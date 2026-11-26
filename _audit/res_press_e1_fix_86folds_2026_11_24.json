@@ -1,0 +1,1563 @@
+{
+  "phase": "POST_E1_86_FOLD_AUDIT",
+  "timestamp": "2026-11-24T19:23:40+08:00",
+  "execution_git_head": "6d834021b441eb715e36df93af25b171f2abfe21",
+  "r2_locked_commit": "74fce40ef41681c7859d66098bbb89b911f7b00c",
+  "theory_py_git_blob_r2_locked_lf": "53b59245c56dbee56ec5632596d3e7b286fc8e46d24a7b6e5b44497dd11fccf4",
+  "theory_py_post_e1_worktree_lf": "81a1c2d63d875bb4a5dff0ace090709b1ffeb159b47806fb12bb49cc372e9d14",
+  "n_tasks_audited": 18,
+  "n_folds_audited": 86,
+  "e1_diff": {
+    "n_fold_decisions_changed": 0,
+    "n_task_decisions_changed": 0,
+    "max_abs_diff_delta_loo_pct": 0.0,
+    "max_abs_diff_t_loo": 0.0,
+    "max_rel_diff_gamma": 0.0,
+    "changed_folds": []
+  },
+  "stratum_inventory": [
+    {
+      "task_id": "CRAW_Barley_NIRS5000__Moisture",
+      "stratum": "strictly_unseen_spectra",
+      "n_rows": 985,
+      "unique_rows": 985,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "CRAW_Barley_NIRS5000__Protein",
+      "stratum": "strictly_unseen_spectra",
+      "n_rows": 2096,
+      "unique_rows": 2096,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "CRAW_Wheat_NIRS5000__Moisture",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 3305,
+      "unique_rows": 3305,
+      "overlap_dev_rows": 2568,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "CRAW_Wheat2_XDS__Moisture",
+      "stratum": "strictly_unseen_spectra",
+      "n_rows": 500,
+      "unique_rows": 500,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "CRAW_Wheat_XDS__Protein",
+      "stratum": "strictly_unseen_spectra",
+      "n_rows": 231,
+      "unique_rows": 231,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "CRAW_Spelt_XDS2__Moisture",
+      "stratum": "r1_subset_overlap_same_target",
+      "n_rows": 198,
+      "unique_rows": 198,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 198
+    },
+    {
+      "task_id": "CRAW_WheatDurum_XDS2__Moisture",
+      "stratum": "r1_subset_overlap_same_target",
+      "n_rows": 170,
+      "unique_rows": 170,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 70
+    },
+    {
+      "task_id": "CRAW_WheatDurum_XDS2__Protein",
+      "stratum": "r1_subset_overlap_same_target",
+      "n_rows": 125,
+      "unique_rows": 125,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 82
+    },
+    {
+      "task_id": "Milk_Raw__Urea",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 1224,
+      "unique_rows": 1224,
+      "overlap_dev_rows": 1224,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "Milk_Raw__Milk_yield",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 1224,
+      "unique_rows": 1224,
+      "overlap_dev_rows": 1224,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "OSSL_Soil_R2__Silt",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 2105,
+      "unique_rows": 2105,
+      "overlap_dev_rows": 2105,
+      "overlap_r1_rows": 2105
+    },
+    {
+      "task_id": "OSSL_Soil_R2__BulkDensity",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 964,
+      "unique_rows": 964,
+      "overlap_dev_rows": 964,
+      "overlap_r1_rows": 964
+    },
+    {
+      "task_id": "OSSL_Soil_R2__CaCO3",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 693,
+      "unique_rows": 693,
+      "overlap_dev_rows": 693,
+      "overlap_r1_rows": 693
+    },
+    {
+      "task_id": "OSSL_Soil_R2__K_ext",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 2095,
+      "unique_rows": 2095,
+      "overlap_dev_rows": 2095,
+      "overlap_r1_rows": 2095
+    },
+    {
+      "task_id": "SWRI_Diesel_R2__FLASH",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 289,
+      "unique_rows": 289,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 261
+    },
+    {
+      "task_id": "SWRI_Diesel_R2__TOTAL",
+      "stratum": "same_spectra_new_target",
+      "n_rows": 284,
+      "unique_rows": 284,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 257
+    },
+    {
+      "task_id": "Tablets_X2_Official__Assay",
+      "stratum": "cross_instrument_same_batch",
+      "n_rows": 615,
+      "unique_rows": 615,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0
+    },
+    {
+      "task_id": "SDOP_Spec2__c2",
+      "stratum": "cross_instrument_same_batch",
+      "n_rows": 30,
+      "unique_rows": 30,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0
+    }
+  ],
+  "strata_metrics_post_e1": {
+    "all_18_tasks_86_folds": {
+      "fold_level": {
+        "n_items": 86,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.3488,
+            "n": 30,
+            "tp": 15,
+            "tn": 7,
+            "fp": 5,
+            "fn": 3,
+            "acc": 0.7333,
+            "tpr": 0.8333,
+            "tnr": 0.5833,
+            "balanced_acc": 0.7083,
+            "mcc": 0.433
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.4545,
+            "n": 20,
+            "tp": 13,
+            "tn": 6,
+            "fp": 0,
+            "fn": 1,
+            "acc": 0.95,
+            "tpr": 0.9286,
+            "tnr": 1.0,
+            "balanced_acc": 0.9643,
+            "mcc": 0.8921
+          },
+          "spearman_rho": 0.5326,
+          "spearman_p": 1.3059066774060396e-07,
+          "pearson_r": 0.632,
+          "pearson_p": 6.762200179502278e-11,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 14,
+                "Actual_NEUTRAL_within_2pct": 4,
+                "Actual_WORSEN_ge_+2pct": 2
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 20,
+                "Actual_NEUTRAL_within_2pct": 16,
+                "Actual_WORSEN_ge_+2pct": 20
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 2,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 7
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 15,
+                "Actual_SIGN_WORSEN_ge0": 5
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 28,
+                "Actual_SIGN_WORSEN_ge0": 28
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 3,
+                "Actual_SIGN_WORSEN_ge0": 7
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 86,
+            "tp": 34,
+            "tn": 26,
+            "fp": 14,
+            "fn": 12,
+            "acc": 0.6977,
+            "tpr": 0.7391,
+            "tnr": 0.65,
+            "balanced_acc": 0.6946,
+            "mcc": 0.3908
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 44,
+            "tp": 24,
+            "tn": 14,
+            "fp": 2,
+            "fn": 4,
+            "acc": 0.8636,
+            "tpr": 0.8571,
+            "tnr": 0.875,
+            "balanced_acc": 0.8661,
+            "mcc": 0.7163
+          },
+          "spearman_rho": 0.5326,
+          "spearman_p": 1.3059066774060396e-07,
+          "pearson_r": 0.632,
+          "pearson_p": 6.762200179502278e-11,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 30,
+                "Actual_NEUTRAL_within_2pct": 11,
+                "Actual_WORSEN_ge_+2pct": 7
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 6,
+                "Actual_NEUTRAL_within_2pct": 10,
+                "Actual_WORSEN_ge_+2pct": 22
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 34,
+                "Actual_SIGN_WORSEN_ge0": 14
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 12,
+                "Actual_SIGN_WORSEN_ge0": 26
+              }
+            }
+          }
+        }
+      },
+      "task_level": {
+        "n_items": 18,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.2778,
+            "n": 5,
+            "tp": 4,
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": 1.0,
+            "balanced_acc": 1.0,
+            "mcc": 1.0
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.3333,
+            "n": 3,
+            "tp": 3,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.7399,
+          "spearman_p": 0.0004472657750928332,
+          "pearson_r": 0.8274,
+          "pearson_p": 2.2651146168346968e-05,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 4,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 3,
+                "Actual_NEUTRAL_within_2pct": 4,
+                "Actual_WORSEN_ge_+2pct": 6
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 1
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 4,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 4,
+                "Actual_SIGN_WORSEN_ge0": 9
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 1
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 18,
+            "tp": 8,
+            "tn": 7,
+            "fp": 3,
+            "fn": 0,
+            "acc": 0.8333,
+            "tpr": 1.0,
+            "tnr": 0.7,
+            "balanced_acc": 0.85,
+            "mcc": 0.7135
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 9,
+            "tp": 6,
+            "tn": 3,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": 1.0,
+            "balanced_acc": 1.0,
+            "mcc": 1.0
+          },
+          "spearman_rho": 0.7399,
+          "spearman_p": 0.0004472657750928332,
+          "pearson_r": 0.8274,
+          "pearson_p": 2.2651146168346968e-05,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 7,
+                "Actual_NEUTRAL_within_2pct": 3,
+                "Actual_WORSEN_ge_+2pct": 1
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 6
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 8,
+                "Actual_SIGN_WORSEN_ge0": 3
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 7
+              }
+            }
+          }
+        }
+      }
+    },
+    "dedup_15_tasks_71_folds_no_r1_subset": {
+      "fold_level": {
+        "n_items": 71,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.338,
+            "n": 24,
+            "tp": 15,
+            "tn": 4,
+            "fp": 5,
+            "fn": 0,
+            "acc": 0.7917,
+            "tpr": 1.0,
+            "tnr": 0.4444,
+            "balanced_acc": 0.7222,
+            "mcc": 0.5774
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.4706,
+            "n": 16,
+            "tp": 13,
+            "tn": 3,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": 1.0,
+            "balanced_acc": 1.0,
+            "mcc": 1.0
+          },
+          "spearman_rho": 0.4968,
+          "spearman_p": 1.0515898270229428e-05,
+          "pearson_r": 0.6632,
+          "pearson_p": 2.9489959455886534e-10,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 14,
+                "Actual_NEUTRAL_within_2pct": 4,
+                "Actual_WORSEN_ge_+2pct": 2
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 19,
+                "Actual_NEUTRAL_within_2pct": 14,
+                "Actual_WORSEN_ge_+2pct": 14
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 4
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 15,
+                "Actual_SIGN_WORSEN_ge0": 5
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 25,
+                "Actual_SIGN_WORSEN_ge0": 22
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 4
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 71,
+            "tp": 33,
+            "tn": 17,
+            "fp": 14,
+            "fn": 7,
+            "acc": 0.7042,
+            "tpr": 0.825,
+            "tnr": 0.5484,
+            "balanced_acc": 0.6867,
+            "mcc": 0.3915
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 34,
+            "tp": 24,
+            "tn": 6,
+            "fp": 2,
+            "fn": 2,
+            "acc": 0.8824,
+            "tpr": 0.9231,
+            "tnr": 0.75,
+            "balanced_acc": 0.8365,
+            "mcc": 0.6731
+          },
+          "spearman_rho": 0.4968,
+          "spearman_p": 1.0515898270229428e-05,
+          "pearson_r": 0.6632,
+          "pearson_p": 2.9489959455886534e-10,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 30,
+                "Actual_NEUTRAL_within_2pct": 10,
+                "Actual_WORSEN_ge_+2pct": 7
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 3,
+                "Actual_NEUTRAL_within_2pct": 8,
+                "Actual_WORSEN_ge_+2pct": 13
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 33,
+                "Actual_SIGN_WORSEN_ge0": 14
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 7,
+                "Actual_SIGN_WORSEN_ge0": 17
+              }
+            }
+          }
+        }
+      },
+      "task_level": {
+        "n_items": 15,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.2667,
+            "n": 4,
+            "tp": 4,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.4286,
+            "n": 3,
+            "tp": 3,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.5821,
+          "spearman_p": 0.02279368712641428,
+          "pearson_r": 0.8303,
+          "pearson_p": 0.00012706109918249428,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 4,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 3,
+                "Actual_NEUTRAL_within_2pct": 4,
+                "Actual_WORSEN_ge_+2pct": 4
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 4,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 4,
+                "Actual_SIGN_WORSEN_ge0": 7
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 15,
+            "tp": 8,
+            "tn": 4,
+            "fp": 3,
+            "fn": 0,
+            "acc": 0.8,
+            "tpr": 1.0,
+            "tnr": 0.5714,
+            "balanced_acc": 0.7857,
+            "mcc": 0.6447
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 7,
+            "tp": 6,
+            "tn": 1,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": 1.0,
+            "balanced_acc": 1.0,
+            "mcc": 1.0
+          },
+          "spearman_rho": 0.5821,
+          "spearman_p": 0.02279368712641428,
+          "pearson_r": 0.8303,
+          "pearson_p": 0.00012706109918249428,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 7,
+                "Actual_NEUTRAL_within_2pct": 3,
+                "Actual_WORSEN_ge_+2pct": 1
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 3
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 8,
+                "Actual_SIGN_WORSEN_ge0": 3
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 4
+              }
+            }
+          }
+        }
+      }
+    },
+    "strictly_unseen_4_tasks_20_folds": {
+      "fold_level": {
+        "n_items": 20,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.3,
+            "n": 6,
+            "tp": 5,
+            "tn": 0,
+            "fp": 1,
+            "fn": 0,
+            "acc": 0.8333,
+            "tpr": 1.0,
+            "tnr": 0.0,
+            "balanced_acc": 0.5,
+            "mcc": 0.0
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.3571,
+            "n": 5,
+            "tp": 5,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.1662,
+          "spearman_p": 0.4836624725230537,
+          "pearson_r": 0.4282,
+          "pearson_p": 0.059626649123767084,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 5,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 10,
+                "Actual_NEUTRAL_within_2pct": 3,
+                "Actual_WORSEN_ge_+2pct": 1
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 5,
+                "Actual_SIGN_WORSEN_ge0": 1
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 10,
+                "Actual_SIGN_WORSEN_ge0": 4
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 20,
+            "tp": 13,
+            "tn": 0,
+            "fp": 5,
+            "fn": 2,
+            "acc": 0.65,
+            "tpr": 0.8667,
+            "tnr": 0.0,
+            "balanced_acc": 0.4333,
+            "mcc": -0.1925
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 14,
+            "tp": 12,
+            "tn": 0,
+            "fp": 0,
+            "fn": 2,
+            "acc": 0.8571,
+            "tpr": 0.8571,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.1662,
+          "spearman_p": 0.4836624725230537,
+          "pearson_r": 0.4282,
+          "pearson_p": 0.059626649123767084,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 13,
+                "Actual_NEUTRAL_within_2pct": 4,
+                "Actual_WORSEN_ge_+2pct": 1
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 2,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 13,
+                "Actual_SIGN_WORSEN_ge0": 5
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 2,
+                "Actual_SIGN_WORSEN_ge0": 0
+              }
+            }
+          }
+        }
+      },
+      "task_level": {
+        "n_items": 4,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.25,
+            "n": 1,
+            "tp": 1,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.3333,
+            "n": 1,
+            "tp": 1,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.4,
+          "spearman_p": 0.6000000000000001,
+          "pearson_r": 0.5111,
+          "pearson_p": 0.48887062337203835,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 1,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 2,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 1,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 2,
+                "Actual_SIGN_WORSEN_ge0": 1
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 4,
+            "tp": 3,
+            "tn": 0,
+            "fp": 1,
+            "fn": 0,
+            "acc": 0.75,
+            "tpr": 1.0,
+            "tnr": 0.0,
+            "balanced_acc": 0.5,
+            "mcc": 0.0
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 3,
+            "tp": 3,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.4,
+          "spearman_p": 0.6000000000000001,
+          "pearson_r": 0.5111,
+          "pearson_p": 0.48887062337203835,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 3,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 3,
+                "Actual_SIGN_WORSEN_ge0": 1
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "same_spectra_new_target_9_tasks_45_folds": {
+      "fold_level": {
+        "n_items": 45,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.3111,
+            "n": 14,
+            "tp": 9,
+            "tn": 1,
+            "fp": 4,
+            "fn": 0,
+            "acc": 0.7143,
+            "tpr": 1.0,
+            "tnr": 0.2,
+            "balanced_acc": 0.6,
+            "mcc": 0.3721
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.5,
+            "n": 7,
+            "tp": 7,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.3393,
+          "spearman_p": 0.022614803240578154,
+          "pearson_r": 0.305,
+          "pearson_p": 0.04159979067985164,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 8,
+                "Actual_NEUTRAL_within_2pct": 3,
+                "Actual_WORSEN_ge_+2pct": 2
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 9,
+                "Actual_NEUTRAL_within_2pct": 11,
+                "Actual_WORSEN_ge_+2pct": 11
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 1
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 9,
+                "Actual_SIGN_WORSEN_ge0": 4
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 15,
+                "Actual_SIGN_WORSEN_ge0": 16
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 1
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 45,
+            "tp": 19,
+            "tn": 12,
+            "fp": 9,
+            "fn": 5,
+            "acc": 0.6889,
+            "tpr": 0.7917,
+            "tnr": 0.5714,
+            "balanced_acc": 0.6815,
+            "mcc": 0.3736
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 14,
+            "tp": 11,
+            "tn": 1,
+            "fp": 2,
+            "fn": 0,
+            "acc": 0.8571,
+            "tpr": 1.0,
+            "tnr": 0.3333,
+            "balanced_acc": 0.6667,
+            "mcc": 0.5311
+          },
+          "spearman_rho": 0.3393,
+          "spearman_p": 0.022614803240578154,
+          "pearson_r": 0.305,
+          "pearson_p": 0.04159979067985164,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 16,
+                "Actual_NEUTRAL_within_2pct": 6,
+                "Actual_WORSEN_ge_+2pct": 6
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 1,
+                "Actual_NEUTRAL_within_2pct": 8,
+                "Actual_WORSEN_ge_+2pct": 8
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 19,
+                "Actual_SIGN_WORSEN_ge0": 9
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 5,
+                "Actual_SIGN_WORSEN_ge0": 12
+              }
+            }
+          }
+        }
+      },
+      "task_level": {
+        "n_items": 9,
+        "primary_t2": {
+          "all_signs": {
+            "coverage": 0.2222,
+            "n": 2,
+            "tp": 2,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "decisive_ge5pct": {
+            "coverage": 0.5,
+            "n": 1,
+            "tp": 1,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.55,
+          "spearman_p": 0.12497678418833194,
+          "pearson_r": 0.3081,
+          "pearson_p": 0.41991033798002536,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 2,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 1,
+                "Actual_NEUTRAL_within_2pct": 3,
+                "Actual_WORSEN_ge_+2pct": 3
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 2,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 2,
+                "Actual_SIGN_WORSEN_ge0": 5
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              }
+            }
+          }
+        },
+        "zero_abstention": {
+          "all_signs": {
+            "coverage": 1.0,
+            "n": 9,
+            "tp": 4,
+            "tn": 3,
+            "fp": 2,
+            "fn": 0,
+            "acc": 0.7778,
+            "tpr": 1.0,
+            "tnr": 0.6,
+            "balanced_acc": 0.8,
+            "mcc": 0.6325
+          },
+          "decisive_ge5pct": {
+            "coverage": 1.0,
+            "n": 2,
+            "tp": 2,
+            "tn": 0,
+            "fp": 0,
+            "fn": 0,
+            "acc": 1.0,
+            "tpr": 1.0,
+            "tnr": null,
+            "balanced_acc": null,
+            "mcc": 0.0
+          },
+          "spearman_rho": 0.55,
+          "spearman_p": 0.12497678418833194,
+          "pearson_r": 0.3081,
+          "pearson_p": 0.41991033798002536,
+          "contingency": {
+            "practical_2pct_band": {
+              "IMPROVE": {
+                "Actual_IMPROVE_le_-2pct": 3,
+                "Actual_NEUTRAL_within_2pct": 2,
+                "Actual_WORSEN_ge_+2pct": 1
+              },
+              "ABSTAIN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 0,
+                "Actual_WORSEN_ge_+2pct": 0
+              },
+              "WORSEN": {
+                "Actual_IMPROVE_le_-2pct": 0,
+                "Actual_NEUTRAL_within_2pct": 1,
+                "Actual_WORSEN_ge_+2pct": 2
+              }
+            },
+            "strict_sign": {
+              "IMPROVE": {
+                "Actual_SIGN_IMPROVE_lt0": 4,
+                "Actual_SIGN_WORSEN_ge0": 2
+              },
+              "ABSTAIN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 0
+              },
+              "WORSEN": {
+                "Actual_SIGN_IMPROVE_lt0": 0,
+                "Actual_SIGN_WORSEN_ge0": 3
+              }
+            }
+          }
+        }
+      }
+    },
+    "official_single_holdout_tablets_x2": {
+      "task_id": "Tablets_X2_Official__Assay",
+      "stratum": "cross_instrument_same_batch",
+      "n": 615,
+      "L": 505,
+      "n_folds": 1,
+      "n_unique_rows": 615,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "IMPROVE",
+      "post_call_primary": "IMPROVE",
+      "pre_delta_loo_mean_pct": -5.54,
+      "post_delta_loo_mean_pct": -5.54,
+      "pre_t_loo_mean": -2.225,
+      "post_t_loo_mean": -2.225,
+      "emp_pooled_pct": -11.49
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "CRAW_Barley_NIRS5000__Moisture",
+      "stratum": "strictly_unseen_spectra",
+      "n": 985,
+      "L": 700,
+      "n_folds": 5,
+      "n_unique_rows": 985,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -2.53,
+      "post_delta_loo_mean_pct": -2.53,
+      "pre_t_loo_mean": -1.596,
+      "post_t_loo_mean": -1.596,
+      "emp_pooled_pct": 0.3
+    },
+    {
+      "task_id": "CRAW_Barley_NIRS5000__Protein",
+      "stratum": "strictly_unseen_spectra",
+      "n": 2096,
+      "L": 700,
+      "n_folds": 5,
+      "n_unique_rows": 2096,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -0.35,
+      "post_delta_loo_mean_pct": -0.35,
+      "pre_t_loo_mean": -0.368,
+      "post_t_loo_mean": -0.368,
+      "emp_pooled_pct": -9.91
+    },
+    {
+      "task_id": "CRAW_Wheat_NIRS5000__Moisture",
+      "stratum": "same_spectra_new_target",
+      "n": 3305,
+      "L": 700,
+      "n_folds": 5,
+      "n_unique_rows": 3305,
+      "overlap_dev_rows": 2568,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "IMPROVE",
+      "post_call_primary": "IMPROVE",
+      "pre_delta_loo_mean_pct": -8.02,
+      "post_delta_loo_mean_pct": -8.02,
+      "pre_t_loo_mean": -8.872,
+      "post_t_loo_mean": -8.872,
+      "emp_pooled_pct": -9.43
+    },
+    {
+      "task_id": "CRAW_Wheat2_XDS__Moisture",
+      "stratum": "strictly_unseen_spectra",
+      "n": 500,
+      "L": 1050,
+      "n_folds": 5,
+      "n_unique_rows": 500,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "IMPROVE",
+      "post_call_primary": "IMPROVE",
+      "pre_delta_loo_mean_pct": -9.58,
+      "post_delta_loo_mean_pct": -9.58,
+      "pre_t_loo_mean": -3.99,
+      "post_t_loo_mean": -3.99,
+      "emp_pooled_pct": -15.47
+    },
+    {
+      "task_id": "CRAW_Wheat_XDS__Protein",
+      "stratum": "strictly_unseen_spectra",
+      "n": 231,
+      "L": 1050,
+      "n_folds": 5,
+      "n_unique_rows": 231,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -1.99,
+      "post_delta_loo_mean_pct": -1.99,
+      "pre_t_loo_mean": -0.741,
+      "post_t_loo_mean": -0.741,
+      "emp_pooled_pct": -11.32
+    },
+    {
+      "task_id": "CRAW_Spelt_XDS2__Moisture",
+      "stratum": "r1_subset_overlap_same_target",
+      "n": 198,
+      "L": 1050,
+      "n_folds": 5,
+      "n_unique_rows": 198,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 198,
+      "pre_call_primary": "WORSEN",
+      "post_call_primary": "WORSEN",
+      "pre_delta_loo_mean_pct": 11.44,
+      "post_delta_loo_mean_pct": 11.44,
+      "pre_t_loo_mean": 2.535,
+      "post_t_loo_mean": 2.535,
+      "emp_pooled_pct": 4.28
+    },
+    {
+      "task_id": "CRAW_WheatDurum_XDS2__Moisture",
+      "stratum": "r1_subset_overlap_same_target",
+      "n": 170,
+      "L": 1050,
+      "n_folds": 5,
+      "n_unique_rows": 170,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 70,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": 8.02,
+      "post_delta_loo_mean_pct": 8.02,
+      "pre_t_loo_mean": 1.265,
+      "post_t_loo_mean": 1.265,
+      "emp_pooled_pct": 8.73
+    },
+    {
+      "task_id": "CRAW_WheatDurum_XDS2__Protein",
+      "stratum": "r1_subset_overlap_same_target",
+      "n": 125,
+      "L": 1050,
+      "n_folds": 5,
+      "n_unique_rows": 125,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 82,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": 4.56,
+      "post_delta_loo_mean_pct": 4.56,
+      "pre_t_loo_mean": 1.017,
+      "post_t_loo_mean": 1.017,
+      "emp_pooled_pct": 9.56
+    },
+    {
+      "task_id": "Milk_Raw__Urea",
+      "stratum": "same_spectra_new_target",
+      "n": 1224,
+      "L": 256,
+      "n_folds": 5,
+      "n_unique_rows": 1224,
+      "overlap_dev_rows": 1224,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -0.39,
+      "post_delta_loo_mean_pct": -0.39,
+      "pre_t_loo_mean": -0.317,
+      "post_t_loo_mean": -0.317,
+      "emp_pooled_pct": 0.51
+    },
+    {
+      "task_id": "Milk_Raw__Milk_yield",
+      "stratum": "same_spectra_new_target",
+      "n": 1224,
+      "L": 256,
+      "n_folds": 5,
+      "n_unique_rows": 1224,
+      "overlap_dev_rows": 1224,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": 10.25,
+      "post_delta_loo_mean_pct": 10.25,
+      "pre_t_loo_mean": 1.291,
+      "post_t_loo_mean": 1.291,
+      "emp_pooled_pct": 2.22
+    },
+    {
+      "task_id": "OSSL_Soil_R2__Silt",
+      "stratum": "same_spectra_new_target",
+      "n": 2105,
+      "L": 601,
+      "n_folds": 5,
+      "n_unique_rows": 2105,
+      "overlap_dev_rows": 2105,
+      "overlap_r1_rows": 2105,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": 1.57,
+      "post_delta_loo_mean_pct": 1.57,
+      "pre_t_loo_mean": 1.194,
+      "post_t_loo_mean": 1.194,
+      "emp_pooled_pct": 1.91
+    },
+    {
+      "task_id": "OSSL_Soil_R2__BulkDensity",
+      "stratum": "same_spectra_new_target",
+      "n": 964,
+      "L": 601,
+      "n_folds": 5,
+      "n_unique_rows": 964,
+      "overlap_dev_rows": 964,
+      "overlap_r1_rows": 964,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -3.09,
+      "post_delta_loo_mean_pct": -3.09,
+      "pre_t_loo_mean": -1.699,
+      "post_t_loo_mean": -1.699,
+      "emp_pooled_pct": -1.5
+    },
+    {
+      "task_id": "OSSL_Soil_R2__CaCO3",
+      "stratum": "same_spectra_new_target",
+      "n": 693,
+      "L": 601,
+      "n_folds": 5,
+      "n_unique_rows": 693,
+      "overlap_dev_rows": 693,
+      "overlap_r1_rows": 693,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -8.88,
+      "post_delta_loo_mean_pct": -8.88,
+      "pre_t_loo_mean": -1.893,
+      "post_t_loo_mean": -1.893,
+      "emp_pooled_pct": 2.01
+    },
+    {
+      "task_id": "OSSL_Soil_R2__K_ext",
+      "stratum": "same_spectra_new_target",
+      "n": 2095,
+      "L": 601,
+      "n_folds": 5,
+      "n_unique_rows": 2095,
+      "overlap_dev_rows": 2095,
+      "overlap_r1_rows": 2095,
+      "pre_call_primary": "IMPROVE",
+      "post_call_primary": "IMPROVE",
+      "pre_delta_loo_mean_pct": -3.28,
+      "post_delta_loo_mean_pct": -3.28,
+      "pre_t_loo_mean": -2.092,
+      "post_t_loo_mean": -2.092,
+      "emp_pooled_pct": -4.23
+    },
+    {
+      "task_id": "SWRI_Diesel_R2__FLASH",
+      "stratum": "same_spectra_new_target",
+      "n": 289,
+      "L": 401,
+      "n_folds": 5,
+      "n_unique_rows": 289,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 261,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": 1.63,
+      "post_delta_loo_mean_pct": 1.63,
+      "pre_t_loo_mean": 1.081,
+      "post_t_loo_mean": 1.081,
+      "emp_pooled_pct": 2.08
+    },
+    {
+      "task_id": "SWRI_Diesel_R2__TOTAL",
+      "stratum": "same_spectra_new_target",
+      "n": 284,
+      "L": 401,
+      "n_folds": 5,
+      "n_unique_rows": 284,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 257,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": -2.29,
+      "post_delta_loo_mean_pct": -2.29,
+      "pre_t_loo_mean": -1.183,
+      "post_t_loo_mean": -1.183,
+      "emp_pooled_pct": -22.75
+    },
+    {
+      "task_id": "Tablets_X2_Official__Assay",
+      "stratum": "cross_instrument_same_batch",
+      "n": 615,
+      "L": 505,
+      "n_folds": 1,
+      "n_unique_rows": 615,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "IMPROVE",
+      "post_call_primary": "IMPROVE",
+      "pre_delta_loo_mean_pct": -5.54,
+      "post_delta_loo_mean_pct": -5.54,
+      "pre_t_loo_mean": -2.225,
+      "post_t_loo_mean": -2.225,
+      "emp_pooled_pct": -11.49
+    },
+    {
+      "task_id": "SDOP_Spec2__c2",
+      "stratum": "cross_instrument_same_batch",
+      "n": 30,
+      "L": 401,
+      "n_folds": 5,
+      "n_unique_rows": 30,
+      "overlap_dev_rows": 0,
+      "overlap_r1_rows": 0,
+      "pre_call_primary": "ABSTAIN",
+      "post_call_primary": "ABSTAIN",
+      "pre_delta_loo_mean_pct": 39.73,
+      "post_delta_loo_mean_pct": 39.73,
+      "pre_t_loo_mean": 1.933,
+      "post_t_loo_mean": 1.933,
+      "emp_pooled_pct": 33.9
+    }
+  ]
+}

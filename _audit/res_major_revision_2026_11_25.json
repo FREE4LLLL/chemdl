@@ -1,0 +1,538 @@
+{
+  "generated_at": "2026-11-25T21:37:04+0800",
+  "elapsed_sec": 258.13,
+  "part1_vsn_comparison": {
+    "synthetic_check": {
+      "w_baseline_mean": 1.0,
+      "w_chemical_peak_mean": 0.0,
+      "max_single_sample_diff": 8.881784197001252e-16,
+      "max_poison_diff": 0.0
+    },
+    "VALID_17": {
+      "n": 17,
+      "mean_rmsep_z": 0.6912,
+      "mean_regret_pct": 21.53,
+      "median_regret_pct": 0.67,
+      "max_regret_pct": 164.67,
+      "n_severe_ge5pct": 6,
+      "C_5": 113.89,
+      "C_10": 229.35,
+      "C_20": 460.27,
+      "total_time_s": 27.189,
+      "mean_time_s": 1.5993
+    },
+    "ALL_18": {
+      "n": 18,
+      "mean_rmsep_z": 2.349,
+      "mean_regret_pct": 20.51,
+      "median_regret_pct": 0.99,
+      "max_regret_pct": 164.67,
+      "n_severe_ge5pct": 6,
+      "C_5": 107.75,
+      "C_10": 216.8,
+      "C_20": 434.88,
+      "total_time_s": 32.327,
+      "mean_time_s": 1.796
+    },
+    "Round3_13": {
+      "n": 13,
+      "mean_rmsep_z": 0.8648,
+      "mean_regret_pct": 14.11,
+      "median_regret_pct": 2.8,
+      "max_regret_pct": 84.89,
+      "n_severe_ge5pct": 6,
+      "C_5": 61.18,
+      "C_10": 120.01,
+      "C_20": 237.68,
+      "total_time_s": 28.901,
+      "mean_time_s": 2.2231
+    },
+    "EXTERNAL_30_PLS": {
+      "n": 30,
+      "mean_rmsep_z": 0.7325,
+      "mean_regret_pct": 17.29,
+      "median_regret_pct": 0.48,
+      "max_regret_pct": 184.43,
+      "n_severe_ge5pct": 10,
+      "C_5": 91.46,
+      "C_10": 184.18,
+      "C_20": 369.61,
+      "total_time_s": 48.412,
+      "mean_time_s": 1.6137
+    },
+    "EXTERNAL_30_RIDGE": {
+      "n": 30,
+      "mean_rmsep_z": 0.7315,
+      "mean_regret_pct": 18.97,
+      "median_regret_pct": 2.53,
+      "max_regret_pct": 165.95,
+      "n_severe_ge5pct": 14,
+      "C_5": 89.16,
+      "C_10": 176.91,
+      "C_20": 352.39,
+      "total_time_s": 53.799,
+      "mean_time_s": 1.7933
+    },
+    "per_task_ext30": [
+      {
+        "task_id": "R3_IFPEN_Hydrocarbon__Density",
+        "pls_rmsep_z": 0.1307,
+        "ridge_rmsep_z": 0.1196
+      },
+      {
+        "task_id": "R3_TreeNSC_Woody__Sugars",
+        "pls_rmsep_z": 0.8512,
+        "ridge_rmsep_z": 0.8696
+      },
+      {
+        "task_id": "R3_TreeNSC_Woody__Starch",
+        "pls_rmsep_z": 0.919,
+        "ridge_rmsep_z": 0.8319
+      },
+      {
+        "task_id": "R3_ResidualOil__Aromatics",
+        "pls_rmsep_z": 1.037,
+        "ridge_rmsep_z": 0.9172
+      },
+      {
+        "task_id": "R3_ResidualOil__CokingValue",
+        "pls_rmsep_z": 0.8863,
+        "ridge_rmsep_z": 0.8695
+      },
+      {
+        "task_id": "R3_ResidualOil__Sulfur",
+        "pls_rmsep_z": 0.6248,
+        "ridge_rmsep_z": 0.5398
+      },
+      {
+        "task_id": "R3_Walnut_Official__Moisture",
+        "pls_rmsep_z": 0.4507,
+        "ridge_rmsep_z": 0.4528
+      },
+      {
+        "task_id": "R3_PeaForage_2019to2020__CP",
+        "pls_rmsep_z": 1.0181,
+        "ridge_rmsep_z": 1.2675
+      },
+      {
+        "task_id": "R3_PeaForage_2019to2020__ADF",
+        "pls_rmsep_z": 1.6538,
+        "ridge_rmsep_z": 2.039
+      },
+      {
+        "task_id": "R3_PeaForage_2019to2020__NDF",
+        "pls_rmsep_z": 1.9254,
+        "ridge_rmsep_z": 1.7492
+      },
+      {
+        "task_id": "R3_AustrianSoil_Pre21toPost21__SOC",
+        "pls_rmsep_z": 0.5314,
+        "ridge_rmsep_z": 0.5578
+      },
+      {
+        "task_id": "R3_AustrianSoil_Pre21toPost21__TN",
+        "pls_rmsep_z": 0.4703,
+        "ridge_rmsep_z": 0.5613
+      },
+      {
+        "task_id": "R3_AustrianSoil_Pre21toPost21__pH_CaCl2",
+        "pls_rmsep_z": 0.4702,
+        "ridge_rmsep_z": 0.6057
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat_XDS_Moist_NewOnly__Temporal",
+        "pls_rmsep_z": 1.665,
+        "ridge_rmsep_z": 1.7914
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat_XDS_Prot_NewOnly__Temporal",
+        "pls_rmsep_z": 1.1236,
+        "ridge_rmsep_z": 0.7419
+      },
+      {
+        "task_id": "Deploy_CRAW_Barley_NIRS5000_Moist__Temporal",
+        "pls_rmsep_z": 0.7466,
+        "ridge_rmsep_z": 0.6411
+      },
+      {
+        "task_id": "Deploy_CRAW_Barley_NIRS5000_Prot__Temporal",
+        "pls_rmsep_z": 0.4375,
+        "ridge_rmsep_z": 0.2735
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat2_XDS_Moist__Temporal",
+        "pls_rmsep_z": 0.2464,
+        "ridge_rmsep_z": 0.3098
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat_XDS_Prot__Temporal",
+        "pls_rmsep_z": 1.2256,
+        "ridge_rmsep_z": 0.6713
+      },
+      {
+        "task_id": "Deploy_Tablets_X2_Official__Assay",
+        "pls_rmsep_z": 0.2071,
+        "ridge_rmsep_z": 0.2024
+      },
+      {
+        "task_id": "Deploy_Wheat_A1_Official__Protein",
+        "pls_rmsep_z": 0.3241,
+        "ridge_rmsep_z": 0.2859
+      },
+      {
+        "task_id": "Deploy_Wheat_A3_Official__Protein",
+        "pls_rmsep_z": 0.3121,
+        "ridge_rmsep_z": 0.2678
+      },
+      {
+        "task_id": "Deploy_Melamine_R568_to_R862__CloudPoint",
+        "pls_rmsep_z": 0.19,
+        "ridge_rmsep_z": 0.7635
+      },
+      {
+        "task_id": "Deploy_Milk_CowGroupHoldout__SCC",
+        "pls_rmsep_z": 0.5191,
+        "ridge_rmsep_z": 0.5657
+      },
+      {
+        "task_id": "Deploy_Milk_CowGroupHoldout__Urea",
+        "pls_rmsep_z": 0.9272,
+        "ridge_rmsep_z": 0.8794
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__Al_dith",
+        "pls_rmsep_z": 0.596,
+        "ridge_rmsep_z": 0.5784
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__Mg_ext",
+        "pls_rmsep_z": 0.6805,
+        "ridge_rmsep_z": 0.667
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__WR1500",
+        "pls_rmsep_z": 0.6733,
+        "ridge_rmsep_z": 0.6664
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__P_ext",
+        "pls_rmsep_z": 0.7187,
+        "ridge_rmsep_z": 0.7207
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__EC",
+        "pls_rmsep_z": 0.4136,
+        "ridge_rmsep_z": 0.5364
+      }
+    ],
+    "per_task_18": [
+      {
+        "task_id": "Deploy_CRAW_Wheat_XDS_Moist_NewOnly__Temporal",
+        "rmsep_z": 1.5785,
+        "regret_pct": 15.05,
+        "time_s": 0.8834
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat_XDS_Prot_NewOnly__Temporal",
+        "rmsep_z": 1.6323,
+        "regret_pct": 38.35,
+        "time_s": 0.1812
+      },
+      {
+        "task_id": "Deploy_CRAW_Barley_NIRS5000_Moist__Temporal",
+        "rmsep_z": 0.5613,
+        "regret_pct": -4.58,
+        "time_s": 2.4403
+      },
+      {
+        "task_id": "Deploy_CRAW_Barley_NIRS5000_Prot__Temporal",
+        "rmsep_z": 0.5849,
+        "regret_pct": 2.07,
+        "time_s": 4.7793
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat2_XDS_Moist__Temporal",
+        "rmsep_z": 0.2906,
+        "regret_pct": -30.79,
+        "time_s": 1.056
+      },
+      {
+        "task_id": "Deploy_CRAW_Wheat_XDS_Prot__Temporal",
+        "rmsep_z": 1.1222,
+        "regret_pct": 39.65,
+        "time_s": 0.692
+      },
+      {
+        "task_id": "Deploy_Mango_Official_SP_test2__DM",
+        "rmsep_z": 30.5315,
+        "regret_pct": 3.31,
+        "time_s": 5.1384
+      },
+      {
+        "task_id": "Deploy_Tablets_X2_Official__Assay",
+        "rmsep_z": 0.2098,
+        "regret_pct": -3.11,
+        "time_s": 0.1881
+      },
+      {
+        "task_id": "Deploy_Wheat_A1_Official__Protein",
+        "rmsep_z": 0.3412,
+        "regret_pct": 164.67,
+        "time_s": 0.7279
+      },
+      {
+        "task_id": "Deploy_Wheat_A3_Official__Protein",
+        "rmsep_z": 0.3066,
+        "regret_pct": 156.76,
+        "time_s": 0.1391
+      },
+      {
+        "task_id": "Deploy_Melamine_R568_to_R862__CloudPoint",
+        "rmsep_z": 0.5467,
+        "regret_pct": -17.71,
+        "time_s": 0.715
+      },
+      {
+        "task_id": "Deploy_Milk_CowGroupHoldout__SCC",
+        "rmsep_z": 0.5714,
+        "regret_pct": -0.51,
+        "time_s": 0.8862
+      },
+      {
+        "task_id": "Deploy_Milk_CowGroupHoldout__Urea",
+        "rmsep_z": 0.8767,
+        "regret_pct": 0.58,
+        "time_s": 1.0535
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__Al_dith",
+        "rmsep_z": 0.6114,
+        "regret_pct": 0.67,
+        "time_s": 3.3712
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__Mg_ext",
+        "rmsep_z": 0.6861,
+        "regret_pct": -3.77,
+        "time_s": 3.6309
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__WR1500",
+        "rmsep_z": 0.6758,
+        "regret_pct": -0.77,
+        "time_s": 3.6154
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__P_ext",
+        "rmsep_z": 0.7187,
+        "regret_pct": 1.3,
+        "time_s": 1.3155
+      },
+      {
+        "task_id": "Deploy_OSSL_Holdout__EC",
+        "rmsep_z": 0.4361,
+        "regret_pct": 8.07,
+        "time_s": 1.5138
+      }
+    ],
+    "per_task_13": [
+      {
+        "task_id": "R3_IFPEN_Hydrocarbon__Density",
+        "rmsep_z": 0.1285,
+        "regret_pct": 84.89,
+        "time_s": 1.5668
+      },
+      {
+        "task_id": "R3_TreeNSC_Woody__Sugars",
+        "rmsep_z": 0.8376,
+        "regret_pct": -0.46,
+        "time_s": 0.6377
+      },
+      {
+        "task_id": "R3_TreeNSC_Woody__Starch",
+        "rmsep_z": 0.9557,
+        "regret_pct": 2.8,
+        "time_s": 0.6609
+      },
+      {
+        "task_id": "R3_ResidualOil__Aromatics",
+        "rmsep_z": 1.037,
+        "regret_pct": 23.57,
+        "time_s": 0.0779
+      },
+      {
+        "task_id": "R3_ResidualOil__CokingValue",
+        "rmsep_z": 0.9492,
+        "regret_pct": 1.02,
+        "time_s": 0.0838
+      },
+      {
+        "task_id": "R3_ResidualOil__Sulfur",
+        "rmsep_z": 0.5222,
+        "regret_pct": -3.55,
+        "time_s": 0.0785
+      },
+      {
+        "task_id": "R3_Walnut_Official__Moisture",
+        "rmsep_z": 0.4562,
+        "regret_pct": 0.33,
+        "time_s": 0.1823
+      },
+      {
+        "task_id": "R3_PeaForage_2019to2020__CP",
+        "rmsep_z": 1.0181,
+        "regret_pct": 0.07,
+        "time_s": 0.1752
+      },
+      {
+        "task_id": "R3_PeaForage_2019to2020__ADF",
+        "rmsep_z": 1.8869,
+        "regret_pct": 0.28,
+        "time_s": 0.1612
+      },
+      {
+        "task_id": "R3_PeaForage_2019to2020__NDF",
+        "rmsep_z": 2.1031,
+        "regret_pct": 40.37,
+        "time_s": 0.1606
+      },
+      {
+        "task_id": "R3_AustrianSoil_Pre21toPost21__SOC",
+        "rmsep_z": 0.5277,
+        "regret_pct": 13.29,
+        "time_s": 9.3355
+      },
+      {
+        "task_id": "R3_AustrianSoil_Pre21toPost21__TN",
+        "rmsep_z": 0.3611,
+        "regret_pct": 14.24,
+        "time_s": 7.4849
+      },
+      {
+        "task_id": "R3_AustrianSoil_Pre21toPost21__pH_CaCl2",
+        "rmsep_z": 0.4596,
+        "regret_pct": 6.61,
+        "time_s": 8.2954
+      }
+    ]
+  },
+  "part2_nested_cv_bias_ablation": {
+    "VALID_17": {
+      "n": 17,
+      "spearman_delta": 0.9216,
+      "spearman_t": 0.9608,
+      "three_state_agreement": "15/17",
+      "three_state_agreement_pct": 88.2,
+      "nested_coverage": "9/17",
+      "nested_decided_acc": "8/9",
+      "nested_fb_snv_mean_regret_pct": 5.78,
+      "nested_fb_snv_C10": 50.58,
+      "nested_fb_cv_mean_regret_pct": 7.6,
+      "nested_fb_cv_C10": 65.38
+    },
+    "ALL_18": {
+      "n": 18,
+      "spearman_delta": 0.934,
+      "spearman_t": 0.967,
+      "three_state_agreement": "16/18",
+      "three_state_agreement_pct": 88.9,
+      "nested_coverage": "10/18",
+      "nested_decided_acc": "8/10",
+      "nested_fb_snv_mean_regret_pct": 5.54,
+      "nested_fb_snv_C10": 47.85,
+      "nested_fb_cv_mean_regret_pct": 7.26,
+      "nested_fb_cv_C10": 61.83
+    },
+    "Round3_13": {
+      "n": 13,
+      "spearman_delta": 0.7747,
+      "spearman_t": 0.8516,
+      "three_state_agreement": "11/13",
+      "three_state_agreement_pct": 84.6,
+      "nested_coverage": "4/13",
+      "nested_decided_acc": "4/4",
+      "nested_fb_snv_mean_regret_pct": 4.16,
+      "nested_fb_snv_C10": 33.94,
+      "nested_fb_cv_mean_regret_pct": 2.89,
+      "nested_fb_cv_C10": 17.53
+    },
+    "Pooled_31": {
+      "n": 31,
+      "spearman_delta": 0.8383,
+      "spearman_t": 0.9113,
+      "three_state_agreement": "27/31",
+      "three_state_agreement_pct": 87.1,
+      "nested_coverage": "14/31",
+      "nested_decided_acc": "12/14",
+      "nested_fb_snv_mean_regret_pct": 4.96,
+      "nested_fb_snv_C10": 42.01,
+      "nested_fb_cv_mean_regret_pct": 5.42,
+      "nested_fb_cv_C10": 43.25
+    },
+    "total_nested_gate_time_s": 71.986
+  },
+  "part3_noninferiority_and_cluster_cis": {
+    "external_30_noninferiority": {
+      "pls": {
+        "mean_diff_wiener_minus_inner_cv": 0.0088,
+        "cluster12_ci95_wiener_minus_inner_cv": [
+          -0.0503,
+          0.0621
+        ],
+        "cluster12_ucb95_wiener_minus_inner_cv": 0.0537,
+        "margins": {
+          "delta_0.03": {
+            "wilcoxon_one_sided_p": 0.000365
+          },
+          "delta_0.05": {
+            "wilcoxon_one_sided_p": 6.2e-05
+          },
+          "delta_0.08": {
+            "wilcoxon_one_sided_p": 6.2e-05
+          }
+        },
+        "mean_diff_wiener_minus_vsn": 0.0209,
+        "cluster12_ci95_wiener_minus_vsn": [
+          -0.0397,
+          0.0721
+        ]
+      },
+      "ridge": {
+        "mean_diff_wiener_minus_inner_cv": 0.0055,
+        "cluster12_ci95_wiener_minus_inner_cv": [
+          -0.0129,
+          0.0308
+        ],
+        "cluster12_ucb95_wiener_minus_inner_cv": 0.0259,
+        "margins": {
+          "delta_0.03": {
+            "wilcoxon_one_sided_p": 0.001383
+          },
+          "delta_0.05": {
+            "wilcoxon_one_sided_p": 7.6e-05
+          },
+          "delta_0.08": {
+            "wilcoxon_one_sided_p": 3e-06
+          }
+        },
+        "mean_diff_wiener_minus_vsn": -0.0067,
+        "cluster12_ci95_wiener_minus_vsn": [
+          -0.0718,
+          0.0452
+        ]
+      }
+    },
+    "folds_170_7dataset_cluster_ci95": [
+      0.564,
+      0.809
+    ],
+    "folds_86_18task_cluster_decided_acc_ci95": [
+      0.5,
+      0.925
+    ],
+    "folds_86_18task_cluster_rho_ci95": [
+      0.176,
+      0.748
+    ]
+  }
+}

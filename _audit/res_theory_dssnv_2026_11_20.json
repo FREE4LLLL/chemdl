@@ -1,0 +1,221 @@
+{
+  "c061_theorem_verification": {
+    "Cordoba_Wheat": {
+      "beta_est": 4.14,
+      "r_crit": 0.837,
+      "r_grid": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "empirical_gain_pct": [
+        -26.3,
+        -29.57,
+        -28.71,
+        -26.1,
+        -9.06
+      ],
+      "theoretical_gain_pct": [
+        -14.61,
+        -14.22,
+        -12.88,
+        -9.88,
+        -2.53
+      ],
+      "closed_form_ws_star": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.559
+      ],
+      "pearson_r": 0.9425,
+      "sign_agreement_at_r0_and_r08": true
+    },
+    "Cordoba_Barley": {
+      "beta_est": 1.13,
+      "r_crit": 0.382,
+      "r_grid": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "empirical_gain_pct": [
+        -6.4,
+        -9.94,
+        -12.19,
+        -7.26,
+        13.94
+      ],
+      "theoretical_gain_pct": [
+        -3.29,
+        -2.46,
+        0.35,
+        6.54,
+        21.12
+      ],
+      "closed_form_ws_star": [
+        1.0,
+        0.84,
+        0.431,
+        0.063,
+        0.0
+      ],
+      "pearson_r": 0.9113,
+      "sign_agreement_at_r0_and_r08": true
+    },
+    "SWRI_Diesel_CN": {
+      "beta_est": 1.51,
+      "r_crit": 0.478,
+      "r_grid": [
+        0.0,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "empirical_gain_pct": [
+        -5.96,
+        -6.65,
+        -8.29,
+        -4.25,
+        15.78
+      ],
+      "theoretical_gain_pct": [
+        -4.79,
+        -4.07,
+        -1.63,
+        3.76,
+        16.59
+      ],
+      "closed_form_ws_star": [
+        1.0,
+        1.0,
+        0.577,
+        0.245,
+        0.0
+      ],
+      "pearson_r": 0.9461,
+      "sign_agreement_at_r0_and_r08": true
+    }
+  },
+  "real_7_datasets": {
+    "Tecator": {
+      "rmsep": {
+        "raw": 0.2497,
+        "snv": 0.1886,
+        "cv_dssnv": 0.1608,
+        "theory_dssnv": 0.1724
+      },
+      "vs_raw_pct": -30.96,
+      "vs_snv_pct": -8.59,
+      "vs_cv_dssnv_pct": 7.21,
+      "p_oof_vs_snv": 0.0,
+      "p_oof_vs_raw": 0.0,
+      "mean_wc_star": 1.0,
+      "mean_ws_star": 0.987,
+      "speedup_vs_cv": 4.16
+    },
+    "Corn_m5": {
+      "rmsep": {
+        "raw": 0.2828,
+        "snv": 0.3892,
+        "cv_dssnv": 0.2519,
+        "theory_dssnv": 0.2565
+      },
+      "vs_raw_pct": -9.3,
+      "vs_snv_pct": -34.1,
+      "vs_cv_dssnv_pct": 1.83,
+      "p_oof_vs_snv": 0.0,
+      "p_oof_vs_raw": 0.00045,
+      "mean_wc_star": 0.844,
+      "mean_ws_star": 0.579,
+      "speedup_vs_cv": 4.17
+    },
+    "Tablets_X1": {
+      "rmsep": {
+        "raw": 0.5864,
+        "snv": 0.5791,
+        "cv_dssnv": 0.578,
+        "theory_dssnv": 0.5822
+      },
+      "vs_raw_pct": -0.72,
+      "vs_snv_pct": 0.54,
+      "vs_cv_dssnv_pct": 0.73,
+      "p_oof_vs_snv": 0.72278,
+      "p_oof_vs_raw": 0.35163,
+      "mean_wc_star": 0.992,
+      "mean_ws_star": 0.324,
+      "speedup_vs_cv": 4.2
+    },
+    "Cordoba_wheat": {
+      "rmsep": {
+        "raw": 0.4275,
+        "snv": 0.4286,
+        "cv_dssnv": 0.4358,
+        "theory_dssnv": 0.429
+      },
+      "vs_raw_pct": 0.35,
+      "vs_snv_pct": 0.09,
+      "vs_cv_dssnv_pct": -1.56,
+      "p_oof_vs_snv": 0.51813,
+      "p_oof_vs_raw": 0.53437,
+      "mean_wc_star": 1.0,
+      "mean_ws_star": 1.0,
+      "speedup_vs_cv": 4.2
+    },
+    "Cordoba_barley": {
+      "rmsep": {
+        "raw": 0.6526,
+        "snv": 0.6535,
+        "cv_dssnv": 0.6624,
+        "theory_dssnv": 0.6537
+      },
+      "vs_raw_pct": 0.17,
+      "vs_snv_pct": 0.03,
+      "vs_cv_dssnv_pct": -1.31,
+      "p_oof_vs_snv": 0.44351,
+      "p_oof_vs_raw": 0.0146,
+      "mean_wc_star": 0.501,
+      "mean_ws_star": 0.361,
+      "speedup_vs_cv": 4.16
+    },
+    "Cordoba_maize": {
+      "rmsep": {
+        "raw": 0.8213,
+        "snv": 0.8375,
+        "cv_dssnv": 0.8266,
+        "theory_dssnv": 0.8211
+      },
+      "vs_raw_pct": -0.02,
+      "vs_snv_pct": -1.96,
+      "vs_cv_dssnv_pct": -0.67,
+      "p_oof_vs_snv": 0.24002,
+      "p_oof_vs_raw": 0.89659,
+      "mean_wc_star": 0.215,
+      "mean_ws_star": 0.185,
+      "speedup_vs_cv": 4.12
+    },
+    "SWRI_Diesel_CN": {
+      "rmsep": {
+        "raw": 0.7031,
+        "snv": 0.7055,
+        "cv_dssnv": 0.6907,
+        "theory_dssnv": 0.7121
+      },
+      "vs_raw_pct": 1.28,
+      "vs_snv_pct": 0.94,
+      "vs_cv_dssnv_pct": 3.1,
+      "p_oof_vs_snv": 0.67004,
+      "p_oof_vs_raw": 0.68002,
+      "mean_wc_star": 0.821,
+      "mean_ws_star": 0.0,
+      "speedup_vs_cv": 4.11
+    }
+  },
+  "elapsed_sec": 95.2
+}

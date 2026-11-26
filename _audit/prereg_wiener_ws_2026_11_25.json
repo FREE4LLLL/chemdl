@@ -1,0 +1,4572 @@
+{
+  "phase": "WIENER_WS_PHASE_1_LOCKED",
+  "created_at_utc": "2026-11-25T01:48:42.266026+00:00",
+  "git_head_frozen": "ef595cca24bea8a3e0b2baacd6fced5585b279c5",
+  "theory_py_git_blob_sha256_lf": "66831a6b1ec7b79be048ebd0712dfae367aa9639bc3bcf9f27cded04fdc8bd76",
+  "c148_prereg_json_sha256_lf": "6bfd2829a1521f1a997571ad067c630d61e4649436b40fcce13884afde2fbb8a",
+  "fixed_wc": 1.0,
+  "interior_eps": 0.01,
+  "n_tasks": 54,
+  "n_external_prospective_valid": 30,
+  "n_classic_dev": 23,
+  "elapsed_s": 57.07,
+  "prospective_hypotheses": {
+    "primary_universe": "EXTERNAL_30 (Phase B Valid 17 + Round 3 13, zero prior test contact)",
+    "H1": "On EXTERNAL_30 (PLS & Ridge), ws_wiener and ws_unified reduce mean_regret_pct_vs_best_ep, worst_regret_pct, and w=10 asymmetric cost vs old ws_closed_v2 (sigma_non=0).",
+    "H2": "On EXTERNAL_30, ws_wiener and ws_unified achieve lower w=10 asymmetric cost and lower mean_regret_pct than BOTH blind endpoints (ws_0 and ws_1).",
+    "H3": "Honest comparison against supervised 11-point ws_inner_cv on EXTERNAL_30 (accuracy, regret, w=10 cost, Wilcoxon p, and calibration speedup).",
+    "H4": "Mechanism ablation snv_plus_logs fails to eliminate nonlinear Beer-Lambert denominator distortion compared to ws_wiener."
+  },
+  "summary": {
+    "pre_tag_counts": {
+      "wiener": {
+        "all_54_interior_01": 54,
+        "ext_30_interior_01": 30,
+        "classic_23_interior_01": 23
+      },
+      "unified": {
+        "all_54_interior_01": 33,
+        "ext_30_interior_01": 17,
+        "classic_23_interior_01": 15
+      }
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "R3_IFPEN_Hydrocarbon__Density",
+      "suite": "Round3_Unseen",
+      "domain": "Z-16783068_IFPEN_France",
+      "split_rule": "QuantileStratified_70_30_seed20261124",
+      "target_name": "DensityNormalized",
+      "n_cal": 146,
+      "n_test": 62,
+      "L": 2635,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "341acd212b01b3b22d66c4d3119f43d14fb670cc5b11cb46d4258fbab3279b6a",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 5.0,
+        "beta": 51.82,
+        "r_s": 0.3365,
+        "sigma_s": 0.3288,
+        "sigma_a_true": 0.0968,
+        "sigma_non_chem": 0.3142,
+        "r2_s_shape": 0.9133,
+        "r_crit": 1.0,
+        "r_crit_raw": 4.5925,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0867,
+      "ws_unified": 0.087,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0951,
+        "v2_params_only_from_c148": 0.3087
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0867,
+          "k": 8,
+          "cv_rmsep_z": 0.116065,
+          "cal_time_s": 0.1895
+        },
+        "ws_unified": {
+          "ws": 0.087,
+          "k": 8,
+          "cv_rmsep_z": 0.116329,
+          "cal_time_s": 0.4043
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.120505,
+          "cal_time_s": 0.0822
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0867,
+          "gamma": 0.05869643754160499,
+          "cv_rmsep_z": 0.118021,
+          "cal_time_s": 0.1474
+        },
+        "ws_unified": {
+          "ws": 0.087,
+          "gamma": 0.058675483081264634,
+          "cv_rmsep_z": 0.118023,
+          "cal_time_s": 0.3617
+        },
+        "snv_plus_logs": {
+          "gamma": 0.04101039794597967,
+          "cv_rmsep_z": 0.121075,
+          "cal_time_s": 0.0653
+        }
+      }
+    },
+    {
+      "task_id": "R3_TreeNSC_Woody__Sugars",
+      "suite": "Round3_Unseen",
+      "domain": "Z-4991924_WoodyPlantNSC",
+      "split_rule": "QuantileStratified_70_30_seed20261124",
+      "target_name": "Sugars",
+      "n_cal": 126,
+      "n_test": 54,
+      "L": 1154,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "7f799bc83ed90374f572f84de8be2cf34989300bfc1e72e3efc42cc6a3f4541f",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 16.34,
+        "beta": 1.33,
+        "r_s": -0.1627,
+        "sigma_s": 0.0912,
+        "sigma_a_true": 0.0552,
+        "sigma_non_chem": 0.0726,
+        "r2_s_shape": 0.6342,
+        "r_crit": 0.3365,
+        "r_crit_raw": 0.3365,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.3658,
+      "ws_unified": 0.306,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0174,
+        "v2_params_only_from_c148": 0.061
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.3658,
+          "k": 11,
+          "cv_rmsep_z": 0.596853,
+          "cal_time_s": 0.0336
+        },
+        "ws_unified": {
+          "ws": 0.306,
+          "k": 11,
+          "cv_rmsep_z": 0.596243,
+          "cal_time_s": 0.0766
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.606192,
+          "cal_time_s": 0.0164
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.3658,
+          "gamma": 0.07233214080826893,
+          "cv_rmsep_z": 0.589925,
+          "cal_time_s": 0.0524
+        },
+        "ws_unified": {
+          "ws": 0.306,
+          "gamma": 0.07308563805850601,
+          "cv_rmsep_z": 0.589832,
+          "cal_time_s": 0.1009
+        },
+        "snv_plus_logs": {
+          "gamma": 0.07012572448794864,
+          "cv_rmsep_z": 0.589404,
+          "cal_time_s": 0.0297
+        }
+      }
+    },
+    {
+      "task_id": "R3_TreeNSC_Woody__Starch",
+      "suite": "Round3_Unseen",
+      "domain": "Z-4991924_WoodyPlantNSC",
+      "split_rule": "QuantileStratified_70_30_seed20261124",
+      "target_name": "Starch",
+      "n_cal": 126,
+      "n_test": 54,
+      "L": 1154,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "360f6fdea9e1eec1026288c5571803f269b461e3638ba9d5068d1541ac9011a7",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 15.87,
+        "beta": 0.07,
+        "r_s": 0.0477,
+        "sigma_s": 0.0891,
+        "sigma_a_true": 0.0577,
+        "sigma_non_chem": 0.0679,
+        "r2_s_shape": 0.5808,
+        "r_crit": 0.0178,
+        "r_crit_raw": 0.0178,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.4192,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0172,
+        "v2_params_only_from_c148": 0.0619
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.4192,
+          "k": 12,
+          "cv_rmsep_z": 0.786525,
+          "cal_time_s": 0.0339
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.784974,
+          "cal_time_s": 0.081
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.876665,
+          "cal_time_s": 0.0176
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.4192,
+          "gamma": 0.004223591578518537,
+          "cv_rmsep_z": 0.578177,
+          "cal_time_s": 0.0477
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.0045609812033857965,
+          "cv_rmsep_z": 0.569733,
+          "cal_time_s": 0.0903
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00414509244120022,
+          "cv_rmsep_z": 0.600608,
+          "cal_time_s": 0.0281
+        }
+      }
+    },
+    {
+      "task_id": "R3_ResidualOil__Aromatics",
+      "suite": "Round3_Unseen",
+      "domain": "Z-16811137_ResidualOil",
+      "split_rule": "QuantileStratified_70_30_seed20261124",
+      "target_name": "Aromatics",
+      "n_cal": 35,
+      "n_test": 15,
+      "L": 801,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "0c593ed1c7d10a9502fc68a45c7843ad0568a83f7ae8732519aa99d0c64186e9",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 9.99,
+        "beta": 1.96,
+        "r_s": 0.2351,
+        "sigma_s": 0.1483,
+        "sigma_a_true": 0.0473,
+        "sigma_non_chem": 0.1406,
+        "r2_s_shape": 0.8985,
+        "r_crit": 0.6239,
+        "r_crit_raw": 0.6239,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.1015,
+      "ws_unified": 0.089,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0087,
+        "v2_params_only_from_c148": 0.0296
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1015,
+          "k": 1,
+          "cv_rmsep_z": 0.81615,
+          "cal_time_s": 0.0168
+        },
+        "ws_unified": {
+          "ws": 0.089,
+          "k": 1,
+          "cv_rmsep_z": 0.817223,
+          "cal_time_s": 0.0378
+        },
+        "snv_plus_logs": {
+          "k": 3,
+          "cv_rmsep_z": 0.619194,
+          "cal_time_s": 0.0082
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1015,
+          "gamma": 81.26263786767292,
+          "cv_rmsep_z": 0.796148,
+          "cal_time_s": 0.0121
+        },
+        "ws_unified": {
+          "ws": 0.089,
+          "gamma": 81.82403377209987,
+          "cv_rmsep_z": 0.797141,
+          "cal_time_s": 0.0324
+        },
+        "snv_plus_logs": {
+          "gamma": 20.872461427132812,
+          "cv_rmsep_z": 0.634893,
+          "cal_time_s": 0.0028
+        }
+      }
+    },
+    {
+      "task_id": "R3_ResidualOil__CokingValue",
+      "suite": "Round3_Unseen",
+      "domain": "Z-16811137_ResidualOil",
+      "split_rule": "QuantileStratified_70_30_seed20261124",
+      "target_name": "CokingValue",
+      "n_cal": 35,
+      "n_test": 15,
+      "L": 801,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "ba5b6070c8e8cf3ce0218e380bc6319723891d1b94be3b95e82f639f5a352ee0",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 11.56,
+        "beta": 0.05,
+        "r_s": -0.124,
+        "sigma_s": 0.1553,
+        "sigma_a_true": 0.0521,
+        "sigma_non_chem": 0.1463,
+        "r2_s_shape": 0.8873,
+        "r_crit": 0.0157,
+        "r_crit_raw": 0.0157,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.1127,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0091,
+        "v2_params_only_from_c148": 0.0291
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1127,
+          "k": 4,
+          "cv_rmsep_z": 0.879908,
+          "cal_time_s": 0.0181
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 4,
+          "cv_rmsep_z": 0.868685,
+          "cal_time_s": 0.0369
+        },
+        "snv_plus_logs": {
+          "k": 4,
+          "cv_rmsep_z": 0.953202,
+          "cal_time_s": 0.0079
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1127,
+          "gamma": 2.3033953173893846,
+          "cv_rmsep_z": 0.816657,
+          "cal_time_s": 0.0126
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 1.3988171369346276,
+          "cv_rmsep_z": 0.811768,
+          "cal_time_s": 0.0318
+        },
+        "snv_plus_logs": {
+          "gamma": 10.156456737518283,
+          "cv_rmsep_z": 0.941017,
+          "cal_time_s": 0.0027
+        }
+      }
+    },
+    {
+      "task_id": "R3_ResidualOil__Sulfur",
+      "suite": "Round3_Unseen",
+      "domain": "Z-16811137_ResidualOil",
+      "split_rule": "QuantileStratified_70_30_seed20261124",
+      "target_name": "Sulfur",
+      "n_cal": 35,
+      "n_test": 15,
+      "L": 801,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "156c9344789687f9ea5048c2fc6fc87a79de8fee7a6c4385ee8fd2fe7ddba85a",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 14.64,
+        "beta": 0.79,
+        "r_s": -0.3665,
+        "sigma_s": 0.1301,
+        "sigma_a_true": 0.0484,
+        "sigma_non_chem": 0.1208,
+        "r2_s_shape": 0.8617,
+        "r_crit": 0.2101,
+        "r_crit_raw": 0.2101,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.1383,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0085,
+        "v2_params_only_from_c148": 0.0316
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1383,
+          "k": 4,
+          "cv_rmsep_z": 0.707192,
+          "cal_time_s": 0.0168
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 5,
+          "cv_rmsep_z": 0.711725,
+          "cal_time_s": 0.0404
+        },
+        "snv_plus_logs": {
+          "k": 3,
+          "cv_rmsep_z": 0.70967,
+          "cal_time_s": 0.008
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1383,
+          "gamma": 3.4059259896437917,
+          "cv_rmsep_z": 0.756397,
+          "cal_time_s": 0.012
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 3.6273843434280693,
+          "cv_rmsep_z": 0.763677,
+          "cal_time_s": 0.0345
+        },
+        "snv_plus_logs": {
+          "gamma": 9.308895412699611,
+          "cv_rmsep_z": 0.794057,
+          "cal_time_s": 0.0029
+        }
+      }
+    },
+    {
+      "task_id": "R3_Walnut_Official__Moisture",
+      "suite": "Round3_Unseen",
+      "domain": "Z-4609414_WalnutMoisture",
+      "split_rule": "Official_Calibration_to_Prediction_Set",
+      "target_name": "Moisture_pct",
+      "n_cal": 102,
+      "n_test": 34,
+      "L": 860,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "aac8ae3035c1e6e09fd7b6fb9270e9b8ff88355d0f75d00488c3b54131e50567",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 87.44,
+        "r_s": 0.5633,
+        "sigma_s": 0.0362,
+        "sigma_a_true": 0.0197,
+        "sigma_non_chem": 0.0304,
+        "r2_s_shape": 0.7041,
+        "r_crit": 1.0,
+        "r_crit_raw": 3.2091,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.2959,
+      "ws_unified": 0.294,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0134,
+        "v2_params_only_from_c148": 0.0419
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2959,
+          "k": 12,
+          "cv_rmsep_z": 0.104715,
+          "cal_time_s": 0.0269
+        },
+        "ws_unified": {
+          "ws": 0.294,
+          "k": 12,
+          "cv_rmsep_z": 0.104759,
+          "cal_time_s": 0.0538
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.094919,
+          "cal_time_s": 0.0119
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2959,
+          "gamma": 0.00013996232359066315,
+          "cv_rmsep_z": 0.09715,
+          "cal_time_s": 0.0269
+        },
+        "ws_unified": {
+          "ws": 0.294,
+          "gamma": 0.00014013419656036912,
+          "cv_rmsep_z": 0.09716,
+          "cal_time_s": 0.0543
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0002921060961000295,
+          "cv_rmsep_z": 0.091255,
+          "cal_time_s": 0.0124
+        }
+      }
+    },
+    {
+      "task_id": "R3_PeaForage_2019to2020__CP",
+      "suite": "Round3_Unseen",
+      "domain": "Z-7809305_PeaForage",
+      "split_rule": "Natural_Temporal_CrossSite_2019GN_to_2020PM",
+      "target_name": "CP",
+      "n_cal": 108,
+      "n_test": 108,
+      "L": 994,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "271981342d6a95688d3325565b8b34088aeecc9d6685f29d1ab0bef997fcd53b",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.37,
+        "r_s": 0.0961,
+        "sigma_s": 0.074,
+        "sigma_a_true": 0.0522,
+        "sigma_non_chem": 0.0525,
+        "r2_s_shape": 0.503,
+        "r_crit": 0.0329,
+        "r_crit_raw": 0.0329,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.497,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0147,
+        "v2_params_only_from_c148": 0.0468
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.497,
+          "k": 3,
+          "cv_rmsep_z": 0.820399,
+          "cal_time_s": 0.0287
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 3,
+          "cv_rmsep_z": 0.817682,
+          "cal_time_s": 0.0597
+        },
+        "snv_plus_logs": {
+          "k": 3,
+          "cv_rmsep_z": 0.824874,
+          "cal_time_s": 0.0128
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.497,
+          "gamma": 0.09333304286281367,
+          "cv_rmsep_z": 0.875599,
+          "cal_time_s": 0.1919
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.03913951566193448,
+          "cv_rmsep_z": 0.864988,
+          "cal_time_s": 0.1684
+        },
+        "snv_plus_logs": {
+          "gamma": 0.14319601301210608,
+          "cv_rmsep_z": 0.901737,
+          "cal_time_s": 0.1099
+        }
+      }
+    },
+    {
+      "task_id": "R3_PeaForage_2019to2020__ADF",
+      "suite": "Round3_Unseen",
+      "domain": "Z-7809305_PeaForage",
+      "split_rule": "Natural_Temporal_CrossSite_2019GN_to_2020PM",
+      "target_name": "ADF",
+      "n_cal": 108,
+      "n_test": 108,
+      "L": 994,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "7e5b94df0e66d4f7da1a466d1ba9d98a38567d9eac0ed32cc2250ac36af5ec29",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.2,
+        "r_s": -0.0429,
+        "sigma_s": 0.074,
+        "sigma_a_true": 0.0522,
+        "sigma_non_chem": 0.0525,
+        "r2_s_shape": 0.503,
+        "r_crit": 0.0173,
+        "r_crit_raw": 0.0173,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.497,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0138,
+        "v2_params_only_from_c148": 0.0495
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.497,
+          "k": 2,
+          "cv_rmsep_z": 0.882426,
+          "cal_time_s": 0.0276
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 2,
+          "cv_rmsep_z": 0.880182,
+          "cal_time_s": 0.0644
+        },
+        "snv_plus_logs": {
+          "k": 2,
+          "cv_rmsep_z": 0.885294,
+          "cal_time_s": 0.0134
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.497,
+          "gamma": 0.30488160693676924,
+          "cv_rmsep_z": 0.942047,
+          "cal_time_s": 0.1313
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.17673167255818184,
+          "cv_rmsep_z": 0.948013,
+          "cal_time_s": 0.1756
+        },
+        "snv_plus_logs": {
+          "gamma": 0.45282555297336363,
+          "cv_rmsep_z": 0.943879,
+          "cal_time_s": 0.122
+        }
+      }
+    },
+    {
+      "task_id": "R3_PeaForage_2019to2020__NDF",
+      "suite": "Round3_Unseen",
+      "domain": "Z-7809305_PeaForage",
+      "split_rule": "Natural_Temporal_CrossSite_2019GN_to_2020PM",
+      "target_name": "NDF",
+      "n_cal": 108,
+      "n_test": 108,
+      "L": 994,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "4c051eb9e9da1925806227bed5d00b4ec636ab6424915bc070dd18dd0247b3a3",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.25,
+        "r_s": -0.0194,
+        "sigma_s": 0.074,
+        "sigma_a_true": 0.0522,
+        "sigma_non_chem": 0.0525,
+        "r2_s_shape": 0.503,
+        "r_crit": 0.0223,
+        "r_crit_raw": 0.0223,
+        "can_flip": true,
+        "ws_star": 0.6141
+      },
+      "ws_wiener": 0.497,
+      "ws_unified": 0.213,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0155,
+        "v2_params_only_from_c148": 0.0473
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.497,
+          "k": 3,
+          "cv_rmsep_z": 0.852917,
+          "cal_time_s": 0.0297
+        },
+        "ws_unified": {
+          "ws": 0.213,
+          "k": 3,
+          "cv_rmsep_z": 0.850334,
+          "cal_time_s": 0.0605
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.843801,
+          "cal_time_s": 0.0127
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.497,
+          "gamma": 0.16597222839922177,
+          "cv_rmsep_z": 0.887673,
+          "cal_time_s": 0.1391
+        },
+        "ws_unified": {
+          "ws": 0.213,
+          "gamma": 0.13405091348153259,
+          "cv_rmsep_z": 0.884526,
+          "cal_time_s": 0.1689
+        },
+        "snv_plus_logs": {
+          "gamma": 0.25464252153909395,
+          "cv_rmsep_z": 0.919132,
+          "cal_time_s": 0.1095
+        }
+      }
+    },
+    {
+      "task_id": "R3_AustrianSoil_Pre21toPost21__SOC",
+      "suite": "Round3_Unseen",
+      "domain": "Z-17941270_AustrianSoil_BOKU",
+      "split_rule": "Natural_Temporal_Year_le2020_to_ge2021",
+      "target_name": "SOC",
+      "n_cal": 1069,
+      "n_test": 1043,
+      "L": 1821,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "86a4b9f44e1ef767af4a4fb423b4c0317f7724a611d43107dfc1826e0471f67a",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 19.64,
+        "beta": 1.14,
+        "r_s": 0.3208,
+        "sigma_s": 0.3236,
+        "sigma_a_true": 0.134,
+        "sigma_non_chem": 0.2945,
+        "r2_s_shape": 0.8284,
+        "r_crit": 0.2936,
+        "r_crit_raw": 0.2936,
+        "can_flip": true,
+        "ws_star": 0.0842
+      },
+      "ws_wiener": 0.1716,
+      "ws_unified": 0.009,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.585,
+        "v2_params_only_from_c148": 2.005
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1716,
+          "k": 12,
+          "cv_rmsep_z": 0.435865,
+          "cal_time_s": 1.1636
+        },
+        "ws_unified": {
+          "ws": 0.009,
+          "k": 12,
+          "cv_rmsep_z": 0.416285,
+          "cal_time_s": 2.5577
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.618703,
+          "cal_time_s": 0.4826
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1716,
+          "gamma": 0.12331069399335114,
+          "cv_rmsep_z": 0.359492,
+          "cal_time_s": 1.4188
+        },
+        "ws_unified": {
+          "ws": 0.009,
+          "gamma": 0.15810800691482074,
+          "cv_rmsep_z": 0.350312,
+          "cal_time_s": 2.8006
+        },
+        "snv_plus_logs": {
+          "gamma": 0.06470221296903954,
+          "cv_rmsep_z": 0.466843,
+          "cal_time_s": 1.0007
+        }
+      }
+    },
+    {
+      "task_id": "R3_AustrianSoil_Pre21toPost21__TN",
+      "suite": "Round3_Unseen",
+      "domain": "Z-17941270_AustrianSoil_BOKU",
+      "split_rule": "Natural_Temporal_Year_le2020_to_ge2021",
+      "target_name": "TN",
+      "n_cal": 798,
+      "n_test": 238,
+      "L": 1821,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "8c653c3d1fd83ff48386b865b7763009cb4686573f1b78c697bb892f1e21a108",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 26.73,
+        "beta": 1.57,
+        "r_s": 0.3204,
+        "sigma_s": 0.317,
+        "sigma_a_true": 0.1264,
+        "sigma_non_chem": 0.2907,
+        "r2_s_shape": 0.8409,
+        "r_crit": 0.3511,
+        "r_crit_raw": 0.3511,
+        "can_flip": true,
+        "ws_star": 0.601
+      },
+      "ws_wiener": 0.1591,
+      "ws_unified": 0.052,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.4667,
+        "v2_params_only_from_c148": 1.5471
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1591,
+          "k": 12,
+          "cv_rmsep_z": 0.472059,
+          "cal_time_s": 0.895
+        },
+        "ws_unified": {
+          "ws": 0.052,
+          "k": 12,
+          "cv_rmsep_z": 0.465639,
+          "cal_time_s": 1.9707
+        },
+        "snv_plus_logs": {
+          "k": 10,
+          "cv_rmsep_z": 0.610382,
+          "cal_time_s": 0.3574
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1591,
+          "gamma": 0.060982226327525105,
+          "cv_rmsep_z": 0.445657,
+          "cal_time_s": 1.2015
+        },
+        "ws_unified": {
+          "ws": 0.052,
+          "gamma": 0.07264076243485473,
+          "cv_rmsep_z": 0.441784,
+          "cal_time_s": 2.2892
+        },
+        "snv_plus_logs": {
+          "gamma": 0.08036086933388925,
+          "cv_rmsep_z": 0.517015,
+          "cal_time_s": 0.7883
+        }
+      }
+    },
+    {
+      "task_id": "R3_AustrianSoil_Pre21toPost21__pH_CaCl2",
+      "suite": "Round3_Unseen",
+      "domain": "Z-17941270_AustrianSoil_BOKU",
+      "split_rule": "Natural_Temporal_Year_le2020_to_ge2021",
+      "target_name": "pH_CaCl2",
+      "n_cal": 1086,
+      "n_test": 831,
+      "L": 1821,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "dc3f49ee2bdc2ada56729091bc8d8d5a7e301814c7c9b3fe27f4c55a523fbb3a",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 19.49,
+        "beta": 1.42,
+        "r_s": -0.0454,
+        "sigma_s": 0.3229,
+        "sigma_a_true": 0.1354,
+        "sigma_non_chem": 0.2931,
+        "r2_s_shape": 0.8241,
+        "r_crit": 0.3626,
+        "r_crit_raw": 0.3626,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.1759,
+      "ws_unified": 0.174,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.5927,
+        "v2_params_only_from_c148": 2.0656
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1759,
+          "k": 12,
+          "cv_rmsep_z": 0.590579,
+          "cal_time_s": 1.2
+        },
+        "ws_unified": {
+          "ws": 0.174,
+          "k": 12,
+          "cv_rmsep_z": 0.590639,
+          "cal_time_s": 2.6882
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.569354,
+          "cal_time_s": 0.495
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1759,
+          "gamma": 0.0038789949017289252,
+          "cv_rmsep_z": 0.477333,
+          "cal_time_s": 2.768
+        },
+        "ws_unified": {
+          "ws": 0.174,
+          "gamma": 0.0038896083044149504,
+          "cv_rmsep_z": 0.477513,
+          "cal_time_s": 3.6891
+        },
+        "snv_plus_logs": {
+          "gamma": 0.006530772487814222,
+          "cv_rmsep_z": 0.435794,
+          "cal_time_s": 0.929
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat_XDS_Moist_NewOnly__Temporal",
+      "suite": "PhaseB_Deploy",
+      "domain": "Cereal XDS (Brand-New Spectra)",
+      "split_rule": "Year <=2017 -> >=2018",
+      "target_name": "Moisture",
+      "n_cal": 172,
+      "n_test": 161,
+      "L": 1050,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "ca32548fb9a3e5e6630be076943e547188a46ab5d9dbf5f6b1233e50c3bbf094",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 1.51,
+        "r_s": 0.2689,
+        "sigma_s": 0.1007,
+        "sigma_a_true": 0.0213,
+        "sigma_non_chem": 0.0984,
+        "r2_s_shape": 0.9553,
+        "r_crit": 0.1114,
+        "r_crit_raw": 0.1114,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.0447,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0219,
+        "v2_params_only_from_c148": 0.0692
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0447,
+          "k": 12,
+          "cv_rmsep_z": 0.509263,
+          "cal_time_s": 0.0725
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.508955,
+          "cal_time_s": 0.12
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.533611,
+          "cal_time_s": 0.0442
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0447,
+          "gamma": 1.4587054645474604e-05,
+          "cv_rmsep_z": 0.390479,
+          "cal_time_s": 0.0613
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 1.5513469781411816e-05,
+          "cv_rmsep_z": 0.389976,
+          "cal_time_s": 0.1091
+        },
+        "snv_plus_logs": {
+          "gamma": 1.0792592068877848e-05,
+          "cv_rmsep_z": 0.409348,
+          "cal_time_s": 0.0388
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat_XDS_Prot_NewOnly__Temporal",
+      "suite": "PhaseB_Deploy",
+      "domain": "Cereal XDS (Brand-New Spectra)",
+      "split_rule": "Year <=2017 -> >=2018",
+      "target_name": "Protein",
+      "n_cal": 104,
+      "n_test": 70,
+      "L": 1050,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "4568745dd8718d3dec190b28fc3226d3cd9ef0ef73ca1907b5ef5df3591be4b9",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 2.63,
+        "r_s": -0.7429,
+        "sigma_s": 0.0866,
+        "sigma_a_true": 0.0182,
+        "sigma_non_chem": 0.0846,
+        "r2_s_shape": 0.9557,
+        "r_crit": 0.1915,
+        "r_crit_raw": 0.1915,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.0443,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0151,
+        "v2_params_only_from_c148": 0.0466
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0443,
+          "k": 12,
+          "cv_rmsep_z": 0.382923,
+          "cal_time_s": 0.0296
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.384068,
+          "cal_time_s": 0.0611
+        },
+        "snv_plus_logs": {
+          "k": 11,
+          "cv_rmsep_z": 0.370134,
+          "cal_time_s": 0.0127
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0443,
+          "gamma": 6.176435773837867e-05,
+          "cv_rmsep_z": 0.218794,
+          "cal_time_s": 0.0364
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 6.564020709858904e-05,
+          "cv_rmsep_z": 0.21949,
+          "cal_time_s": 0.0683
+        },
+        "snv_plus_logs": {
+          "gamma": 4.8572237382995885e-05,
+          "cv_rmsep_z": 0.215618,
+          "cal_time_s": 0.018
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Barley_NIRS5000_Moist__Temporal",
+      "suite": "PhaseB_Deploy",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2012 -> >2012",
+      "target_name": "Moisture",
+      "n_cal": 834,
+      "n_test": 151,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "1f0a59203d64802ed23f1349df443ad683e0143cf04223c28b0b3393d186e149",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 7.68,
+        "r_s": 0.0004,
+        "sigma_s": 0.0763,
+        "sigma_a_true": 0.0382,
+        "sigma_non_chem": 0.066,
+        "r2_s_shape": 0.7491,
+        "r_crit": 0.5892,
+        "r_crit_raw": 0.5892,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.2509,
+      "ws_unified": 0.251,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.1599,
+        "v2_params_only_from_c148": 0.5097
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2509,
+          "k": 12,
+          "cv_rmsep_z": 0.280858,
+          "cal_time_s": 0.3339
+        },
+        "ws_unified": {
+          "ws": 0.251,
+          "k": 12,
+          "cv_rmsep_z": 0.280859,
+          "cal_time_s": 0.6952
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.287361,
+          "cal_time_s": 0.1552
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2509,
+          "gamma": 4.413344032566464e-06,
+          "cv_rmsep_z": 0.19895,
+          "cal_time_s": 0.4964
+        },
+        "ws_unified": {
+          "ws": 0.251,
+          "gamma": 4.412617296086473e-06,
+          "cv_rmsep_z": 0.198951,
+          "cal_time_s": 0.7773
+        },
+        "snv_plus_logs": {
+          "gamma": 9.147006199912688e-06,
+          "cv_rmsep_z": 0.206609,
+          "cal_time_s": 0.2752
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Barley_NIRS5000_Prot__Temporal",
+      "suite": "PhaseB_Deploy",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2012 -> >2012",
+      "target_name": "Protein",
+      "n_cal": 1668,
+      "n_test": 428,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "e9b31a87cc57ddd5d4409568d3e6802bdc7de0458dd6ea939f52755cddcaa5cb",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.83,
+        "r_s": -0.2219,
+        "sigma_s": 0.0767,
+        "sigma_a_true": 0.0404,
+        "sigma_non_chem": 0.0651,
+        "r2_s_shape": 0.7218,
+        "r_crit": 0.0679,
+        "r_crit_raw": 0.0679,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.2782,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.3779,
+        "v2_params_only_from_c148": 1.2656
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2782,
+          "k": 12,
+          "cv_rmsep_z": 0.480352,
+          "cal_time_s": 0.7529
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.48228,
+          "cal_time_s": 1.6503
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.481917,
+          "cal_time_s": 0.3208
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2782,
+          "gamma": 2.7901812635210774e-05,
+          "cv_rmsep_z": 0.204,
+          "cal_time_s": 1.253
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 2.4000583739216206e-05,
+          "cv_rmsep_z": 0.205048,
+          "cal_time_s": 1.9493
+        },
+        "snv_plus_logs": {
+          "gamma": 1.931269151236239e-05,
+          "cv_rmsep_z": 0.20787,
+          "cal_time_s": 0.5834
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat2_XDS_Moist__Temporal",
+      "suite": "PhaseB_Deploy",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2017 -> >2017",
+      "target_name": "Moisture",
+      "n_cal": 227,
+      "n_test": 273,
+      "L": 1050,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "591d24533813e6e00ab2f9f78f687c1a4a22ab8acb971f257b7298fdf4198551",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 14.08,
+        "r_s": -0.2602,
+        "sigma_s": 0.0878,
+        "sigma_a_true": 0.0246,
+        "sigma_non_chem": 0.0843,
+        "r2_s_shape": 0.9215,
+        "r_crit": 0.9921,
+        "r_crit_raw": 0.9921,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0785,
+      "ws_unified": 0.074,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0641,
+        "v2_params_only_from_c148": 0.2036
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0785,
+          "k": 12,
+          "cv_rmsep_z": 0.223438,
+          "cal_time_s": 0.1277
+        },
+        "ws_unified": {
+          "ws": 0.074,
+          "k": 12,
+          "cv_rmsep_z": 0.223541,
+          "cal_time_s": 0.2625
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.234866,
+          "cal_time_s": 0.0516
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0785,
+          "gamma": 0.0002006282690339248,
+          "cv_rmsep_z": 0.206674,
+          "cal_time_s": 0.1278
+        },
+        "ws_unified": {
+          "ws": 0.074,
+          "gamma": 0.00020176607228041956,
+          "cv_rmsep_z": 0.206729,
+          "cal_time_s": 0.2622
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0005609441754032395,
+          "cv_rmsep_z": 0.206624,
+          "cal_time_s": 0.0821
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat_XDS_Prot__Temporal",
+      "suite": "PhaseB_Deploy",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2017 -> >2017",
+      "target_name": "Protein",
+      "n_cal": 141,
+      "n_test": 90,
+      "L": 1050,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "8111073539ee9f9705b8d86a1a0b1c73153d30f48e71641c6a28452dc1fe30da",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 2.43,
+        "r_s": 0.0392,
+        "sigma_s": 0.0759,
+        "sigma_a_true": 0.0226,
+        "sigma_non_chem": 0.0725,
+        "r2_s_shape": 0.9113,
+        "r_crit": 0.1802,
+        "r_crit_raw": 0.1802,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0887,
+      "ws_unified": 0.085,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.019,
+        "v2_params_only_from_c148": 0.0588
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0887,
+          "k": 11,
+          "cv_rmsep_z": 0.434796,
+          "cal_time_s": 0.0373
+        },
+        "ws_unified": {
+          "ws": 0.085,
+          "k": 11,
+          "cv_rmsep_z": 0.434811,
+          "cal_time_s": 0.0754
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.447835,
+          "cal_time_s": 0.0157
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0887,
+          "gamma": 2.9443382317406563e-05,
+          "cv_rmsep_z": 0.29235,
+          "cal_time_s": 0.0511
+        },
+        "ws_unified": {
+          "ws": 0.085,
+          "gamma": 2.9572982283240367e-05,
+          "cv_rmsep_z": 0.292385,
+          "cal_time_s": 0.0908
+        },
+        "snv_plus_logs": {
+          "gamma": 2.9717203383933322e-05,
+          "cv_rmsep_z": 0.292238,
+          "cal_time_s": 0.029
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Mango_Official_SP_test2__DM",
+      "suite": "PhaseB_Deploy",
+      "domain": "Anderson (2020) Mango DM",
+      "split_rule": "Official SP_cal -> SP_test2",
+      "target_name": "Dry_Matter",
+      "n_cal": 9914,
+      "n_test": 501,
+      "L": 103,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": true,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "2e3574c03d1c77161eaad3025ac1e0ea7aeeecc5f990f984821239714445e586",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 18.38,
+        "beta": 3.27,
+        "r_s": -0.3016,
+        "sigma_s": 0.2201,
+        "sigma_a_true": 0.0489,
+        "sigma_non_chem": 0.2146,
+        "r2_s_shape": 0.9506,
+        "r_crit": 0.7669,
+        "r_crit_raw": 0.7669,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0494,
+      "ws_unified": 0.042,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.3434,
+        "v2_params_only_from_c148": 1.2459
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0494,
+          "k": 12,
+          "cv_rmsep_z": 0.356766,
+          "cal_time_s": 0.6895
+        },
+        "ws_unified": {
+          "ws": 0.042,
+          "k": 12,
+          "cv_rmsep_z": 0.356627,
+          "cal_time_s": 1.5915
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.424603,
+          "cal_time_s": 0.2942
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0494,
+          "gamma": 0.0011264164189297753,
+          "cv_rmsep_z": 0.338092,
+          "cal_time_s": 0.4359
+        },
+        "ws_unified": {
+          "ws": 0.042,
+          "gamma": 0.0011321615821605385,
+          "cv_rmsep_z": 0.337981,
+          "cal_time_s": 1.3532
+        },
+        "snv_plus_logs": {
+          "gamma": 0.001009247936774123,
+          "cv_rmsep_z": 0.399322,
+          "cal_time_s": 0.1031
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Tablets_X2_Official__Assay",
+      "suite": "PhaseB_Deploy",
+      "domain": "IDRC 2002 Tablets X2 [35:540]",
+      "split_rule": "Official cal(155) -> test(460)",
+      "target_name": "Assay",
+      "n_cal": 155,
+      "n_test": 460,
+      "L": 505,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "28c55f7a38b1b5e37951b7c278c3bfa767cd2ee3b76942dd1788ddde1ed60952",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 38.13,
+        "beta": 22.6,
+        "r_s": 0.584,
+        "sigma_s": 0.0709,
+        "sigma_a_true": 0.0113,
+        "sigma_non_chem": 0.07,
+        "r2_s_shape": 0.9746,
+        "r_crit": 1.0,
+        "r_crit_raw": 3.5504,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0254,
+      "ws_unified": 0.025,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0141,
+        "v2_params_only_from_c148": 0.0409
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0254,
+          "k": 5,
+          "cv_rmsep_z": 0.216904,
+          "cal_time_s": 0.0264
+        },
+        "ws_unified": {
+          "ws": 0.025,
+          "k": 5,
+          "cv_rmsep_z": 0.216938,
+          "cal_time_s": 0.0518
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.202721,
+          "cal_time_s": 0.0109
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0254,
+          "gamma": 0.46865204694894114,
+          "cv_rmsep_z": 0.212475,
+          "cal_time_s": 0.0346
+        },
+        "ws_unified": {
+          "ws": 0.025,
+          "gamma": 0.46872955851361814,
+          "cv_rmsep_z": 0.212482,
+          "cal_time_s": 0.0612
+        },
+        "snv_plus_logs": {
+          "gamma": 0.7291721724773537,
+          "cv_rmsep_z": 0.20228,
+          "cal_time_s": 0.0186
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Wheat_A1_Official__Protein",
+      "suite": "PhaseB_Deploy",
+      "domain": "IDRC 2016 Wheat A1",
+      "split_rule": "Official cal(200) -> test(48)",
+      "target_name": "Protein_%",
+      "n_cal": 200,
+      "n_test": 48,
+      "L": 741,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "0d19ace499a22d0b7f7f250a6c6a59100e62220add66b5f24cc9cd6122274367",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 26.93,
+        "beta": 9.53,
+        "r_s": 0.0382,
+        "sigma_s": 0.3063,
+        "sigma_a_true": 0.071,
+        "sigma_non_chem": 0.2979,
+        "r2_s_shape": 0.9463,
+        "r_crit": 1.0,
+        "r_crit_raw": 1.5955,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0537,
+      "ws_unified": 0.054,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0217,
+        "v2_params_only_from_c148": 0.0626
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0537,
+          "k": 12,
+          "cv_rmsep_z": 0.125849,
+          "cal_time_s": 0.0419
+        },
+        "ws_unified": {
+          "ws": 0.054,
+          "k": 12,
+          "cv_rmsep_z": 0.12585,
+          "cal_time_s": 0.0813
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.2809,
+          "cal_time_s": 0.0166
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0537,
+          "gamma": 0.0003025874768622779,
+          "cv_rmsep_z": 0.116902,
+          "cal_time_s": 0.0521
+        },
+        "ws_unified": {
+          "ws": 0.054,
+          "gamma": 0.0003024734572992753,
+          "cv_rmsep_z": 0.116901,
+          "cal_time_s": 0.094
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0002418026830065383,
+          "cv_rmsep_z": 0.243661,
+          "cal_time_s": 0.0343
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Wheat_A3_Official__Protein",
+      "suite": "PhaseB_Deploy",
+      "domain": "IDRC 2016 Wheat A3",
+      "split_rule": "Official cal(48) -> test(200)",
+      "target_name": "Protein_%",
+      "n_cal": 48,
+      "n_test": 200,
+      "L": 741,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "774a6e978d65829dc90b3c3ec344d23052690066596fed8acfc2c7ec3b6af9e1",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 18.53,
+        "beta": 6.66,
+        "r_s": 0.1102,
+        "sigma_s": 0.3186,
+        "sigma_a_true": 0.092,
+        "sigma_non_chem": 0.305,
+        "r2_s_shape": 0.9166,
+        "r_crit": 1.0,
+        "r_crit_raw": 1.3909,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0834,
+      "ws_unified": 0.083,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.01,
+        "v2_params_only_from_c148": 0.0332
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0834,
+          "k": 11,
+          "cv_rmsep_z": 0.120726,
+          "cal_time_s": 0.0197
+        },
+        "ws_unified": {
+          "ws": 0.083,
+          "k": 11,
+          "cv_rmsep_z": 0.120716,
+          "cal_time_s": 0.042
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.258456,
+          "cal_time_s": 0.0084
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0834,
+          "gamma": 0.00018902080680120536,
+          "cv_rmsep_z": 0.11817,
+          "cal_time_s": 0.0156
+        },
+        "ws_unified": {
+          "ws": 0.083,
+          "gamma": 0.0001891196733229569,
+          "cv_rmsep_z": 0.118148,
+          "cal_time_s": 0.0376
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00016495530087130877,
+          "cv_rmsep_z": 0.25587,
+          "cal_time_s": 0.0041
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Melamine_R568_to_R862__CloudPoint",
+      "suite": "PhaseB_Deploy",
+      "domain": "Melamine Resin FT-NIR (R568 -> R862)",
+      "split_rule": "Cross-recipe R568(733) -> R862(472)",
+      "target_name": "Cloud_Point",
+      "n_cal": 733,
+      "n_test": 472,
+      "L": 225,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "4358d19bc5adbd57da473d91e62978f20d99779f18feda5214503c2f38753b54",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 35.29,
+        "r_s": -0.1874,
+        "sigma_s": 0.0419,
+        "sigma_a_true": 0.0059,
+        "sigma_non_chem": 0.0415,
+        "r2_s_shape": 0.98,
+        "r_crit": 1.0,
+        "r_crit_raw": 2.4496,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.02,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0212,
+        "v2_params_only_from_c148": 0.0674
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 12,
+          "cv_rmsep_z": 0.146859,
+          "cal_time_s": 0.0669
+        },
+        "ws_unified": {
+          "ws": 0.02,
+          "k": 12,
+          "cv_rmsep_z": 0.146859,
+          "cal_time_s": 0.1103
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.135651,
+          "cal_time_s": 0.0393
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.0004146283480159082,
+          "cv_rmsep_z": 0.122195,
+          "cal_time_s": 0.0616
+        },
+        "ws_unified": {
+          "ws": 0.02,
+          "gamma": 0.00041462834801590836,
+          "cv_rmsep_z": 0.122195,
+          "cal_time_s": 0.1037
+        },
+        "snv_plus_logs": {
+          "gamma": 0.000432529907311335,
+          "cv_rmsep_z": 0.115877,
+          "cal_time_s": 0.0381
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Milk_CowGroupHoldout__SCC",
+      "suite": "PhaseB_Deploy",
+      "domain": "On-farm Milk NIR (41 cows)",
+      "split_rule": "Cow_ID deterministic 70/30 holdout",
+      "target_name": "SCC",
+      "n_cal": 803,
+      "n_test": 421,
+      "L": 256,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "533b3f2f9c14d8cb14822f29def42d0b7ad04491aa98f70dd116bf6c6e96af96",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.05,
+        "r_s": 0.0137,
+        "sigma_s": 0.0249,
+        "sigma_a_true": 0.0048,
+        "sigma_non_chem": 0.0244,
+        "r2_s_shape": 0.9633,
+        "r_crit": 0.0037,
+        "r_crit_raw": 0.0037,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.0367,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0494,
+        "v2_params_only_from_c148": 0.1716
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0367,
+          "k": 1,
+          "cv_rmsep_z": 0.88405,
+          "cal_time_s": 0.097
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 1,
+          "cv_rmsep_z": 0.88453,
+          "cal_time_s": 0.2179
+        },
+        "snv_plus_logs": {
+          "k": 2,
+          "cv_rmsep_z": 0.885843,
+          "cal_time_s": 0.0432
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0367,
+          "gamma": 0.09801820697993326,
+          "cv_rmsep_z": 1.058753,
+          "cal_time_s": 0.435
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.10082864870824104,
+          "cv_rmsep_z": 1.061587,
+          "cal_time_s": 0.5887
+        },
+        "snv_plus_logs": {
+          "gamma": 0.09882698024261852,
+          "cv_rmsep_z": 1.048964,
+          "cal_time_s": 0.35
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_Milk_CowGroupHoldout__Urea",
+      "suite": "PhaseB_Deploy",
+      "domain": "On-farm Milk NIR (41 cows)",
+      "split_rule": "Cow_ID deterministic 70/30 holdout",
+      "target_name": "Urea",
+      "n_cal": 803,
+      "n_test": 421,
+      "L": 256,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "3120bc8437d3d1ef11b2bf5cf4d2ad7c6b1cdc3c945b10b681ed6ff080c15b2f",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.07,
+        "r_s": 0.0729,
+        "sigma_s": 0.0249,
+        "sigma_a_true": 0.0048,
+        "sigma_non_chem": 0.0244,
+        "r2_s_shape": 0.9633,
+        "r_crit": 0.0049,
+        "r_crit_raw": 0.0049,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.0367,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0476,
+        "v2_params_only_from_c148": 0.1617
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0367,
+          "k": 4,
+          "cv_rmsep_z": 1.012908,
+          "cal_time_s": 0.0956
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 4,
+          "cv_rmsep_z": 1.012876,
+          "cal_time_s": 0.2095
+        },
+        "snv_plus_logs": {
+          "k": 4,
+          "cv_rmsep_z": 1.013864,
+          "cal_time_s": 0.0417
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0367,
+          "gamma": 9.680433190982628e-07,
+          "cv_rmsep_z": 1.135488,
+          "cal_time_s": 0.4656
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 9.958109789782884e-07,
+          "cv_rmsep_z": 1.134818,
+          "cal_time_s": 0.5503
+        },
+        "snv_plus_logs": {
+          "gamma": 3.195034423153063e-06,
+          "cv_rmsep_z": 1.121046,
+          "cal_time_s": 0.3325
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__Al_dith",
+      "suite": "PhaseB_Deploy",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "target_name": "al.dith_usda.a65_w.pct",
+      "n_cal": 1311,
+      "n_test": 563,
+      "L": 601,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "7aac49e86f25e9938e024d8429a5eb819039a48936f123fa73018086075b3bf5",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 5.0,
+        "beta": 1.24,
+        "r_s": 0.007,
+        "sigma_s": 0.3948,
+        "sigma_a_true": 0.1919,
+        "sigma_non_chem": 0.345,
+        "r2_s_shape": 0.7638,
+        "r_crit": 0.5757,
+        "r_crit_raw": 0.5757,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.2362,
+      "ws_unified": 0.236,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.2626,
+        "v2_params_only_from_c148": 0.8754
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2362,
+          "k": 12,
+          "cv_rmsep_z": 0.659066,
+          "cal_time_s": 0.5133
+        },
+        "ws_unified": {
+          "ws": 0.236,
+          "k": 12,
+          "cv_rmsep_z": 0.659074,
+          "cal_time_s": 1.1198
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.637841,
+          "cal_time_s": 0.2123
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2362,
+          "gamma": 0.5695692370328994,
+          "cv_rmsep_z": 0.656672,
+          "cal_time_s": 0.7056
+        },
+        "ws_unified": {
+          "ws": 0.236,
+          "gamma": 0.5696892146071914,
+          "cv_rmsep_z": 0.656681,
+          "cal_time_s": 1.3
+        },
+        "snv_plus_logs": {
+          "gamma": 0.23095747920891554,
+          "cv_rmsep_z": 0.620192,
+          "cal_time_s": 0.4187
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__Mg_ext",
+      "suite": "PhaseB_Deploy",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "target_name": "mg.ext_usda.a724_cmolc.kg",
+      "n_cal": 1466,
+      "n_test": 629,
+      "L": 601,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "3a08eedd2df4459eb954c5b3e0bd41771433f291fdede287df1d4359d81568fb",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 5.0,
+        "beta": 0.4,
+        "r_s": 0.0732,
+        "sigma_s": 0.4026,
+        "sigma_a_true": 0.1929,
+        "sigma_non_chem": 0.3534,
+        "r2_s_shape": 0.7705,
+        "r_crit": 0.1942,
+        "r_crit_raw": 0.1942,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.2295,
+      "ws_unified": 0.203,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.2929,
+        "v2_params_only_from_c148": 0.9581
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2295,
+          "k": 10,
+          "cv_rmsep_z": 0.860001,
+          "cal_time_s": 0.5689
+        },
+        "ws_unified": {
+          "ws": 0.203,
+          "k": 10,
+          "cv_rmsep_z": 0.861017,
+          "cal_time_s": 1.2404
+        },
+        "snv_plus_logs": {
+          "k": 11,
+          "cv_rmsep_z": 0.807637,
+          "cal_time_s": 0.2415
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2295,
+          "gamma": 0.1178956403257393,
+          "cv_rmsep_z": 0.808092,
+          "cal_time_s": 0.7668
+        },
+        "ws_unified": {
+          "ws": 0.203,
+          "gamma": 0.12140710801521512,
+          "cv_rmsep_z": 0.810949,
+          "cal_time_s": 1.384
+        },
+        "snv_plus_logs": {
+          "gamma": 0.08476758289991417,
+          "cv_rmsep_z": 0.770966,
+          "cal_time_s": 1.0225
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__WR1500",
+      "suite": "PhaseB_Deploy",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "target_name": "wr.1500kPa_usda.a417_w.pct",
+      "n_cal": 1449,
+      "n_test": 621,
+      "L": 601,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "6df2711454f7020f961551a91ffa2170897fb4a32b736595cbe94b2fe5084ea2",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 5.0,
+        "beta": 0.52,
+        "r_s": 0.1097,
+        "sigma_s": 0.3829,
+        "sigma_a_true": 0.1878,
+        "sigma_non_chem": 0.3337,
+        "r2_s_shape": 0.7595,
+        "r_crit": 0.2509,
+        "r_crit_raw": 0.2509,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.2405,
+      "ws_unified": 0.203,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.2895,
+        "v2_params_only_from_c148": 0.9395
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2405,
+          "k": 10,
+          "cv_rmsep_z": 0.778594,
+          "cal_time_s": 0.5599
+        },
+        "ws_unified": {
+          "ws": 0.203,
+          "k": 12,
+          "cv_rmsep_z": 0.780405,
+          "cal_time_s": 1.218
+        },
+        "snv_plus_logs": {
+          "k": 11,
+          "cv_rmsep_z": 0.772606,
+          "cal_time_s": 0.248
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2405,
+          "gamma": 1.9524398667550642,
+          "cv_rmsep_z": 0.771309,
+          "cal_time_s": 0.7817
+        },
+        "ws_unified": {
+          "ws": 0.203,
+          "gamma": 2.029875761248864,
+          "cv_rmsep_z": 0.772415,
+          "cal_time_s": 1.3169
+        },
+        "snv_plus_logs": {
+          "gamma": 1.42220568463273,
+          "cv_rmsep_z": 0.762091,
+          "cal_time_s": 0.5185
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__P_ext",
+      "suite": "PhaseB_Deploy",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "target_name": "p.ext_usda.a652_mg.kg",
+      "n_cal": 509,
+      "n_test": 219,
+      "L": 601,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "878a3c3b57a44568cf276aeb4e505c7b22ff2449d1f26789831396a7f4367516",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 5.0,
+        "beta": 0.09,
+        "r_s": -0.0774,
+        "sigma_s": 0.3235,
+        "sigma_a_true": 0.192,
+        "sigma_non_chem": 0.2603,
+        "r2_s_shape": 0.6477,
+        "r_crit": 0.0447,
+        "r_crit_raw": 0.0447,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.3523,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0729,
+        "v2_params_only_from_c148": 0.254
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.3523,
+          "k": 6,
+          "cv_rmsep_z": 0.87184,
+          "cal_time_s": 0.1455
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 6,
+          "cv_rmsep_z": 0.882684,
+          "cal_time_s": 0.3268
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.860115,
+          "cal_time_s": 0.0701
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.3523,
+          "gamma": 3.8408088064249326,
+          "cv_rmsep_z": 0.955251,
+          "cal_time_s": 0.2747
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 5.336870973942706,
+          "cv_rmsep_z": 0.963487,
+          "cal_time_s": 0.3716
+        },
+        "snv_plus_logs": {
+          "gamma": 3.18748576005265,
+          "cv_rmsep_z": 0.949569,
+          "cal_time_s": 0.1596
+        }
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__EC",
+      "suite": "PhaseB_Deploy",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "target_name": "ec_usda.a364_ds.m",
+      "n_cal": 666,
+      "n_test": 286,
+      "L": 601,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "1c0bca198d0d15b30b4f9e18ee4e9319cb0e6020a6597f058cd64b003fd83785",
+      "is_external_prospective": true,
+      "physics_frozen": {
+        "alpha": 5.0,
+        "beta": 0.07,
+        "r_s": -0.0561,
+        "sigma_s": 0.3908,
+        "sigma_a_true": 0.1733,
+        "sigma_non_chem": 0.3503,
+        "r2_s_shape": 0.8034,
+        "r_crit": 0.0321,
+        "r_crit_raw": 0.0321,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.1966,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.1104,
+        "v2_params_only_from_c148": 0.3601
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1966,
+          "k": 1,
+          "cv_rmsep_z": 0.881835,
+          "cal_time_s": 0.2078
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 1,
+          "cv_rmsep_z": 0.881009,
+          "cal_time_s": 0.4555
+        },
+        "snv_plus_logs": {
+          "k": 1,
+          "cv_rmsep_z": 0.881105,
+          "cal_time_s": 0.0798
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1966,
+          "gamma": 234.92731832889183,
+          "cv_rmsep_z": 0.982686,
+          "cal_time_s": 0.2765
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 601.6471342855689,
+          "cv_rmsep_z": 0.987473,
+          "cal_time_s": 0.6515
+        },
+        "snv_plus_logs": {
+          "gamma": 8.258516237734189e-05,
+          "cv_rmsep_z": 0.937505,
+          "cal_time_s": 0.2196
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Tecator_70_30__moisture",
+      "suite": "Classic_Holdout",
+      "domain": "Tecator Meat NIR (100 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125_group_dedup",
+      "target_name": "moisture",
+      "n_cal": 169,
+      "n_test": 71,
+      "L": 100,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "9734b4ccacaad18bd7e7dac24c2ca31c054de796ff67d2f73d991256506694f4",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 27.59,
+        "beta": 25.11,
+        "r_s": -0.335,
+        "sigma_s": 0.1908,
+        "sigma_a_true": 0.1564,
+        "sigma_non_chem": 0.1093,
+        "r2_s_shape": 0.3283,
+        "r_crit": 1.0,
+        "r_crit_raw": 1.4989,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.6717,
+      "ws_unified": 0.671,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.008,
+        "v2_params_only_from_c148": 0.0287
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.6717,
+          "k": 12,
+          "cv_rmsep_z": 0.146036,
+          "cal_time_s": 0.0154
+        },
+        "ws_unified": {
+          "ws": 0.671,
+          "k": 12,
+          "cv_rmsep_z": 0.146058,
+          "cal_time_s": 0.0358
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.160251,
+          "cal_time_s": 0.0066
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.6717,
+          "gamma": 1.6453245825606758e-05,
+          "cv_rmsep_z": 0.154587,
+          "cal_time_s": 0.0569
+        },
+        "ws_unified": {
+          "ws": 0.671,
+          "gamma": 1.6458493269707314e-05,
+          "cv_rmsep_z": 0.154639,
+          "cal_time_s": 0.0755
+        },
+        "snv_plus_logs": {
+          "gamma": 3.48554701644582e-05,
+          "cv_rmsep_z": 0.151341,
+          "cal_time_s": 0.0433
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Tecator_70_30__fat",
+      "suite": "Classic_Holdout",
+      "domain": "Tecator Meat NIR (100 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125_group_dedup",
+      "target_name": "fat",
+      "n_cal": 167,
+      "n_test": 73,
+      "L": 100,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "09db587914e621317b7e2eaf4bfc79174089e29cc34e4f944cd788774c4c27fd",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 27.89,
+        "beta": 30.66,
+        "r_s": 0.3344,
+        "sigma_s": 0.1952,
+        "sigma_a_true": 0.1638,
+        "sigma_non_chem": 0.1063,
+        "r2_s_shape": 0.2963,
+        "r_crit": 1.0,
+        "r_crit_raw": 1.4763,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.7037,
+      "ws_unified": 0.703,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0084,
+        "v2_params_only_from_c148": 0.0295
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.7037,
+          "k": 12,
+          "cv_rmsep_z": 0.133795,
+          "cal_time_s": 0.0159
+        },
+        "ws_unified": {
+          "ws": 0.703,
+          "k": 12,
+          "cv_rmsep_z": 0.133807,
+          "cal_time_s": 0.037
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.160979,
+          "cal_time_s": 0.007
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.7037,
+          "gamma": 1.7153496473913562e-05,
+          "cv_rmsep_z": 0.122726,
+          "cal_time_s": 0.05
+        },
+        "ws_unified": {
+          "ws": 0.703,
+          "gamma": 1.715802870522937e-05,
+          "cv_rmsep_z": 0.122736,
+          "cal_time_s": 0.0673
+        },
+        "snv_plus_logs": {
+          "gamma": 1.1533123552703324e-05,
+          "cv_rmsep_z": 0.135757,
+          "cal_time_s": 0.0378
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Tecator_70_30__protein",
+      "suite": "Classic_Holdout",
+      "domain": "Tecator Meat NIR (100 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125_group_dedup",
+      "target_name": "protein",
+      "n_cal": 168,
+      "n_test": 72,
+      "L": 100,
+      "has_groups_cal": true,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "d48cae80e016e28ba41c96a3b30944807c0bbaf372764aa0a92d82438d23eb94",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 27.43,
+        "beta": 8.99,
+        "r_s": -0.4134,
+        "sigma_s": 0.1978,
+        "sigma_a_true": 0.1635,
+        "sigma_non_chem": 0.1115,
+        "r2_s_shape": 0.3174,
+        "r_crit": 1.0,
+        "r_crit_raw": 1.2257,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.6826,
+      "ws_unified": 0.67,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0083,
+        "v2_params_only_from_c148": 0.0252
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.6826,
+          "k": 12,
+          "cv_rmsep_z": 0.178668,
+          "cal_time_s": 0.0151
+        },
+        "ws_unified": {
+          "ws": 0.67,
+          "k": 12,
+          "cv_rmsep_z": 0.178459,
+          "cal_time_s": 0.0326
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.186863,
+          "cal_time_s": 0.0069
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.6826,
+          "gamma": 9.649101419588601e-05,
+          "cv_rmsep_z": 0.175759,
+          "cal_time_s": 0.0458
+        },
+        "ws_unified": {
+          "ws": 0.67,
+          "gamma": 9.460036563118215e-05,
+          "cv_rmsep_z": 0.176669,
+          "cal_time_s": 0.0628
+        },
+        "snv_plus_logs": {
+          "gamma": 0.000193880625825353,
+          "cv_rmsep_z": 0.181712,
+          "cal_time_s": 0.0386
+        }
+      }
+    },
+    {
+      "task_id": "Classic_TabletsX1_Official__weight",
+      "suite": "Classic_Holdout",
+      "domain": "IDRC 2002 Tablets X1 [35:540]",
+      "split_rule": "Official_IDRC2002_X1_cal155_to_test460",
+      "target_name": "weight",
+      "n_cal": 155,
+      "n_test": 460,
+      "L": 505,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "53c397f4b101845547e520186cea8e20f1e0216b0ce13925e2aabccf0fbfb7db",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 41.95,
+        "beta": 2.31,
+        "r_s": -0.5444,
+        "sigma_s": 0.0798,
+        "sigma_a_true": 0.0145,
+        "sigma_non_chem": 0.0785,
+        "r2_s_shape": 0.9671,
+        "r_crit": 0.358,
+        "r_crit_raw": 0.358,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.0329,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0117,
+        "v2_params_only_from_c148": 0.0403
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0329,
+          "k": 9,
+          "cv_rmsep_z": 0.551852,
+          "cal_time_s": 0.0228
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 9,
+          "cv_rmsep_z": 0.554416,
+          "cal_time_s": 0.0507
+        },
+        "snv_plus_logs": {
+          "k": 9,
+          "cv_rmsep_z": 0.523472,
+          "cal_time_s": 0.0094
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0329,
+          "gamma": 0.002537072885858784,
+          "cv_rmsep_z": 0.515943,
+          "cal_time_s": 0.028
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.002582441890418834,
+          "cv_rmsep_z": 0.517215,
+          "cal_time_s": 0.0569
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00211156779687605,
+          "cv_rmsep_z": 0.514175,
+          "cal_time_s": 0.0171
+        }
+      }
+    },
+    {
+      "task_id": "Classic_TabletsX1_Official__hardness",
+      "suite": "Classic_Holdout",
+      "domain": "IDRC 2002 Tablets X1 [35:540]",
+      "split_rule": "Official_IDRC2002_X1_cal155_to_test460",
+      "target_name": "hardness",
+      "n_cal": 155,
+      "n_test": 460,
+      "L": 505,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "d34a9780ede40e562c59677e285ce7f04cb45a3a6673afb29aec764e7bd05814",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 41.95,
+        "beta": 0.72,
+        "r_s": -0.4636,
+        "sigma_s": 0.0798,
+        "sigma_a_true": 0.0145,
+        "sigma_non_chem": 0.0785,
+        "r2_s_shape": 0.9671,
+        "r_crit": 0.1122,
+        "r_crit_raw": 0.1122,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.0329,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.012,
+        "v2_params_only_from_c148": 0.04
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0329,
+          "k": 8,
+          "cv_rmsep_z": 0.745698,
+          "cal_time_s": 0.0239
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 8,
+          "cv_rmsep_z": 0.745823,
+          "cal_time_s": 0.0517
+        },
+        "snv_plus_logs": {
+          "k": 8,
+          "cv_rmsep_z": 0.741437,
+          "cal_time_s": 0.0106
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0329,
+          "gamma": 0.04511624474690706,
+          "cv_rmsep_z": 0.768598,
+          "cal_time_s": 0.0269
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.045923032413538054,
+          "cv_rmsep_z": 0.768285,
+          "cal_time_s": 0.0544
+        },
+        "snv_plus_logs": {
+          "gamma": 0.06677363671992095,
+          "cv_rmsep_z": 0.77157,
+          "cal_time_s": 0.0169
+        }
+      }
+    },
+    {
+      "task_id": "Classic_TabletsX1_Official__assay",
+      "suite": "Classic_Holdout",
+      "domain": "IDRC 2002 Tablets X1 [35:540]",
+      "split_rule": "Official_IDRC2002_X1_cal155_to_test460",
+      "target_name": "assay",
+      "n_cal": 155,
+      "n_test": 460,
+      "L": 505,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "0c81bc1404c7f0a9502192e868672a82f05ea12962be19d4174982a8579e0e8e",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 41.95,
+        "beta": 23.7,
+        "r_s": 0.6071,
+        "sigma_s": 0.0798,
+        "sigma_a_true": 0.0145,
+        "sigma_non_chem": 0.0785,
+        "r2_s_shape": 0.9671,
+        "r_crit": 1.0,
+        "r_crit_raw": 3.469,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0329,
+      "ws_unified": 0.032,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0116,
+        "v2_params_only_from_c148": 0.0393
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0329,
+          "k": 8,
+          "cv_rmsep_z": 0.205779,
+          "cal_time_s": 0.0235
+        },
+        "ws_unified": {
+          "ws": 0.032,
+          "k": 8,
+          "cv_rmsep_z": 0.205787,
+          "cal_time_s": 0.0507
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.198876,
+          "cal_time_s": 0.0097
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0329,
+          "gamma": 0.04511624474690706,
+          "cv_rmsep_z": 0.198075,
+          "cal_time_s": 0.032
+        },
+        "ws_unified": {
+          "ws": 0.032,
+          "gamma": 0.04513781778431733,
+          "cv_rmsep_z": 0.19808,
+          "cal_time_s": 0.0537
+        },
+        "snv_plus_logs": {
+          "gamma": 0.06677363671992095,
+          "cv_rmsep_z": 0.197993,
+          "cal_time_s": 0.0159
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Corn_m5_70_30__Moisture",
+      "suite": "Classic_Holdout",
+      "domain": "Cargill Corn m5 (700 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Moisture",
+      "n_cal": 56,
+      "n_test": 24,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "9e79df7f0835e387bdfef689c15bf6725d4a02aae41bf103babf20ebbcc6970f",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 5.49,
+        "r_s": -0.7357,
+        "sigma_s": 0.0635,
+        "sigma_a_true": 0.017,
+        "sigma_non_chem": 0.0612,
+        "r2_s_shape": 0.928,
+        "r_crit": 0.3972,
+        "r_crit_raw": 0.3972,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.072,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0093,
+        "v2_params_only_from_c148": 0.0312
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.072,
+          "k": 12,
+          "cv_rmsep_z": 0.052933,
+          "cal_time_s": 0.0181
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.052306,
+          "cal_time_s": 0.0401
+        },
+        "snv_plus_logs": {
+          "k": 10,
+          "cv_rmsep_z": 0.068615,
+          "cal_time_s": 0.0089
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.072,
+          "gamma": 4.660144954691125e-05,
+          "cv_rmsep_z": 0.038619,
+          "cal_time_s": 0.014
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 5.368555644452515e-05,
+          "cv_rmsep_z": 0.037681,
+          "cal_time_s": 0.0356
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00021158281117382842,
+          "cv_rmsep_z": 0.064923,
+          "cal_time_s": 0.0043
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Corn_m5_70_30__Oil",
+      "suite": "Classic_Holdout",
+      "domain": "Cargill Corn m5 (700 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Oil",
+      "n_cal": 56,
+      "n_test": 24,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "c7091401378133a7a68f5b37871fab16386a89fe9aecad255aac4d4ca0f91907",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 2.54,
+        "r_s": 0.1324,
+        "sigma_s": 0.0585,
+        "sigma_a_true": 0.0203,
+        "sigma_non_chem": 0.0548,
+        "r2_s_shape": 0.879,
+        "r_crit": 0.1864,
+        "r_crit_raw": 0.1864,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.121,
+      "ws_unified": 0.065,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0095,
+        "v2_params_only_from_c148": 0.0317
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.121,
+          "k": 12,
+          "cv_rmsep_z": 0.328111,
+          "cal_time_s": 0.0185
+        },
+        "ws_unified": {
+          "ws": 0.065,
+          "k": 12,
+          "cv_rmsep_z": 0.328616,
+          "cal_time_s": 0.0417
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.287604,
+          "cal_time_s": 0.0096
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.121,
+          "gamma": 2.0454395852634894e-06,
+          "cv_rmsep_z": 0.176114,
+          "cal_time_s": 0.016
+        },
+        "ws_unified": {
+          "ws": 0.065,
+          "gamma": 2.2928697888610185e-06,
+          "cv_rmsep_z": 0.177276,
+          "cal_time_s": 0.0376
+        },
+        "snv_plus_logs": {
+          "gamma": 1.2009596681792854e-06,
+          "cv_rmsep_z": 0.180337,
+          "cal_time_s": 0.0054
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Corn_m5_70_30__Protein",
+      "suite": "Classic_Holdout",
+      "domain": "Cargill Corn m5 (700 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Protein",
+      "n_cal": 56,
+      "n_test": 24,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "403206d3f43af9f9ecc8e2b973fdaf1557afa2f35228491d53bc9a824c05c5b1",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 11.11,
+        "r_s": 0.3982,
+        "sigma_s": 0.0577,
+        "sigma_a_true": 0.0147,
+        "sigma_non_chem": 0.0558,
+        "r2_s_shape": 0.9351,
+        "r_crit": 0.791,
+        "r_crit_raw": 0.791,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0649,
+      "ws_unified": 0.05,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0109,
+        "v2_params_only_from_c148": 0.0331
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0649,
+          "k": 12,
+          "cv_rmsep_z": 0.188168,
+          "cal_time_s": 0.0217
+        },
+        "ws_unified": {
+          "ws": 0.05,
+          "k": 12,
+          "cv_rmsep_z": 0.188233,
+          "cal_time_s": 0.0424
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.188843,
+          "cal_time_s": 0.0086
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0649,
+          "gamma": 2.1983396708426096e-06,
+          "cv_rmsep_z": 0.144629,
+          "cal_time_s": 0.0174
+        },
+        "ws_unified": {
+          "ws": 0.05,
+          "gamma": 2.2644389718736055e-06,
+          "cv_rmsep_z": 0.144722,
+          "cal_time_s": 0.039
+        },
+        "snv_plus_logs": {
+          "gamma": 1.1608567476876507e-06,
+          "cv_rmsep_z": 0.157536,
+          "cal_time_s": 0.0057
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Corn_m5_70_30__Starch",
+      "suite": "Classic_Holdout",
+      "domain": "Cargill Corn m5 (700 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Starch",
+      "n_cal": 56,
+      "n_test": 24,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "b9f552a54546dfdbc9a9c99c8001a8fc5daedd92e4236af2410a9b4de4be4fd2",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 5.21,
+        "r_s": 0.2186,
+        "sigma_s": 0.0696,
+        "sigma_a_true": 0.0199,
+        "sigma_non_chem": 0.0667,
+        "r2_s_shape": 0.918,
+        "r_crit": 0.3801,
+        "r_crit_raw": 0.3801,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.082,
+      "ws_unified": 0.057,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0099,
+        "v2_params_only_from_c148": 0.029
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.082,
+          "k": 12,
+          "cv_rmsep_z": 0.293871,
+          "cal_time_s": 0.0191
+        },
+        "ws_unified": {
+          "ws": 0.057,
+          "k": 12,
+          "cv_rmsep_z": 0.293727,
+          "cal_time_s": 0.0381
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.324772,
+          "cal_time_s": 0.0087
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.082,
+          "gamma": 5.5185892592649046e-06,
+          "cv_rmsep_z": 0.155712,
+          "cal_time_s": 0.0152
+        },
+        "ws_unified": {
+          "ws": 0.057,
+          "gamma": 5.804255651146914e-06,
+          "cv_rmsep_z": 0.156053,
+          "cal_time_s": 0.0342
+        },
+        "snv_plus_logs": {
+          "gamma": 1.2475095784638479e-06,
+          "cv_rmsep_z": 0.180285,
+          "cal_time_s": 0.0051
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Cordoba_barley_70_30__Moisture",
+      "suite": "Classic_Holdout",
+      "domain": "Cordoba Barley NIRS5000",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Moisture",
+      "n_cal": 125,
+      "n_test": 53,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "913b326d906ff64ffb63d7e6fd690b20b48901008665c87b68c7e157404d4c17",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 1.67,
+        "r_s": 0.1737,
+        "sigma_s": 0.0416,
+        "sigma_a_true": 0.0151,
+        "sigma_non_chem": 0.0388,
+        "r2_s_shape": 0.8676,
+        "r_crit": 0.1206,
+        "r_crit_raw": 0.1206,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.1324,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0124,
+        "v2_params_only_from_c148": 0.0406
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1324,
+          "k": 12,
+          "cv_rmsep_z": 0.622118,
+          "cal_time_s": 0.0243
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.620623,
+          "cal_time_s": 0.0527
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.641162,
+          "cal_time_s": 0.0114
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1324,
+          "gamma": 0.0010026943392102774,
+          "cv_rmsep_z": 0.597956,
+          "cal_time_s": 0.0271
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.0011686827769104087,
+          "cv_rmsep_z": 0.597714,
+          "cal_time_s": 0.0561
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0010566127861858822,
+          "cv_rmsep_z": 0.603812,
+          "cal_time_s": 0.017
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Cordoba_barley_70_30__Protein",
+      "suite": "Classic_Holdout",
+      "domain": "Cordoba Barley NIRS5000",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Protein",
+      "n_cal": 125,
+      "n_test": 53,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "e588e5b42c875cc031d642c96f56f3d6f03f47bf81ea5007c983f63da6cc5d8c",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 1.34,
+        "r_s": 0.0542,
+        "sigma_s": 0.0427,
+        "sigma_a_true": 0.014,
+        "sigma_non_chem": 0.0404,
+        "r2_s_shape": 0.8922,
+        "r_crit": 0.0964,
+        "r_crit_raw": 0.0964,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.1078,
+      "ws_unified": 0.076,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0126,
+        "v2_params_only_from_c148": 0.0407
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1078,
+          "k": 6,
+          "cv_rmsep_z": 0.661939,
+          "cal_time_s": 0.0251
+        },
+        "ws_unified": {
+          "ws": 0.076,
+          "k": 6,
+          "cv_rmsep_z": 0.661649,
+          "cal_time_s": 0.0528
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.667569,
+          "cal_time_s": 0.011
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.1078,
+          "gamma": 0.019394473068790847,
+          "cv_rmsep_z": 0.672767,
+          "cal_time_s": 0.0272
+        },
+        "ws_unified": {
+          "ws": 0.076,
+          "gamma": 0.02011681128036496,
+          "cv_rmsep_z": 0.672515,
+          "cal_time_s": 0.0554
+        },
+        "snv_plus_logs": {
+          "gamma": 0.03435969264209896,
+          "cv_rmsep_z": 0.678672,
+          "cal_time_s": 0.0188
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Cordoba_maize_70_30__Moisture",
+      "suite": "Classic_Holdout",
+      "domain": "Cordoba Maize NIRS5000",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Moisture",
+      "n_cal": 99,
+      "n_test": 42,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "da448ed7d00ab631eaddf88bddb5bbe552c9beabf811c3617c16c5756b52ece3",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.49,
+        "r_s": 0.2005,
+        "sigma_s": 0.0533,
+        "sigma_a_true": 0.0242,
+        "sigma_non_chem": 0.0475,
+        "r2_s_shape": 0.7938,
+        "r_crit": 0.0364,
+        "r_crit_raw": 0.0364,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.2062,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0122,
+        "v2_params_only_from_c148": 0.0376
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2062,
+          "k": 10,
+          "cv_rmsep_z": 0.813382,
+          "cal_time_s": 0.024
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 10,
+          "cv_rmsep_z": 0.813351,
+          "cal_time_s": 0.0486
+        },
+        "snv_plus_logs": {
+          "k": 10,
+          "cv_rmsep_z": 0.812583,
+          "cal_time_s": 0.0104
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2062,
+          "gamma": 0.0002677055913457106,
+          "cv_rmsep_z": 0.809112,
+          "cal_time_s": 0.0285
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.00022446424569539706,
+          "cv_rmsep_z": 0.807419,
+          "cal_time_s": 0.0512
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00022515925780677032,
+          "cv_rmsep_z": 0.803953,
+          "cal_time_s": 0.013
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Cordoba_maize_70_30__Protein",
+      "suite": "Classic_Holdout",
+      "domain": "Cordoba Maize NIRS5000",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "Protein",
+      "n_cal": 99,
+      "n_test": 42,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "a11c75164c91ed493ca8f2420ac3a432b35c85f33b4be01f1f409d570ce2a9b4",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.3,
+        "r_s": 0.0247,
+        "sigma_s": 0.048,
+        "sigma_a_true": 0.0231,
+        "sigma_non_chem": 0.042,
+        "r2_s_shape": 0.7686,
+        "r_crit": 0.0223,
+        "r_crit_raw": 0.0223,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.2314,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.011,
+        "v2_params_only_from_c148": 0.0388
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2314,
+          "k": 8,
+          "cv_rmsep_z": 0.840928,
+          "cal_time_s": 0.0217
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 8,
+          "cv_rmsep_z": 0.837831,
+          "cal_time_s": 0.0495
+        },
+        "snv_plus_logs": {
+          "k": 8,
+          "cv_rmsep_z": 0.844289,
+          "cal_time_s": 0.0103
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.2314,
+          "gamma": 0.0006948533632058425,
+          "cv_rmsep_z": 0.778592,
+          "cal_time_s": 0.0224
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.001058301091859131,
+          "cv_rmsep_z": 0.778192,
+          "cal_time_s": 0.0482
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0007237528276004353,
+          "cv_rmsep_z": 0.785777,
+          "cal_time_s": 0.0098
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Cordoba_wheat_98to99__Moisture",
+      "suite": "Classic_Holdout",
+      "domain": "Cordoba Wheat NIRS5000",
+      "split_rule": "Natural_Temporal_1998_to_1999",
+      "target_name": "Moisture",
+      "n_cal": 100,
+      "n_test": 49,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "beb6f95e8445474d2c99dc643e70e78d8cb094ef5a66851891b01e1c3494338a",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 7.83,
+        "r_s": -0.0084,
+        "sigma_s": 0.0636,
+        "sigma_a_true": 0.0152,
+        "sigma_non_chem": 0.0617,
+        "r2_s_shape": 0.9428,
+        "r_crit": 0.5615,
+        "r_crit_raw": 0.5615,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0572,
+      "ws_unified": 0.057,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0111,
+        "v2_params_only_from_c148": 0.04
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0572,
+          "k": 3,
+          "cv_rmsep_z": 0.321157,
+          "cal_time_s": 0.0229
+        },
+        "ws_unified": {
+          "ws": 0.057,
+          "k": 3,
+          "cv_rmsep_z": 0.321159,
+          "cal_time_s": 0.051
+        },
+        "snv_plus_logs": {
+          "k": 3,
+          "cv_rmsep_z": 0.319289,
+          "cal_time_s": 0.0095
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0572,
+          "gamma": 0.1844980626295146,
+          "cv_rmsep_z": 0.330998,
+          "cal_time_s": 0.0244
+        },
+        "ws_unified": {
+          "ws": 0.057,
+          "gamma": 0.18456590422891136,
+          "cv_rmsep_z": 0.331,
+          "cal_time_s": 0.0534
+        },
+        "snv_plus_logs": {
+          "gamma": 0.18151066971225693,
+          "cv_rmsep_z": 0.328248,
+          "cal_time_s": 0.0149
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Cordoba_wheat_98to99__Protein",
+      "suite": "Classic_Holdout",
+      "domain": "Cordoba Wheat NIRS5000",
+      "split_rule": "Natural_Temporal_1998_to_1999",
+      "target_name": "Protein",
+      "n_cal": 100,
+      "n_test": 49,
+      "L": 700,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "149669027099f439c452afc6e14ddfb7dd0218647de98cc354a08519de674d68",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 2.94,
+        "r_s": 0.173,
+        "sigma_s": 0.0636,
+        "sigma_a_true": 0.0152,
+        "sigma_non_chem": 0.0617,
+        "r2_s_shape": 0.9428,
+        "r_crit": 0.2121,
+        "r_crit_raw": 0.2121,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.0572,
+      "ws_unified": 0.021,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0106,
+        "v2_params_only_from_c148": 0.0392
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0572,
+          "k": 6,
+          "cv_rmsep_z": 0.484199,
+          "cal_time_s": 0.0229
+        },
+        "ws_unified": {
+          "ws": 0.021,
+          "k": 6,
+          "cv_rmsep_z": 0.483792,
+          "cal_time_s": 0.0504
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.499653,
+          "cal_time_s": 0.0104
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.0572,
+          "gamma": 0.00010375088503413325,
+          "cv_rmsep_z": 0.477447,
+          "cal_time_s": 0.0249
+        },
+        "ws_unified": {
+          "ws": 0.021,
+          "gamma": 0.00011086096264127368,
+          "cv_rmsep_z": 0.477249,
+          "cal_time_s": 0.0529
+        },
+        "snv_plus_logs": {
+          "gamma": 5.739871359132714e-05,
+          "cv_rmsep_z": 0.492516,
+          "cal_time_s": 0.0131
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__BP50",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "BP50",
+      "n_cal": 276,
+      "n_test": 119,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "5bfd12dc6fc957482378eece73cccaa67f1d29b4ae40e4a48e84f59850b2c0b7",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 7.86,
+        "r_s": 0.192,
+        "sigma_s": 0.0304,
+        "sigma_a_true": 0.0043,
+        "sigma_non_chem": 0.0301,
+        "r2_s_shape": 0.98,
+        "r_crit": 0.5565,
+        "r_crit_raw": 0.5565,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.018,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0131,
+        "v2_params_only_from_c148": 0.0536
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 12,
+          "cv_rmsep_z": 0.255139,
+          "cal_time_s": 0.0263
+        },
+        "ws_unified": {
+          "ws": 0.018,
+          "k": 12,
+          "cv_rmsep_z": 0.255014,
+          "cal_time_s": 0.0681
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.253932,
+          "cal_time_s": 0.0133
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.00011358217280624997,
+          "cv_rmsep_z": 0.180288,
+          "cal_time_s": 0.0344
+        },
+        "ws_unified": {
+          "ws": 0.018,
+          "gamma": 0.00011365888363350873,
+          "cv_rmsep_z": 0.180289,
+          "cal_time_s": 0.075
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00015204641266754657,
+          "cv_rmsep_z": 0.18557,
+          "cal_time_s": 0.0222
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__CN",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "CN",
+      "n_cal": 267,
+      "n_test": 114,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "00c91c18abec4589e597d3d10216c277189f9bf9ae9872e0882be1f238bd5fdf",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 1.52,
+        "r_s": -0.4079,
+        "sigma_s": 0.0324,
+        "sigma_a_true": 0.0046,
+        "sigma_non_chem": 0.032,
+        "r2_s_shape": 0.98,
+        "r_crit": 0.1073,
+        "r_crit_raw": 0.1073,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.014,
+        "v2_params_only_from_c148": 0.0467
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 12,
+          "cv_rmsep_z": 0.619584,
+          "cal_time_s": 0.0272
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 12,
+          "cv_rmsep_z": 0.619039,
+          "cal_time_s": 0.06
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.625109,
+          "cal_time_s": 0.0112
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.003829026512302974,
+          "cv_rmsep_z": 0.609668,
+          "cal_time_s": 0.0336
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.0038570602659862593,
+          "cv_rmsep_z": 0.609213,
+          "cal_time_s": 0.0677
+        },
+        "snv_plus_logs": {
+          "gamma": 0.004955594703464637,
+          "cv_rmsep_z": 0.611047,
+          "cal_time_s": 0.0226
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__D4052",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "D4052",
+      "n_cal": 276,
+      "n_test": 119,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "47c71bf0d7d2c57c02a48777edcb419147fe5acb3ee3055a7e5275642e50d6fc",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 21.23,
+        "r_s": 0.4815,
+        "sigma_s": 0.0316,
+        "sigma_a_true": 0.0045,
+        "sigma_non_chem": 0.0313,
+        "r2_s_shape": 0.98,
+        "r_crit": 1.0,
+        "r_crit_raw": 1.4973,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.018,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0138,
+        "v2_params_only_from_c148": 0.0512
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 12,
+          "cv_rmsep_z": 0.138676,
+          "cal_time_s": 0.028
+        },
+        "ws_unified": {
+          "ws": 0.018,
+          "k": 12,
+          "cv_rmsep_z": 0.138698,
+          "cal_time_s": 0.0648
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.138049,
+          "cal_time_s": 0.0124
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.00011671578442493122,
+          "cv_rmsep_z": 0.073124,
+          "cal_time_s": 0.0377
+        },
+        "ws_unified": {
+          "ws": 0.018,
+          "gamma": 0.00011679799914092291,
+          "cv_rmsep_z": 0.073131,
+          "cal_time_s": 0.0734
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0001538551148110347,
+          "cv_rmsep_z": 0.076232,
+          "cal_time_s": 0.023
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__FLASH",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "FLASH",
+      "n_cal": 276,
+      "n_test": 119,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "27fc280406d0caa545ef18caede955cd057f9f1767254334b2a317d79bfa1554",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 0.52,
+        "r_s": 0.1661,
+        "sigma_s": 0.0319,
+        "sigma_a_true": 0.0045,
+        "sigma_non_chem": 0.0316,
+        "r2_s_shape": 0.98,
+        "r_crit": 0.0368,
+        "r_crit_raw": 0.0368,
+        "can_flip": true,
+        "ws_star": 0.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.0,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "BOUNDARY_0",
+          "is_interior_01": false,
+          "is_strict_interior": false
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0143,
+        "v2_params_only_from_c148": 0.0482
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 6,
+          "cv_rmsep_z": 0.776656,
+          "cal_time_s": 0.0279
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "k": 6,
+          "cv_rmsep_z": 0.77629,
+          "cal_time_s": 0.0613
+        },
+        "snv_plus_logs": {
+          "k": 6,
+          "cv_rmsep_z": 0.778517,
+          "cal_time_s": 0.0117
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.0006791657636008345,
+          "cv_rmsep_z": 0.750701,
+          "cal_time_s": 0.0399
+        },
+        "ws_unified": {
+          "ws": 0.0,
+          "gamma": 0.000683969094005687,
+          "cv_rmsep_z": 0.750523,
+          "cal_time_s": 0.0705
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0004974268329551824,
+          "cv_rmsep_z": 0.755225,
+          "cal_time_s": 0.0193
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__FREEZE",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "FREEZE",
+      "n_cal": 276,
+      "n_test": 119,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "37907d217d9ddb9a159d77c3bfe3ec71f9d1f1d57942919f0909632851033f43",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 4.74,
+        "r_s": 0.1623,
+        "sigma_s": 0.03,
+        "sigma_a_true": 0.0042,
+        "sigma_non_chem": 0.0297,
+        "r2_s_shape": 0.98,
+        "r_crit": 0.3355,
+        "r_crit_raw": 0.3355,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.015,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0137,
+        "v2_params_only_from_c148": 0.0463
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 10,
+          "cv_rmsep_z": 0.407008,
+          "cal_time_s": 0.0266
+        },
+        "ws_unified": {
+          "ws": 0.015,
+          "k": 10,
+          "cv_rmsep_z": 0.407009,
+          "cal_time_s": 0.0602
+        },
+        "snv_plus_logs": {
+          "k": 10,
+          "cv_rmsep_z": 0.396582,
+          "cal_time_s": 0.0117
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.0019463958017257425,
+          "cv_rmsep_z": 0.397313,
+          "cal_time_s": 0.036
+        },
+        "ws_unified": {
+          "ws": 0.015,
+          "gamma": 0.0019497216334088466,
+          "cv_rmsep_z": 0.397273,
+          "cal_time_s": 0.069
+        },
+        "snv_plus_logs": {
+          "gamma": 0.0046894879661135425,
+          "cv_rmsep_z": 0.390704,
+          "cal_time_s": 0.0253
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__TOTAL",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "TOTAL",
+      "n_cal": 276,
+      "n_test": 119,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "893de7dc0332dbba1d7535528ce2342e926c7170b400682d3e987cebe62ae16b",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 29.65,
+        "r_s": 0.7988,
+        "sigma_s": 0.0312,
+        "sigma_a_true": 0.0044,
+        "sigma_non_chem": 0.0309,
+        "r2_s_shape": 0.98,
+        "r_crit": 1.0,
+        "r_crit_raw": 2.0826,
+        "can_flip": false,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.017,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0137,
+        "v2_params_only_from_c148": 0.0494
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 12,
+          "cv_rmsep_z": 0.123473,
+          "cal_time_s": 0.0269
+        },
+        "ws_unified": {
+          "ws": 0.017,
+          "k": 12,
+          "cv_rmsep_z": 0.123465,
+          "cal_time_s": 0.0631
+        },
+        "snv_plus_logs": {
+          "k": 12,
+          "cv_rmsep_z": 0.135991,
+          "cal_time_s": 0.0132
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 0.00020174266846232416,
+          "cv_rmsep_z": 0.099497,
+          "cal_time_s": 0.0364
+        },
+        "ws_unified": {
+          "ws": 0.017,
+          "gamma": 0.00020196046915417156,
+          "cv_rmsep_z": 0.0995,
+          "cal_time_s": 0.0716
+        },
+        "snv_plus_logs": {
+          "gamma": 0.00026791452469534334,
+          "cv_rmsep_z": 0.099669,
+          "cal_time_s": 0.0239
+        }
+      }
+    },
+    {
+      "task_id": "Classic_Diesel_70_30__VISC",
+      "suite": "Classic_Holdout",
+      "domain": "SWRI Diesel NIR (401 ch)",
+      "split_rule": "QuantileStratified_70_30_seed20261125",
+      "target_name": "VISC",
+      "n_cal": 276,
+      "n_test": 119,
+      "L": 401,
+      "has_groups_cal": false,
+      "has_label_scale_anomaly": false,
+      "cal_test_hash_overlap": 0,
+      "split_sha256": "c9bafaf50c90df0c514b3824ddd81aaeb8c7bc2f027666e10903028b9d882483",
+      "is_external_prospective": false,
+      "physics_frozen": {
+        "alpha": 200.0,
+        "beta": 4.05,
+        "r_s": 0.1313,
+        "sigma_s": 0.0323,
+        "sigma_a_true": 0.0046,
+        "sigma_non_chem": 0.032,
+        "r2_s_shape": 0.98,
+        "r_crit": 0.2866,
+        "r_crit_raw": 0.2866,
+        "can_flip": true,
+        "ws_star": 1.0
+      },
+      "ws_wiener": 0.02,
+      "ws_unified": 0.016,
+      "pre_tags": {
+        "wiener": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        },
+        "unified": {
+          "regime": "INTERIOR",
+          "is_interior_01": true,
+          "is_strict_interior": true
+        }
+      },
+      "timing_s": {
+        "unsupervised_r2_shape_only": 0.0154,
+        "v2_params_only_from_c148": 0.0494
+      },
+      "pls_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "k": 11,
+          "cv_rmsep_z": 0.372651,
+          "cal_time_s": 0.0294
+        },
+        "ws_unified": {
+          "ws": 0.016,
+          "k": 11,
+          "cv_rmsep_z": 0.372537,
+          "cal_time_s": 0.0626
+        },
+        "snv_plus_logs": {
+          "k": 11,
+          "cv_rmsep_z": 0.36494,
+          "cal_time_s": 0.0118
+        }
+      },
+      "ridge_cal_config": {
+        "ws_wiener": {
+          "ws": 0.02,
+          "gamma": 6.654199447339762e-05,
+          "cv_rmsep_z": 0.269904,
+          "cal_time_s": 0.0392
+        },
+        "ws_unified": {
+          "ws": 0.016,
+          "gamma": 6.66406335826838e-05,
+          "cv_rmsep_z": 0.269779,
+          "cal_time_s": 0.0732
+        },
+        "snv_plus_logs": {
+          "gamma": 8.663328611661331e-05,
+          "cv_rmsep_z": 0.280834,
+          "cal_time_s": 0.0215
+        }
+      }
+    }
+  ]
+}

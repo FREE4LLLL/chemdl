@@ -1,0 +1,970 @@
+{
+  "part1_tuned_sg_7datasets": {
+    "Tecator": {
+      "z_pooled": {
+        "tuned_sg": 0.2066,
+        "snv_tuned_sg": 0.1772,
+        "raw_ridge": 0.2945,
+        "snv_ridge": 0.1977,
+        "bilevel_ref": 0.0942,
+        "mk_bilevel_ref": 0.0884,
+        "sport_fix_ref": 0.1607
+      },
+      "mk_vs_tuned_sg_pct": -57.21,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": -50.11,
+      "top_sg_cfgs": [
+        [
+          "(9, 3, 2)",
+          8
+        ],
+        [
+          "(5, 3, 1)",
+          4
+        ],
+        [
+          "(7, 3, 2)",
+          2
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(11, 3, 1)",
+          8
+        ],
+        [
+          "(5, 3, 1)",
+          4
+        ],
+        [
+          "(9, 3, 1)",
+          2
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "water_%": {
+          "rmsep": 2.2736,
+          "r2": 0.9574,
+          "rpd": 4.84
+        },
+        "fat_%": {
+          "rmsep": 2.5611,
+          "r2": 0.9681,
+          "rpd": 5.6
+        },
+        "protein_%": {
+          "rmsep": 0.7975,
+          "r2": 0.9471,
+          "rpd": 4.35
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "water_%": {
+          "rmsep": 1.9017,
+          "r2": 0.9702,
+          "rpd": 5.79
+        },
+        "fat_%": {
+          "rmsep": 2.1588,
+          "r2": 0.9773,
+          "rpd": 6.64
+        },
+        "protein_%": {
+          "rmsep": 0.7034,
+          "r2": 0.9589,
+          "rpd": 4.93
+        }
+      }
+    },
+    "Corn_m5": {
+      "z_pooled": {
+        "tuned_sg": 0.1276,
+        "snv_tuned_sg": 0.294,
+        "raw_ridge": 0.3674,
+        "snv_ridge": 0.3195,
+        "bilevel_ref": 0.1264,
+        "mk_bilevel_ref": 0.1264,
+        "sport_fix_ref": 0.1586
+      },
+      "mk_vs_tuned_sg_pct": -0.94,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": -0.94,
+      "top_sg_cfgs": [
+        [
+          "(21, 3, 1)",
+          15
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(21, 3, 2)",
+          3
+        ],
+        [
+          "(21, 3, 1)",
+          3
+        ],
+        [
+          "(31, 3, 2)",
+          2
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 0.0188,
+          "r2": 0.9975,
+          "rpd": 20.14
+        },
+        "oil_%": {
+          "rmsep": 0.0247,
+          "r2": 0.9803,
+          "rpd": 7.13
+        },
+        "protein_%": {
+          "rmsep": 0.0654,
+          "r2": 0.9826,
+          "rpd": 7.58
+        },
+        "starch_%": {
+          "rmsep": 0.1277,
+          "r2": 0.9755,
+          "rpd": 6.38
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 0.157,
+          "r2": 0.8274,
+          "rpd": 2.41
+        },
+        "oil_%": {
+          "rmsep": 0.0534,
+          "r2": 0.9078,
+          "rpd": 3.29
+        },
+        "protein_%": {
+          "rmsep": 0.1076,
+          "r2": 0.9528,
+          "rpd": 4.6
+        },
+        "starch_%": {
+          "rmsep": 0.1391,
+          "r2": 0.9709,
+          "rpd": 5.86
+        }
+      }
+    },
+    "Tablets_X1": {
+      "z_pooled": {
+        "tuned_sg": 0.5797,
+        "snv_tuned_sg": 0.5734,
+        "raw_ridge": 0.5847,
+        "snv_ridge": 0.5693,
+        "bilevel_ref": 0.5779,
+        "mk_bilevel_ref": 0.5776,
+        "sport_fix_ref": 0.5886
+      },
+      "mk_vs_tuned_sg_pct": -0.36,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": 0.73,
+      "top_sg_cfgs": [
+        [
+          "(31, 3, 1)",
+          11
+        ],
+        [
+          "(21, 3, 1)",
+          3
+        ],
+        [
+          "(15, 3, 1)",
+          1
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(11, 3, 0)",
+          6
+        ],
+        [
+          "(31, 3, 0)",
+          4
+        ],
+        [
+          "(9, 3, 0)",
+          2
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "weight_mg": {
+          "rmsep": 2.9842,
+          "r2": 0.7126,
+          "rpd": 1.87
+        },
+        "hardness": {
+          "rmsep": 1.243,
+          "r2": 0.3535,
+          "rpd": 1.24
+        },
+        "assay_mg": {
+          "rmsep": 4.293,
+          "r2": 0.9616,
+          "rpd": 5.1
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "weight_mg": {
+          "rmsep": 3.0247,
+          "r2": 0.7047,
+          "rpd": 1.84
+        },
+        "hardness": {
+          "rmsep": 1.2161,
+          "r2": 0.3812,
+          "rpd": 1.27
+        },
+        "assay_mg": {
+          "rmsep": 4.3985,
+          "r2": 0.9597,
+          "rpd": 4.98
+        }
+      }
+    },
+    "Cordoba_wheat": {
+      "z_pooled": {
+        "tuned_sg": 0.4157,
+        "snv_tuned_sg": 0.4172,
+        "raw_ridge": 0.4183,
+        "snv_ridge": 0.4198,
+        "bilevel_ref": 0.4107,
+        "mk_bilevel_ref": 0.4108,
+        "sport_fix_ref": 0.4354
+      },
+      "mk_vs_tuned_sg_pct": -1.18,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": -1.18,
+      "top_sg_cfgs": [
+        [
+          "(9, 3, 1)",
+          6
+        ],
+        [
+          "(7, 3, 1)",
+          3
+        ],
+        [
+          "(15, 3, 1)",
+          3
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(15, 3, 1)",
+          5
+        ],
+        [
+          "(31, 3, 1)",
+          4
+        ],
+        [
+          "(9, 3, 1)",
+          3
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 0.6424,
+          "r2": 0.8044,
+          "rpd": 2.26
+        },
+        "protein_%": {
+          "rmsep": 0.403,
+          "r2": 0.8532,
+          "rpd": 2.61
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 0.6399,
+          "r2": 0.806,
+          "rpd": 2.27
+        },
+        "protein_%": {
+          "rmsep": 0.4083,
+          "r2": 0.8493,
+          "rpd": 2.58
+        }
+      }
+    },
+    "Cordoba_barley": {
+      "z_pooled": {
+        "tuned_sg": 0.6243,
+        "snv_tuned_sg": 0.6285,
+        "raw_ridge": 0.6311,
+        "snv_ridge": 0.6477,
+        "bilevel_ref": 0.604,
+        "mk_bilevel_ref": 0.6044,
+        "sport_fix_ref": 0.6661
+      },
+      "mk_vs_tuned_sg_pct": -3.19,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": -3.19,
+      "top_sg_cfgs": [
+        [
+          "(5, 3, 1)",
+          12
+        ],
+        [
+          "(31, 3, 2)",
+          2
+        ],
+        [
+          "(31, 3, 1)",
+          1
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(5, 3, 1)",
+          12
+        ],
+        [
+          "(31, 3, 2)",
+          3
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 2.0186,
+          "r2": 0.6092,
+          "rpd": 1.6
+        },
+        "protein_%": {
+          "rmsep": 1.5685,
+          "r2": 0.6157,
+          "rpd": 1.61
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 2.0324,
+          "r2": 0.6039,
+          "rpd": 1.59
+        },
+        "protein_%": {
+          "rmsep": 1.5795,
+          "r2": 0.6103,
+          "rpd": 1.6
+        }
+      }
+    },
+    "Cordoba_maize": {
+      "z_pooled": {
+        "tuned_sg": 0.7703,
+        "snv_tuned_sg": 0.8147,
+        "raw_ridge": 0.8166,
+        "snv_ridge": 0.7874,
+        "bilevel_ref": 0.7563,
+        "mk_bilevel_ref": 0.7593,
+        "sport_fix_ref": 0.8143
+      },
+      "mk_vs_tuned_sg_pct": -1.43,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": -1.43,
+      "top_sg_cfgs": [
+        [
+          "(11, 3, 1)",
+          7
+        ],
+        [
+          "(15, 3, 2)",
+          4
+        ],
+        [
+          "(15, 3, 1)",
+          2
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(15, 3, 2)",
+          6
+        ],
+        [
+          "(21, 3, 1)",
+          3
+        ],
+        [
+          "(31, 3, 2)",
+          2
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 0.6406,
+          "r2": 0.3711,
+          "rpd": 1.26
+        },
+        "protein_%": {
+          "rmsep": 0.2473,
+          "r2": 0.4508,
+          "rpd": 1.35
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "moisture_%": {
+          "rmsep": 0.6953,
+          "r2": 0.2592,
+          "rpd": 1.16
+        },
+        "protein_%": {
+          "rmsep": 0.2539,
+          "r2": 0.421,
+          "rpd": 1.31
+        }
+      }
+    },
+    "SWRI_Diesel_CN": {
+      "z_pooled": {
+        "tuned_sg": 0.6559,
+        "snv_tuned_sg": 0.6843,
+        "raw_ridge": 0.6644,
+        "snv_ridge": 0.6814,
+        "bilevel_ref": 0.6864,
+        "mk_bilevel_ref": 0.6861,
+        "sport_fix_ref": 0.7292
+      },
+      "mk_vs_tuned_sg_pct": 4.6,
+      "mk_vs_best_tuned_sg_or_snv_sg_pct": 4.6,
+      "top_sg_cfgs": [
+        [
+          "(15, 3, 2)",
+          6
+        ],
+        [
+          "(21, 3, 2)",
+          5
+        ],
+        [
+          "(11, 3, 0)",
+          3
+        ]
+      ],
+      "top_snv_sg_cfgs": [
+        [
+          "(31, 3, 0)",
+          4
+        ],
+        [
+          "(21, 3, 2)",
+          4
+        ],
+        [
+          "(15, 3, 2)",
+          4
+        ]
+      ],
+      "physical_units_tuned_sg": {
+        "cetane_number": {
+          "rmsep": 2.2334,
+          "r2": 0.5741,
+          "rpd": 1.53
+        }
+      },
+      "physical_units_snv_tuned_sg": {
+        "cetane_number": {
+          "rmsep": 2.3249,
+          "r2": 0.5385,
+          "rpd": 1.47
+        }
+      }
+    }
+  },
+  "part2_tecator_ablation_and_phys": {
+    "tecator_ablation_z": {
+      "raw": 0.2945,
+      "snv": 0.1977,
+      "tuned_sg": 0.2066,
+      "snv_tuned_sg": 0.1772,
+      "bilevel_no_sg": 0.146,
+      "bilevel_full": 0.0942,
+      "mk_bilevel": 0.0884
+    },
+    "physical_units_mk": {
+      "Tecator_MK": {
+        "water_%": {
+          "rmsep": 0.705,
+          "r2": 0.9959,
+          "rpd": 15.62
+        },
+        "fat_%": {
+          "rmsep": 0.577,
+          "r2": 0.9984,
+          "rpd": 24.84
+        },
+        "protein_%": {
+          "rmsep": 0.4613,
+          "r2": 0.9823,
+          "rpd": 7.52
+        }
+      },
+      "Tecator_BI": {
+        "water_%": {
+          "rmsep": 0.7448,
+          "r2": 0.9954,
+          "rpd": 14.79
+        },
+        "fat_%": {
+          "rmsep": 0.7443,
+          "r2": 0.9973,
+          "rpd": 19.26
+        },
+        "protein_%": {
+          "rmsep": 0.4822,
+          "r2": 0.9807,
+          "rpd": 7.19
+        }
+      },
+      "Corn_m5_MK": {
+        "moisture_%": {
+          "rmsep": 0.0242,
+          "r2": 0.9959,
+          "rpd": 15.64
+        },
+        "oil_%": {
+          "rmsep": 0.0245,
+          "r2": 0.9807,
+          "rpd": 7.19
+        },
+        "protein_%": {
+          "rmsep": 0.0699,
+          "r2": 0.9801,
+          "rpd": 7.09
+        },
+        "starch_%": {
+          "rmsep": 0.1255,
+          "r2": 0.9763,
+          "rpd": 6.5
+        }
+      },
+      "Tablets_X1_MK": {
+        "weight_mg": {
+          "rmsep": 3.0246,
+          "r2": 0.7047,
+          "rpd": 1.84
+        },
+        "hardness": {
+          "rmsep": 1.2059,
+          "r2": 0.3915,
+          "rpd": 1.28
+        },
+        "assay_mg": {
+          "rmsep": 4.3811,
+          "r2": 0.96,
+          "rpd": 5.0
+        }
+      },
+      "SWRI_Diesel_CN_MK": {
+        "cetane_number": {
+          "rmsep": 2.3359,
+          "r2": 0.5342,
+          "rpd": 1.47
+        }
+      }
+    }
+  },
+  "part3_theorem1_confusion": {
+    "total_checks": 170,
+    "global_constant_majority_acc": 0.5471,
+    "per_dataset_oracle_majority_acc": 0.6882,
+    "overall_v1": {
+      "n": 170,
+      "tp": 63,
+      "tn": 45,
+      "fp": 32,
+      "fn": 30,
+      "acc": 0.6353,
+      "tpr": 0.6774,
+      "tnr": 0.5844,
+      "balanced_acc": 0.6309,
+      "mcc": 0.2625
+    },
+    "overall_v2": {
+      "n": 170,
+      "tp": 73,
+      "tn": 45,
+      "fp": 32,
+      "fn": 20,
+      "acc": 0.6941,
+      "tpr": 0.7849,
+      "tnr": 0.5844,
+      "balanced_acc": 0.6847,
+      "mcc": 0.3783
+    },
+    "abstain_tiers_v2": {
+      "abs_pred_ge_0.5pct": {
+        "coverage": 0.2647,
+        "n": 45,
+        "tp": 36,
+        "tn": 3,
+        "fp": 4,
+        "fn": 2,
+        "acc": 0.8667,
+        "tpr": 0.9474,
+        "tnr": 0.4286,
+        "balanced_acc": 0.688,
+        "mcc": 0.4336
+      },
+      "abs_pred_ge_1.0pct": {
+        "coverage": 0.2353,
+        "n": 40,
+        "tp": 36,
+        "tn": 0,
+        "fp": 4,
+        "fn": 0,
+        "acc": 0.9,
+        "tpr": 1.0,
+        "tnr": 0.0,
+        "balanced_acc": 0.5,
+        "mcc": 0.0
+      },
+      "abs_pred_ge_2.0pct": {
+        "coverage": 0.2176,
+        "n": 37,
+        "tp": 33,
+        "tn": 0,
+        "fp": 4,
+        "fn": 0,
+        "acc": 0.8919,
+        "tpr": 1.0,
+        "tnr": 0.0,
+        "balanced_acc": 0.5,
+        "mcc": 0.0
+      },
+      "abs_pred_ge_5.0pct": {
+        "coverage": 0.1765,
+        "n": 30,
+        "tp": 28,
+        "tn": 0,
+        "fp": 2,
+        "fn": 0,
+        "acc": 0.9333,
+        "tpr": 1.0,
+        "tnr": 0.0,
+        "balanced_acc": 0.5,
+        "mcc": 0.0
+      }
+    },
+    "per_dataset": {
+      "Tecator": {
+        "actual_snv_win_rate": 0.9333,
+        "per_ds_majority_acc": 0.9333,
+        "v1": {
+          "n": 30,
+          "tp": 28,
+          "tn": 0,
+          "fp": 2,
+          "fn": 0,
+          "acc": 0.9333,
+          "tpr": 1.0,
+          "tnr": 0.0,
+          "balanced_acc": 0.5,
+          "mcc": 0.0
+        },
+        "v2": {
+          "n": 30,
+          "tp": 28,
+          "tn": 0,
+          "fp": 2,
+          "fn": 0,
+          "acc": 0.9333,
+          "tpr": 1.0,
+          "tnr": 0.0,
+          "balanced_acc": 0.5,
+          "mcc": 0.0
+        }
+      },
+      "Corn_m5": {
+        "actual_snv_win_rate": 0.275,
+        "per_ds_majority_acc": 0.725,
+        "v1": {
+          "n": 40,
+          "tp": 11,
+          "tn": 16,
+          "fp": 13,
+          "fn": 0,
+          "acc": 0.675,
+          "tpr": 1.0,
+          "tnr": 0.5517,
+          "balanced_acc": 0.7759,
+          "mcc": 0.5029
+        },
+        "v2": {
+          "n": 40,
+          "tp": 11,
+          "tn": 18,
+          "fp": 11,
+          "fn": 0,
+          "acc": 0.725,
+          "tpr": 1.0,
+          "tnr": 0.6207,
+          "balanced_acc": 0.8103,
+          "mcc": 0.5571
+        }
+      },
+      "Tablets_X1": {
+        "actual_snv_win_rate": 0.6667,
+        "per_ds_majority_acc": 0.6667,
+        "v1": {
+          "n": 30,
+          "tp": 8,
+          "tn": 8,
+          "fp": 2,
+          "fn": 12,
+          "acc": 0.5333,
+          "tpr": 0.4,
+          "tnr": 0.8,
+          "balanced_acc": 0.6,
+          "mcc": 0.2
+        },
+        "v2": {
+          "n": 30,
+          "tp": 19,
+          "tn": 6,
+          "fp": 4,
+          "fn": 1,
+          "acc": 0.8333,
+          "tpr": 0.95,
+          "tnr": 0.6,
+          "balanced_acc": 0.775,
+          "mcc": 0.613
+        }
+      },
+      "Cordoba_wheat": {
+        "actual_snv_win_rate": 0.5,
+        "per_ds_majority_acc": 0.5,
+        "v1": {
+          "n": 20,
+          "tp": 10,
+          "tn": 0,
+          "fp": 10,
+          "fn": 0,
+          "acc": 0.5,
+          "tpr": 1.0,
+          "tnr": 0.0,
+          "balanced_acc": 0.5,
+          "mcc": 0.0
+        },
+        "v2": {
+          "n": 20,
+          "tp": 10,
+          "tn": 0,
+          "fp": 10,
+          "fn": 0,
+          "acc": 0.5,
+          "tpr": 1.0,
+          "tnr": 0.0,
+          "balanced_acc": 0.5,
+          "mcc": 0.0
+        }
+      },
+      "Cordoba_barley": {
+        "actual_snv_win_rate": 0.6,
+        "per_ds_majority_acc": 0.6,
+        "v1": {
+          "n": 20,
+          "tp": 5,
+          "tn": 5,
+          "fp": 3,
+          "fn": 7,
+          "acc": 0.5,
+          "tpr": 0.4167,
+          "tnr": 0.625,
+          "balanced_acc": 0.5208,
+          "mcc": 0.0417
+        },
+        "v2": {
+          "n": 20,
+          "tp": 5,
+          "tn": 5,
+          "fp": 3,
+          "fn": 7,
+          "acc": 0.5,
+          "tpr": 0.4167,
+          "tnr": 0.625,
+          "balanced_acc": 0.5208,
+          "mcc": 0.0417
+        }
+      },
+      "Cordoba_maize": {
+        "actual_snv_win_rate": 0.35,
+        "per_ds_majority_acc": 0.65,
+        "v1": {
+          "n": 20,
+          "tp": 1,
+          "tn": 11,
+          "fp": 2,
+          "fn": 6,
+          "acc": 0.6,
+          "tpr": 0.1429,
+          "tnr": 0.8462,
+          "balanced_acc": 0.4945,
+          "mcc": -0.0147
+        },
+        "v2": {
+          "n": 20,
+          "tp": 0,
+          "tn": 11,
+          "fp": 2,
+          "fn": 7,
+          "acc": 0.55,
+          "tpr": 0.0,
+          "tnr": 0.8462,
+          "balanced_acc": 0.4231,
+          "mcc": -0.2446
+        }
+      },
+      "SWRI_Diesel_CN": {
+        "actual_snv_win_rate": 0.5,
+        "per_ds_majority_acc": 0.5,
+        "v1": {
+          "n": 10,
+          "tp": 0,
+          "tn": 5,
+          "fp": 0,
+          "fn": 5,
+          "acc": 0.5,
+          "tpr": 0.0,
+          "tnr": 1.0,
+          "balanced_acc": 0.5,
+          "mcc": 0.0
+        },
+        "v2": {
+          "n": 10,
+          "tp": 0,
+          "tn": 5,
+          "fp": 0,
+          "fn": 5,
+          "acc": 0.5,
+          "tpr": 0.0,
+          "tnr": 1.0,
+          "balanced_acc": 0.5,
+          "mcc": 0.0
+        }
+      }
+    }
+  },
+  "part4_melamine_sg_decomp": {
+    "R562": {
+      "rmsep_z": {
+        "raw_pls": 0.1377,
+        "raw_ridge": 0.1308,
+        "fixed_sg1_11_d1_pls": 0.1809,
+        "fixed_sg1_11_d1_ridge": 0.1641,
+        "tuned_sg_all_ridge": 0.1333,
+        "tuned_sg_deriv_only_ridge": 0.1708
+      },
+      "top_tuned_all": [
+        [
+          "(21, 3, 0)",
+          4
+        ],
+        [
+          "(9, 3, 0)",
+          1
+        ]
+      ],
+      "top_tuned_deriv_only": [
+        [
+          "(15, 3, 1)",
+          2
+        ],
+        [
+          "(11, 3, 1)",
+          1
+        ]
+      ]
+    },
+    "R568": {
+      "rmsep_z": {
+        "raw_pls": 0.133,
+        "raw_ridge": 0.1291,
+        "fixed_sg1_11_d1_pls": 0.1779,
+        "fixed_sg1_11_d1_ridge": 0.1441,
+        "tuned_sg_all_ridge": 0.1302,
+        "tuned_sg_deriv_only_ridge": 0.137
+      },
+      "top_tuned_all": [
+        [
+          "(5, 3, 0)",
+          5
+        ]
+      ],
+      "top_tuned_deriv_only": [
+        [
+          "(21, 3, 1)",
+          3
+        ],
+        [
+          "(31, 3, 1)",
+          2
+        ]
+      ]
+    },
+    "R861": {
+      "rmsep_z": {
+        "raw_pls": 0.1391,
+        "raw_ridge": 0.1329,
+        "fixed_sg1_11_d1_pls": 0.18,
+        "fixed_sg1_11_d1_ridge": 0.1521,
+        "tuned_sg_all_ridge": 0.1307,
+        "tuned_sg_deriv_only_ridge": 0.1398
+      },
+      "top_tuned_all": [
+        [
+          "(7, 3, 0)",
+          4
+        ],
+        [
+          "(9, 3, 0)",
+          1
+        ]
+      ],
+      "top_tuned_deriv_only": [
+        [
+          "(31, 3, 1)",
+          4
+        ],
+        [
+          "(21, 3, 1)",
+          1
+        ]
+      ]
+    },
+    "R862": {
+      "rmsep_z": {
+        "raw_pls": 0.1094,
+        "raw_ridge": 0.106,
+        "fixed_sg1_11_d1_pls": 0.1347,
+        "fixed_sg1_11_d1_ridge": 0.1107,
+        "tuned_sg_all_ridge": 0.1075,
+        "tuned_sg_deriv_only_ridge": 0.1055
+      },
+      "top_tuned_all": [
+        [
+          "(31, 3, 2)",
+          3
+        ],
+        [
+          "(31, 3, 1)",
+          1
+        ]
+      ],
+      "top_tuned_deriv_only": [
+        [
+          "(31, 3, 2)",
+          3
+        ],
+        [
+          "(31, 3, 1)",
+          2
+        ]
+      ]
+    }
+  },
+  "elapsed_sec": 466.8
+}

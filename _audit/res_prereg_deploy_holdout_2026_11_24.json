@@ -1,0 +1,1776 @@
+{
+  "phase": "DEPLOY_PHASE_2_UNBLINDED_VERIFIED",
+  "timestamp": "2026-11-24T19:29:40+08:00",
+  "prereg_commit_locked": "384ac59950ca42111b36968f5155633716fc91d1",
+  "execution_git_head": "bba73204023828a5a08b1668a6ae9435e27c956b",
+  "prereg_json_sha256": "f88d59753d629b15f60d8d31ebb18712cb58e3f675496ca70789737fbc672684",
+  "theory_py_git_blob_sha256_lf": "81a1c2d63d875bb4a5dff0ace090709b1ffeb159b47806fb12bb49cc372e9d14",
+  "theory_py_worktree_sha256_lf": "81a1c2d63d875bb4a5dff0ace090709b1ffeb159b47806fb12bb49cc372e9d14",
+  "n_tasks": 18,
+  "elapsed_sec": 122.38,
+  "gate_decision_eval": {
+    "new_paired_loo_primary": {
+      "all_signs": {
+        "coverage": 0.4444,
+        "n": 8,
+        "tp": 3,
+        "tn": 4,
+        "fp": 0,
+        "fn": 1,
+        "acc": 0.875,
+        "tpr": 0.75,
+        "tnr": 1.0,
+        "balanced_acc": 0.875,
+        "mcc": 0.7746
+      },
+      "decisive_ge5pct": {
+        "coverage": 0.5,
+        "n": 5,
+        "tp": 2,
+        "tn": 3,
+        "fp": 0,
+        "fn": 0,
+        "acc": 1.0,
+        "tpr": 1.0,
+        "tnr": 1.0,
+        "balanced_acc": 1.0,
+        "mcc": 1.0
+      },
+      "spearman_rho": 0.4068,
+      "spearman_p": 0.09384894795991018,
+      "pearson_r": 0.8991,
+      "pearson_p": 3.921629457006739e-07,
+      "contingency": {
+        "practical_2pct_band": {
+          "IMPROVE": {
+            "Actual_IMPROVE_le_-2pct": 3,
+            "Actual_NEUTRAL_within_2pct": 0,
+            "Actual_WORSEN_ge_+2pct": 0
+          },
+          "ABSTAIN": {
+            "Actual_IMPROVE_le_-2pct": 7,
+            "Actual_NEUTRAL_within_2pct": 1,
+            "Actual_WORSEN_ge_+2pct": 2
+          },
+          "WORSEN": {
+            "Actual_IMPROVE_le_-2pct": 0,
+            "Actual_NEUTRAL_within_2pct": 2,
+            "Actual_WORSEN_ge_+2pct": 3
+          }
+        },
+        "strict_sign": {
+          "IMPROVE": {
+            "Actual_SIGN_IMPROVE_lt0": 3,
+            "Actual_SIGN_WORSEN_ge0": 0
+          },
+          "ABSTAIN": {
+            "Actual_SIGN_IMPROVE_lt0": 7,
+            "Actual_SIGN_WORSEN_ge0": 3
+          },
+          "WORSEN": {
+            "Actual_SIGN_IMPROVE_lt0": 1,
+            "Actual_SIGN_WORSEN_ge0": 4
+          }
+        }
+      }
+    },
+    "new_loo_sign_zero": {
+      "all_signs": {
+        "coverage": 1.0,
+        "n": 18,
+        "tp": 7,
+        "tn": 5,
+        "fp": 2,
+        "fn": 4,
+        "acc": 0.6667,
+        "tpr": 0.6364,
+        "tnr": 0.7143,
+        "balanced_acc": 0.6753,
+        "mcc": 0.3419
+      },
+      "decisive_ge5pct": {
+        "coverage": 1.0,
+        "n": 10,
+        "tp": 4,
+        "tn": 3,
+        "fp": 1,
+        "fn": 2,
+        "acc": 0.7,
+        "tpr": 0.6667,
+        "tnr": 0.75,
+        "balanced_acc": 0.7083,
+        "mcc": 0.4082
+      },
+      "spearman_rho": 0.4068,
+      "spearman_p": 0.09384894795991018,
+      "pearson_r": 0.8991,
+      "pearson_p": 3.921629457006739e-07,
+      "contingency": {
+        "practical_2pct_band": {
+          "IMPROVE": {
+            "Actual_IMPROVE_le_-2pct": 7,
+            "Actual_NEUTRAL_within_2pct": 0,
+            "Actual_WORSEN_ge_+2pct": 2
+          },
+          "ABSTAIN": {
+            "Actual_IMPROVE_le_-2pct": 0,
+            "Actual_NEUTRAL_within_2pct": 0,
+            "Actual_WORSEN_ge_+2pct": 0
+          },
+          "WORSEN": {
+            "Actual_IMPROVE_le_-2pct": 3,
+            "Actual_NEUTRAL_within_2pct": 3,
+            "Actual_WORSEN_ge_+2pct": 3
+          }
+        },
+        "strict_sign": {
+          "IMPROVE": {
+            "Actual_SIGN_IMPROVE_lt0": 7,
+            "Actual_SIGN_WORSEN_ge0": 2
+          },
+          "ABSTAIN": {
+            "Actual_SIGN_IMPROVE_lt0": 0,
+            "Actual_SIGN_WORSEN_ge0": 0
+          },
+          "WORSEN": {
+            "Actual_SIGN_IMPROVE_lt0": 4,
+            "Actual_SIGN_WORSEN_ge0": 5
+          }
+        }
+      }
+    },
+    "inner_cv_pls": {
+      "all_signs": {
+        "coverage": 1.0,
+        "n": 18,
+        "tp": 8,
+        "tn": 5,
+        "fp": 2,
+        "fn": 3,
+        "acc": 0.7222,
+        "tpr": 0.7273,
+        "tnr": 0.7143,
+        "balanced_acc": 0.7208,
+        "mcc": 0.4332
+      },
+      "decisive_ge5pct": {
+        "coverage": 1.0,
+        "n": 10,
+        "tp": 4,
+        "tn": 3,
+        "fp": 1,
+        "fn": 2,
+        "acc": 0.7,
+        "tpr": 0.6667,
+        "tnr": 0.75,
+        "balanced_acc": 0.7083,
+        "mcc": 0.4082
+      },
+      "spearman_rho": 0.3244,
+      "spearman_p": 0.18908901271298173,
+      "pearson_r": 0.8572,
+      "pearson_p": 5.497981127021528e-06,
+      "contingency": {
+        "practical_2pct_band": {
+          "IMPROVE": {
+            "Actual_IMPROVE_le_-2pct": 8,
+            "Actual_NEUTRAL_within_2pct": 1,
+            "Actual_WORSEN_ge_+2pct": 1
+          },
+          "ABSTAIN": {
+            "Actual_IMPROVE_le_-2pct": 0,
+            "Actual_NEUTRAL_within_2pct": 0,
+            "Actual_WORSEN_ge_+2pct": 0
+          },
+          "WORSEN": {
+            "Actual_IMPROVE_le_-2pct": 2,
+            "Actual_NEUTRAL_within_2pct": 2,
+            "Actual_WORSEN_ge_+2pct": 4
+          }
+        },
+        "strict_sign": {
+          "IMPROVE": {
+            "Actual_SIGN_IMPROVE_lt0": 8,
+            "Actual_SIGN_WORSEN_ge0": 2
+          },
+          "ABSTAIN": {
+            "Actual_SIGN_IMPROVE_lt0": 0,
+            "Actual_SIGN_WORSEN_ge0": 0
+          },
+          "WORSEN": {
+            "Actual_SIGN_IMPROVE_lt0": 3,
+            "Actual_SIGN_WORSEN_ge0": 5
+          }
+        }
+      }
+    },
+    "legacy_v2_tau_0_5": {
+      "all_signs": {
+        "coverage": 0.5556,
+        "n": 10,
+        "tp": 6,
+        "tn": 0,
+        "fp": 3,
+        "fn": 1,
+        "acc": 0.6,
+        "tpr": 0.8571,
+        "tnr": 0.0,
+        "balanced_acc": 0.4286,
+        "mcc": -0.2182
+      },
+      "decisive_ge5pct": {
+        "coverage": 0.6,
+        "n": 6,
+        "tp": 3,
+        "tn": 0,
+        "fp": 2,
+        "fn": 1,
+        "acc": 0.5,
+        "tpr": 0.75,
+        "tnr": 0.0,
+        "balanced_acc": 0.375,
+        "mcc": -0.3162
+      },
+      "spearman_rho": -0.3254,
+      "spearman_p": 0.1876023613785693,
+      "pearson_r": -0.6867,
+      "pearson_p": 0.001646177212949792,
+      "contingency": {
+        "practical_2pct_band": {
+          "IMPROVE": {
+            "Actual_IMPROVE_le_-2pct": 6,
+            "Actual_NEUTRAL_within_2pct": 1,
+            "Actual_WORSEN_ge_+2pct": 2
+          },
+          "ABSTAIN": {
+            "Actual_IMPROVE_le_-2pct": 3,
+            "Actual_NEUTRAL_within_2pct": 2,
+            "Actual_WORSEN_ge_+2pct": 3
+          },
+          "WORSEN": {
+            "Actual_IMPROVE_le_-2pct": 1,
+            "Actual_NEUTRAL_within_2pct": 0,
+            "Actual_WORSEN_ge_+2pct": 0
+          }
+        },
+        "strict_sign": {
+          "IMPROVE": {
+            "Actual_SIGN_IMPROVE_lt0": 6,
+            "Actual_SIGN_WORSEN_ge0": 3
+          },
+          "ABSTAIN": {
+            "Actual_SIGN_IMPROVE_lt0": 4,
+            "Actual_SIGN_WORSEN_ge0": 4
+          },
+          "WORSEN": {
+            "Actual_SIGN_IMPROVE_lt0": 1,
+            "Actual_SIGN_WORSEN_ge0": 0
+          }
+        }
+      }
+    }
+  },
+  "deployment_strategy_eval": {
+    "ALL_18": {
+      "same_pls": {
+        "Always_Raw": {
+          "n": 18,
+          "mean_rmsep_z": 2.3352,
+          "geom_ratio_vs_oracle": 1.0788,
+          "mean_regret_pct_vs_oracle": 8.71,
+          "median_regret_pct_vs_oracle": 4.75,
+          "max_regret_pct_vs_oracle": 64.69,
+          "n_severe_regrets_ge5pct": 8,
+          "n_oracle_exact_hits": 7,
+          "wtl_vs_always_raw": [
+            0,
+            18,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            7,
+            0,
+            11
+          ],
+          "wtl_vs_inner_cv": [
+            2,
+            8,
+            8
+          ]
+        },
+        "Always_SNV": {
+          "n": 18,
+          "mean_rmsep_z": 2.3003,
+          "geom_ratio_vs_oracle": 1.1601,
+          "mean_regret_pct_vs_oracle": 22.46,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 150.5,
+          "n_severe_regrets_ge5pct": 4,
+          "n_oracle_exact_hits": 11,
+          "wtl_vs_always_raw": [
+            11,
+            0,
+            7
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            18,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            3,
+            10,
+            5
+          ]
+        },
+        "InnerCV_PLS": {
+          "n": 18,
+          "mean_rmsep_z": 2.2901,
+          "geom_ratio_vs_oracle": 1.034,
+          "mean_regret_pct_vs_oracle": 3.72,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 3,
+          "n_oracle_exact_hits": 13,
+          "wtl_vs_always_raw": [
+            8,
+            8,
+            2
+          ],
+          "wtl_vs_always_snv": [
+            5,
+            10,
+            3
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            18,
+            0
+          ]
+        },
+        "Gate_Fallback_Raw": {
+          "n": 18,
+          "mean_rmsep_z": 2.3276,
+          "geom_ratio_vs_oracle": 1.0625,
+          "mean_regret_pct_vs_oracle": 7.11,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 64.69,
+          "n_severe_regrets_ge5pct": 6,
+          "n_oracle_exact_hits": 10,
+          "wtl_vs_always_raw": [
+            3,
+            15,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            7,
+            3,
+            8
+          ],
+          "wtl_vs_inner_cv": [
+            2,
+            11,
+            5
+          ]
+        },
+        "Gate_Fallback_SNV": {
+          "n": 18,
+          "mean_rmsep_z": 2.2765,
+          "geom_ratio_vs_oracle": 1.0175,
+          "mean_regret_pct_vs_oracle": 1.95,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 14,
+          "wtl_vs_always_raw": [
+            10,
+            5,
+            3
+          ],
+          "wtl_vs_always_snv": [
+            4,
+            13,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            3,
+            13,
+            2
+          ]
+        },
+        "Gate_Fallback_InnerCV": {
+          "n": 18,
+          "mean_rmsep_z": 2.2896,
+          "geom_ratio_vs_oracle": 1.0334,
+          "mean_regret_pct_vs_oracle": 3.66,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 3,
+          "n_oracle_exact_hits": 14,
+          "wtl_vs_always_raw": [
+            8,
+            9,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            6,
+            9,
+            3
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            17,
+            0
+          ]
+        }
+      },
+      "heterogeneous": {
+        "Gate_Escalate_Bilevel": {
+          "n": 18,
+          "mean_rmsep_z": 2.2553,
+          "geom_ratio_vs_oracle": 0.9454,
+          "mean_regret_pct_vs_oracle": -0.63,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 66.42,
+          "n_severe_regrets_ge5pct": 5,
+          "n_oracle_exact_hits": 7,
+          "wtl_vs_always_raw": [
+            8,
+            5,
+            5
+          ],
+          "wtl_vs_always_snv": [
+            9,
+            3,
+            6
+          ],
+          "wtl_vs_inner_cv": [
+            6,
+            7,
+            5
+          ]
+        }
+      }
+    },
+    "A_Unseen_Spectra_Temporal": {
+      "same_pls": {
+        "Always_Raw": {
+          "n": 2,
+          "mean_rmsep_z": 1.7197,
+          "geom_ratio_vs_oracle": 1.2833,
+          "mean_regret_pct_vs_oracle": 32.34,
+          "median_regret_pct_vs_oracle": 32.34,
+          "max_regret_pct_vs_oracle": 64.69,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            0,
+            2,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            0,
+            1
+          ]
+        },
+        "Always_SNV": {
+          "n": 2,
+          "mean_rmsep_z": 1.4525,
+          "geom_ratio_vs_oracle": 1.1399,
+          "mean_regret_pct_vs_oracle": 14.96,
+          "median_regret_pct_vs_oracle": 14.96,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            2,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            2,
+            0
+          ]
+        },
+        "InnerCV_PLS": {
+          "n": 2,
+          "mean_rmsep_z": 1.4525,
+          "geom_ratio_vs_oracle": 1.1399,
+          "mean_regret_pct_vs_oracle": 14.96,
+          "median_regret_pct_vs_oracle": 14.96,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            2,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            2,
+            0
+          ]
+        },
+        "Gate_Fallback_Raw": {
+          "n": 2,
+          "mean_rmsep_z": 1.7197,
+          "geom_ratio_vs_oracle": 1.2833,
+          "mean_regret_pct_vs_oracle": 32.34,
+          "median_regret_pct_vs_oracle": 32.34,
+          "max_regret_pct_vs_oracle": 64.69,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            0,
+            2,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            0,
+            1
+          ]
+        },
+        "Gate_Fallback_SNV": {
+          "n": 2,
+          "mean_rmsep_z": 1.4525,
+          "geom_ratio_vs_oracle": 1.1399,
+          "mean_regret_pct_vs_oracle": 14.96,
+          "median_regret_pct_vs_oracle": 14.96,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            2,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            2,
+            0
+          ]
+        },
+        "Gate_Fallback_InnerCV": {
+          "n": 2,
+          "mean_rmsep_z": 1.4525,
+          "geom_ratio_vs_oracle": 1.1399,
+          "mean_regret_pct_vs_oracle": 14.96,
+          "median_regret_pct_vs_oracle": 14.96,
+          "max_regret_pct_vs_oracle": 29.93,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            2,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            2,
+            0
+          ]
+        }
+      },
+      "heterogeneous": {
+        "Gate_Escalate_Bilevel": {
+          "n": 2,
+          "mean_rmsep_z": 1.3439,
+          "geom_ratio_vs_oracle": 0.7555,
+          "mean_regret_pct_vs_oracle": 0.36,
+          "median_regret_pct_vs_oracle": 0.36,
+          "max_regret_pct_vs_oracle": 66.42,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 0,
+          "wtl_vs_always_raw": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            0,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    "B_CRAW_UnseenSeries_Temporal": {
+      "same_pls": {
+        "Always_Raw": {
+          "n": 4,
+          "mean_rmsep_z": 0.6634,
+          "geom_ratio_vs_oracle": 1.0986,
+          "mean_regret_pct_vs_oracle": 10.2,
+          "median_regret_pct_vs_oracle": 8.7,
+          "max_regret_pct_vs_oracle": 23.39,
+          "n_severe_regrets_ge5pct": 3,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            0,
+            4,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            0,
+            3
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            2,
+            2
+          ]
+        },
+        "Always_SNV": {
+          "n": 4,
+          "mean_rmsep_z": 0.5975,
+          "geom_ratio_vs_oracle": 1.0022,
+          "mean_regret_pct_vs_oracle": 0.22,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 0.88,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 3,
+          "wtl_vs_always_raw": [
+            3,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            4,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            2,
+            1
+          ]
+        },
+        "InnerCV_PLS": {
+          "n": 4,
+          "mean_rmsep_z": 0.6432,
+          "geom_ratio_vs_oracle": 1.054,
+          "mean_regret_pct_vs_oracle": 5.85,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 23.39,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 3,
+          "wtl_vs_always_raw": [
+            2,
+            2,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            2,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            4,
+            0
+          ]
+        },
+        "Gate_Fallback_Raw": {
+          "n": 4,
+          "mean_rmsep_z": 0.6634,
+          "geom_ratio_vs_oracle": 1.0986,
+          "mean_regret_pct_vs_oracle": 10.2,
+          "median_regret_pct_vs_oracle": 8.7,
+          "max_regret_pct_vs_oracle": 23.39,
+          "n_severe_regrets_ge5pct": 3,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            0,
+            4,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            0,
+            3
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            2,
+            2
+          ]
+        },
+        "Gate_Fallback_SNV": {
+          "n": 4,
+          "mean_rmsep_z": 0.5975,
+          "geom_ratio_vs_oracle": 1.0022,
+          "mean_regret_pct_vs_oracle": 0.22,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 0.88,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 3,
+          "wtl_vs_always_raw": [
+            3,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            4,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            2,
+            1
+          ]
+        },
+        "Gate_Fallback_InnerCV": {
+          "n": 4,
+          "mean_rmsep_z": 0.6432,
+          "geom_ratio_vs_oracle": 1.054,
+          "mean_regret_pct_vs_oracle": 5.85,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 23.39,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 3,
+          "wtl_vs_always_raw": [
+            2,
+            2,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            2,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            4,
+            0
+          ]
+        }
+      },
+      "heterogeneous": {
+        "Gate_Escalate_Bilevel": {
+          "n": 4,
+          "mean_rmsep_z": 0.4984,
+          "geom_ratio_vs_oracle": 0.7935,
+          "mean_regret_pct_vs_oracle": -16.52,
+          "median_regret_pct_vs_oracle": -17.01,
+          "max_regret_pct_vs_oracle": 19.94,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 0,
+          "wtl_vs_always_raw": [
+            3,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            3,
+            0,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            3,
+            0,
+            1
+          ]
+        }
+      }
+    },
+    "C_Official_CrossInst_CowGroup": {
+      "same_pls": {
+        "Always_Raw": {
+          "n": 7,
+          "mean_rmsep_z": 4.6642,
+          "geom_ratio_vs_oracle": 1.0352,
+          "mean_regret_pct_vs_oracle": 3.65,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 12.98,
+          "n_severe_regrets_ge5pct": 2,
+          "n_oracle_exact_hits": 4,
+          "wtl_vs_always_raw": [
+            0,
+            7,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            4,
+            0,
+            3
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            5,
+            1
+          ]
+        },
+        "Always_SNV": {
+          "n": 7,
+          "mean_rmsep_z": 4.7122,
+          "geom_ratio_vs_oracle": 1.4041,
+          "mean_regret_pct_vs_oracle": 52.96,
+          "median_regret_pct_vs_oracle": 0.99,
+          "max_regret_pct_vs_oracle": 150.5,
+          "n_severe_regrets_ge5pct": 3,
+          "n_oracle_exact_hits": 3,
+          "wtl_vs_always_raw": [
+            3,
+            0,
+            4
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            7,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            2,
+            2,
+            3
+          ]
+        },
+        "InnerCV_PLS": {
+          "n": 7,
+          "mean_rmsep_z": 4.6614,
+          "geom_ratio_vs_oracle": 1.0187,
+          "mean_regret_pct_vs_oracle": 1.94,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 11.14,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 4,
+          "wtl_vs_always_raw": [
+            1,
+            5,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            3,
+            2,
+            2
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            7,
+            0
+          ]
+        },
+        "Gate_Fallback_Raw": {
+          "n": 7,
+          "mean_rmsep_z": 4.6602,
+          "geom_ratio_vs_oracle": 1.0173,
+          "mean_regret_pct_vs_oracle": 1.8,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 11.14,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 5,
+          "wtl_vs_always_raw": [
+            1,
+            6,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            4,
+            1,
+            2
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            6,
+            0
+          ]
+        },
+        "Gate_Fallback_SNV": {
+          "n": 7,
+          "mean_rmsep_z": 4.651,
+          "geom_ratio_vs_oracle": 1.0021,
+          "mean_regret_pct_vs_oracle": 0.21,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 1.45,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 6,
+          "wtl_vs_always_raw": [
+            2,
+            5,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            4,
+            2,
+            1
+          ],
+          "wtl_vs_inner_cv": [
+            2,
+            5,
+            0
+          ]
+        },
+        "Gate_Fallback_InnerCV": {
+          "n": 7,
+          "mean_rmsep_z": 4.6602,
+          "geom_ratio_vs_oracle": 1.0173,
+          "mean_regret_pct_vs_oracle": 1.8,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 11.14,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 5,
+          "wtl_vs_always_raw": [
+            1,
+            6,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            4,
+            1,
+            2
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            6,
+            0
+          ]
+        }
+      },
+      "heterogeneous": {
+        "Gate_Escalate_Bilevel": {
+          "n": 7,
+          "mean_rmsep_z": 4.6633,
+          "geom_ratio_vs_oracle": 1.0223,
+          "mean_regret_pct_vs_oracle": 2.35,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 14.99,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 5,
+          "wtl_vs_always_raw": [
+            1,
+            5,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            4,
+            1,
+            2
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            5,
+            1
+          ]
+        }
+      }
+    },
+    "D_OSSL_UnseenProps_Holdout": {
+      "same_pls": {
+        "Always_Raw": {
+          "n": 5,
+          "mean_rmsep_z": 0.6582,
+          "geom_ratio_vs_oracle": 1.0509,
+          "mean_regret_pct_vs_oracle": 5.15,
+          "median_regret_pct_vs_oracle": 4.86,
+          "max_regret_pct_vs_oracle": 11.05,
+          "n_severe_regrets_ge5pct": 2,
+          "n_oracle_exact_hits": 1,
+          "wtl_vs_always_raw": [
+            0,
+            5,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            0,
+            4
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            1,
+            4
+          ]
+        },
+        "Always_SNV": {
+          "n": 5,
+          "mean_rmsep_z": 0.6251,
+          "geom_ratio_vs_oracle": 1.0055,
+          "mean_regret_pct_vs_oracle": 0.56,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 2.8,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 4,
+          "wtl_vs_always_raw": [
+            4,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            5,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            4,
+            1
+          ]
+        },
+        "InnerCV_PLS": {
+          "n": 5,
+          "mean_rmsep_z": 0.6229,
+          "geom_ratio_vs_oracle": 1.0,
+          "mean_regret_pct_vs_oracle": 0.0,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 0.0,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 5,
+          "wtl_vs_always_raw": [
+            4,
+            1,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            4,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            5,
+            0
+          ]
+        },
+        "Gate_Fallback_Raw": {
+          "n": 5,
+          "mean_rmsep_z": 0.6366,
+          "geom_ratio_vs_oracle": 1.0194,
+          "mean_regret_pct_vs_oracle": 1.97,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 5.22,
+          "n_severe_regrets_ge5pct": 1,
+          "n_oracle_exact_hits": 3,
+          "wtl_vs_always_raw": [
+            2,
+            3,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            2,
+            2
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            3,
+            2
+          ]
+        },
+        "Gate_Fallback_SNV": {
+          "n": 5,
+          "mean_rmsep_z": 0.6251,
+          "geom_ratio_vs_oracle": 1.0055,
+          "mean_regret_pct_vs_oracle": 0.56,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 2.8,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 4,
+          "wtl_vs_always_raw": [
+            4,
+            0,
+            1
+          ],
+          "wtl_vs_always_snv": [
+            0,
+            5,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            4,
+            1
+          ]
+        },
+        "Gate_Fallback_InnerCV": {
+          "n": 5,
+          "mean_rmsep_z": 0.6229,
+          "geom_ratio_vs_oracle": 1.0,
+          "mean_regret_pct_vs_oracle": 0.0,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 0.0,
+          "n_severe_regrets_ge5pct": 0,
+          "n_oracle_exact_hits": 5,
+          "wtl_vs_always_raw": [
+            4,
+            1,
+            0
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            4,
+            0
+          ],
+          "wtl_vs_inner_cv": [
+            0,
+            5,
+            0
+          ]
+        }
+      },
+      "heterogeneous": {
+        "Gate_Escalate_Bilevel": {
+          "n": 5,
+          "mean_rmsep_z": 0.6541,
+          "geom_ratio_vs_oracle": 1.0662,
+          "mean_regret_pct_vs_oracle": 7.52,
+          "median_regret_pct_vs_oracle": 0.0,
+          "max_regret_pct_vs_oracle": 35.24,
+          "n_severe_regrets_ge5pct": 2,
+          "n_oracle_exact_hits": 2,
+          "wtl_vs_always_raw": [
+            3,
+            0,
+            2
+          ],
+          "wtl_vs_always_snv": [
+            1,
+            2,
+            2
+          ],
+          "wtl_vs_inner_cv": [
+            1,
+            2,
+            2
+          ]
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "Deploy_CRAW_Wheat_XDS_Moist_NewOnly__Temporal",
+      "stratum": "A_Unseen_Spectra_Temporal",
+      "domain": "Cereal XDS (Brand-New Spectra)",
+      "split_rule": "Year <=2017 -> >=2018",
+      "n_cal": 172,
+      "n_test": 161,
+      "L": 1050,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": 5.78,
+      "t_loo": 1.827,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -0.46,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": 0.12,
+      "rmsep_raw_z": 2.2595,
+      "rmsep_snv_z": 1.372,
+      "emp_snv_vs_raw_pct": -39.28,
+      "oracle_pls_z": 1.372,
+      "strategies_same_pls": {
+        "Always_Raw": 2.2595,
+        "Always_SNV": 1.372,
+        "InnerCV_PLS": 1.372,
+        "Gate_Fallback_Raw": 2.2595,
+        "Gate_Fallback_SNV": 1.372,
+        "Gate_Fallback_InnerCV": 1.372
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 2.2833,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat_XDS_Prot_NewOnly__Temporal",
+      "stratum": "A_Unseen_Spectra_Temporal",
+      "domain": "Cereal XDS (Brand-New Spectra)",
+      "split_rule": "Year <=2017 -> >=2018",
+      "n_cal": 104,
+      "n_test": 70,
+      "L": 1050,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": -1.5,
+      "t_loo": -0.443,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -19.15,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": 0.39,
+      "rmsep_raw_z": 1.1798,
+      "rmsep_snv_z": 1.5329,
+      "emp_snv_vs_raw_pct": 29.93,
+      "oracle_pls_z": 1.1798,
+      "strategies_same_pls": {
+        "Always_Raw": 1.1798,
+        "Always_SNV": 1.5329,
+        "InnerCV_PLS": 1.5329,
+        "Gate_Fallback_Raw": 1.1798,
+        "Gate_Fallback_SNV": 1.5329,
+        "Gate_Fallback_InnerCV": 1.5329
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.4046,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Barley_NIRS5000_Moist__Temporal",
+      "stratum": "B_CRAW_UnseenSeries_Temporal",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2012 -> >2012",
+      "n_cal": 834,
+      "n_test": 151,
+      "L": 700,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": 1.4,
+      "t_loo": 0.297,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 1.35,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -2.72,
+      "rmsep_raw_z": 0.5882,
+      "rmsep_snv_z": 0.5934,
+      "emp_snv_vs_raw_pct": 0.88,
+      "oracle_pls_z": 0.5882,
+      "strategies_same_pls": {
+        "Always_Raw": 0.5882,
+        "Always_SNV": 0.5934,
+        "InnerCV_PLS": 0.5882,
+        "Gate_Fallback_Raw": 0.5882,
+        "Gate_Fallback_SNV": 0.5934,
+        "Gate_Fallback_InnerCV": 0.5882
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.7055,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Barley_NIRS5000_Prot__Temporal",
+      "stratum": "B_CRAW_UnseenSeries_Temporal",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2012 -> >2012",
+      "n_cal": 1668,
+      "n_test": 428,
+      "L": 700,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": 0.39,
+      "t_loo": 0.395,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -8.61,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": -0.09,
+      "rmsep_raw_z": 0.603,
+      "rmsep_snv_z": 0.573,
+      "emp_snv_vs_raw_pct": -4.96,
+      "oracle_pls_z": 0.573,
+      "strategies_same_pls": {
+        "Always_Raw": 0.603,
+        "Always_SNV": 0.573,
+        "InnerCV_PLS": 0.573,
+        "Gate_Fallback_Raw": 0.603,
+        "Gate_Fallback_SNV": 0.573,
+        "Gate_Fallback_InnerCV": 0.573
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.275,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat2_XDS_Moist__Temporal",
+      "stratum": "B_CRAW_UnseenSeries_Temporal",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2017 -> >2017",
+      "n_cal": 227,
+      "n_test": 273,
+      "L": 1050,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": -0.58,
+      "t_loo": -0.204,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -8.47,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -1.0,
+      "rmsep_raw_z": 0.471,
+      "rmsep_snv_z": 0.4199,
+      "emp_snv_vs_raw_pct": -10.84,
+      "oracle_pls_z": 0.4199,
+      "strategies_same_pls": {
+        "Always_Raw": 0.471,
+        "Always_SNV": 0.4199,
+        "InnerCV_PLS": 0.4199,
+        "Gate_Fallback_Raw": 0.471,
+        "Gate_Fallback_SNV": 0.4199,
+        "Gate_Fallback_InnerCV": 0.4199
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.3507,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_CRAW_Wheat_XDS_Prot__Temporal",
+      "stratum": "B_CRAW_UnseenSeries_Temporal",
+      "domain": "Cereal (Unseen in Dev/R1)",
+      "split_rule": "Year <=2017 -> >2017",
+      "n_cal": 141,
+      "n_test": 90,
+      "L": 1050,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": -1.71,
+      "t_loo": -0.701,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 5.38,
+      "legacy_v2_call_0_5": "WORSEN",
+      "legacy_v2_pred_pct": 0.62,
+      "rmsep_raw_z": 0.9916,
+      "rmsep_snv_z": 0.8036,
+      "emp_snv_vs_raw_pct": -18.96,
+      "oracle_pls_z": 0.8036,
+      "strategies_same_pls": {
+        "Always_Raw": 0.9916,
+        "Always_SNV": 0.8036,
+        "InnerCV_PLS": 0.9916,
+        "Gate_Fallback_Raw": 0.9916,
+        "Gate_Fallback_SNV": 0.8036,
+        "Gate_Fallback_InnerCV": 0.9916
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.6626,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_Mango_Official_SP_test2__DM",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "Anderson (2020) Mango DM",
+      "split_rule": "Official SP_cal -> SP_test2",
+      "n_cal": 9914,
+      "n_test": 501,
+      "L": 103,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "WORSEN",
+      "delta_loo_pct": 18.07,
+      "t_loo": 24.956,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 12.83,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": -0.37,
+      "rmsep_raw_z": 29.9823,
+      "rmsep_snv_z": 29.5536,
+      "emp_snv_vs_raw_pct": -1.43,
+      "oracle_pls_z": 29.5536,
+      "strategies_same_pls": {
+        "Always_Raw": 29.9823,
+        "Always_SNV": 29.5536,
+        "InnerCV_PLS": 29.9823,
+        "Gate_Fallback_Raw": 29.9823,
+        "Gate_Fallback_SNV": 29.9823,
+        "Gate_Fallback_InnerCV": 29.9823
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 29.9823,
+        "escalated_model": "Raw_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_Tablets_X2_Official__Assay",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "IDRC 2002 Tablets X2 [35:540]",
+      "split_rule": "Official cal(155) -> test(460)",
+      "n_cal": 155,
+      "n_test": 460,
+      "L": 505,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "IMPROVE",
+      "delta_loo_pct": -5.54,
+      "t_loo": -2.225,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -8.09,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -1.4,
+      "rmsep_raw_z": 0.2446,
+      "rmsep_snv_z": 0.2165,
+      "emp_snv_vs_raw_pct": -11.49,
+      "oracle_pls_z": 0.2165,
+      "strategies_same_pls": {
+        "Always_Raw": 0.2446,
+        "Always_SNV": 0.2165,
+        "InnerCV_PLS": 0.2165,
+        "Gate_Fallback_Raw": 0.2165,
+        "Gate_Fallback_SNV": 0.2165,
+        "Gate_Fallback_InnerCV": 0.2165
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.2165,
+        "escalated_model": "SNV_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_Wheat_A1_Official__Protein",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "IDRC 2016 Wheat A1",
+      "split_rule": "Official cal(200) -> test(48)",
+      "n_cal": 200,
+      "n_test": 48,
+      "L": 741,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "WORSEN",
+      "delta_loo_pct": 105.89,
+      "t_loo": 6.795,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 70.06,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -19.86,
+      "rmsep_raw_z": 0.1289,
+      "rmsep_snv_z": 0.3229,
+      "emp_snv_vs_raw_pct": 150.4,
+      "oracle_pls_z": 0.1289,
+      "strategies_same_pls": {
+        "Always_Raw": 0.1289,
+        "Always_SNV": 0.3229,
+        "InnerCV_PLS": 0.1289,
+        "Gate_Fallback_Raw": 0.1289,
+        "Gate_Fallback_SNV": 0.1289,
+        "Gate_Fallback_InnerCV": 0.1289
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.1289,
+        "escalated_model": "Raw_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_Wheat_A3_Official__Protein",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "IDRC 2016 Wheat A3",
+      "split_rule": "Official cal(48) -> test(200)",
+      "n_cal": 48,
+      "n_test": 200,
+      "L": 741,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "WORSEN",
+      "delta_loo_pct": 104.93,
+      "t_loo": 3.461,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 110.75,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -20.21,
+      "rmsep_raw_z": 0.1194,
+      "rmsep_snv_z": 0.2952,
+      "emp_snv_vs_raw_pct": 147.19,
+      "oracle_pls_z": 0.1194,
+      "strategies_same_pls": {
+        "Always_Raw": 0.1194,
+        "Always_SNV": 0.2952,
+        "InnerCV_PLS": 0.1194,
+        "Gate_Fallback_Raw": 0.1194,
+        "Gate_Fallback_SNV": 0.1194,
+        "Gate_Fallback_InnerCV": 0.1194
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.1194,
+        "escalated_model": "Raw_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_Melamine_R568_to_R862__CloudPoint",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "Melamine Resin FT-NIR (R568 -> R862)",
+      "split_rule": "Cross-recipe R568(733) -> R862(472)",
+      "n_cal": 733,
+      "n_test": 472,
+      "L": 225,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "WORSEN",
+      "delta_loo_pct": 3.52,
+      "t_loo": 2.616,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 4.81,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": -0.03,
+      "rmsep_raw_z": 0.6643,
+      "rmsep_snv_z": 1.1426,
+      "emp_snv_vs_raw_pct": 72.01,
+      "oracle_pls_z": 0.6643,
+      "strategies_same_pls": {
+        "Always_Raw": 0.6643,
+        "Always_SNV": 1.1426,
+        "InnerCV_PLS": 0.6643,
+        "Gate_Fallback_Raw": 0.6643,
+        "Gate_Fallback_SNV": 0.6643,
+        "Gate_Fallback_InnerCV": 0.6643
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.6643,
+        "escalated_model": "Raw_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_Milk_CowGroupHoldout__SCC",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "On-farm Milk NIR (41 cows)",
+      "split_rule": "Cow_ID deterministic 70/30 holdout",
+      "n_cal": 803,
+      "n_test": 421,
+      "L": 256,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": 1.35,
+      "t_loo": 1.013,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 2.51,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": 0.0,
+      "rmsep_raw_z": 0.6383,
+      "rmsep_snv_z": 0.5743,
+      "emp_snv_vs_raw_pct": -10.02,
+      "oracle_pls_z": 0.5743,
+      "strategies_same_pls": {
+        "Always_Raw": 0.6383,
+        "Always_SNV": 0.5743,
+        "InnerCV_PLS": 0.6383,
+        "Gate_Fallback_Raw": 0.6383,
+        "Gate_Fallback_SNV": 0.5743,
+        "Gate_Fallback_InnerCV": 0.6383
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.6604,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_Milk_CowGroupHoldout__Urea",
+      "stratum": "C_Official_CrossInst_CowGroup",
+      "domain": "On-farm Milk NIR (41 cows)",
+      "split_rule": "Cow_ID deterministic 70/30 holdout",
+      "n_cal": 803,
+      "n_test": 421,
+      "L": 256,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "WORSEN",
+      "delta_loo_pct": 2.99,
+      "t_loo": 2.106,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -4.44,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": 0.0,
+      "rmsep_raw_z": 0.8716,
+      "rmsep_snv_z": 0.8802,
+      "emp_snv_vs_raw_pct": 0.99,
+      "oracle_pls_z": 0.8716,
+      "strategies_same_pls": {
+        "Always_Raw": 0.8716,
+        "Always_SNV": 0.8802,
+        "InnerCV_PLS": 0.8802,
+        "Gate_Fallback_Raw": 0.8716,
+        "Gate_Fallback_SNV": 0.8716,
+        "Gate_Fallback_InnerCV": 0.8716
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.8716,
+        "escalated_model": "Raw_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__Al_dith",
+      "stratum": "D_OSSL_UnseenProps_Holdout",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "n_cal": 1311,
+      "n_test": 563,
+      "L": 601,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "IMPROVE",
+      "delta_loo_pct": -7.4,
+      "t_loo": -3.752,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -6.79,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -16.96,
+      "rmsep_raw_z": 0.6368,
+      "rmsep_snv_z": 0.6073,
+      "emp_snv_vs_raw_pct": -4.64,
+      "oracle_pls_z": 0.6073,
+      "strategies_same_pls": {
+        "Always_Raw": 0.6368,
+        "Always_SNV": 0.6073,
+        "InnerCV_PLS": 0.6073,
+        "Gate_Fallback_Raw": 0.6073,
+        "Gate_Fallback_SNV": 0.6073,
+        "Gate_Fallback_InnerCV": 0.6073
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.6073,
+        "escalated_model": "SNV_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__Mg_ext",
+      "stratum": "D_OSSL_UnseenProps_Holdout",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "n_cal": 1466,
+      "n_test": 629,
+      "L": 601,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": -7.92,
+      "t_loo": -1.819,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -8.61,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -10.55,
+      "rmsep_raw_z": 0.7502,
+      "rmsep_snv_z": 0.713,
+      "emp_snv_vs_raw_pct": -4.96,
+      "oracle_pls_z": 0.713,
+      "strategies_same_pls": {
+        "Always_Raw": 0.7502,
+        "Always_SNV": 0.713,
+        "InnerCV_PLS": 0.713,
+        "Gate_Fallback_Raw": 0.7502,
+        "Gate_Fallback_SNV": 0.713,
+        "Gate_Fallback_InnerCV": 0.713
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.6718,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__WR1500",
+      "stratum": "D_OSSL_UnseenProps_Holdout",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "n_cal": 1449,
+      "n_test": 621,
+      "L": 601,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": -1.84,
+      "t_loo": -1.219,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -1.08,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -5.83,
+      "rmsep_raw_z": 0.7126,
+      "rmsep_snv_z": 0.681,
+      "emp_snv_vs_raw_pct": -4.43,
+      "oracle_pls_z": 0.681,
+      "strategies_same_pls": {
+        "Always_Raw": 0.7126,
+        "Always_SNV": 0.681,
+        "InnerCV_PLS": 0.681,
+        "Gate_Fallback_Raw": 0.7126,
+        "Gate_Fallback_SNV": 0.681,
+        "Gate_Fallback_InnerCV": 0.681
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.7363,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__P_ext",
+      "stratum": "D_OSSL_UnseenProps_Holdout",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "n_cal": 509,
+      "n_test": 219,
+      "L": 601,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "IMPROVE",
+      "delta_loo_pct": -1.58,
+      "t_loo": -2.441,
+      "inner_cv_pick": "SNV",
+      "delta_cv_pct": -1.94,
+      "legacy_v2_call_0_5": "IMPROVE",
+      "legacy_v2_pred_pct": -1.03,
+      "rmsep_raw_z": 0.7879,
+      "rmsep_snv_z": 0.7095,
+      "emp_snv_vs_raw_pct": -9.95,
+      "oracle_pls_z": 0.7095,
+      "strategies_same_pls": {
+        "Always_Raw": 0.7879,
+        "Always_SNV": 0.7095,
+        "InnerCV_PLS": 0.7095,
+        "Gate_Fallback_Raw": 0.7095,
+        "Gate_Fallback_SNV": 0.7095,
+        "Gate_Fallback_InnerCV": 0.7095
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.7095,
+        "escalated_model": "SNV_PLS"
+      }
+    },
+    {
+      "task_id": "Deploy_OSSL_Holdout__EC",
+      "stratum": "D_OSSL_UnseenProps_Holdout",
+      "domain": "OSSL Soil MEMS (Unique Scans)",
+      "split_rule": "Unique-soil deterministic 70/30 holdout",
+      "n_cal": 666,
+      "n_test": 286,
+      "L": 601,
+      "cal_test_hash_overlap": 0,
+      "gate_decision": "ABSTAIN",
+      "delta_loo_pct": -4.61,
+      "t_loo": -0.445,
+      "inner_cv_pick": "RAW",
+      "delta_cv_pct": 0.29,
+      "legacy_v2_call_0_5": "ABSTAIN",
+      "legacy_v2_pred_pct": -0.1,
+      "rmsep_raw_z": 0.4035,
+      "rmsep_snv_z": 0.4148,
+      "emp_snv_vs_raw_pct": 2.78,
+      "oracle_pls_z": 0.4035,
+      "strategies_same_pls": {
+        "Always_Raw": 0.4035,
+        "Always_SNV": 0.4148,
+        "InnerCV_PLS": 0.4035,
+        "Gate_Fallback_Raw": 0.4035,
+        "Gate_Fallback_SNV": 0.4148,
+        "Gate_Fallback_InnerCV": 0.4035
+      },
+      "hetero_workflow": {
+        "Gate_Escalate_Bilevel": 0.5457,
+        "escalated_model": "BilevelDiffPrep"
+      }
+    }
+  ]
+}
