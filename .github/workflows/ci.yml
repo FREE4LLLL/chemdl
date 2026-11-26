@@ -1,0 +1,33 @@
+name: Paper Reproducibility CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: "${{ matrix.python-version }}"
+      - name: Install dependencies (CPU PyTorch)
+        run: |
+          python -m pip install --upgrade pip
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install numpy scipy scikit-learn matplotlib pandas pytest
+      - name: Install package in editable mode
+        run: pip install --no-deps -e .
+      - name: Run self-contained unit & invariant tests
+        run: pytest -q -W default
+      - name: Verify frozen theory hash, archived JSONs, and preregistration locks
+        run: python reproduce_paper.py --verify
+      - name: Regenerate all 7 publication figures from archived JSONs
+        run: python reproduce_paper.py --plot-all
