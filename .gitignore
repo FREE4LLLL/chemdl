@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# External raw datasets (downloaded via scripts/fetch_data.py and _audit/fetch_round3_unseen.py)
+data_raw/
+data_ext/
+
+# Environments & IDE
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+*.bak
+*.orig
