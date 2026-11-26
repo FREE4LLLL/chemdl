@@ -9,10 +9,10 @@ Companion code, SHA-256 dataset manifests, preregistered audit logs, and figure-
 
 1. **Analytic Sign Criterion & Residual Shape Decomposition (Theorem 1)**:
    Derives a closed-form first-order two-channel orthogonal SNR surrogate and critical coupling threshold $r_{\text{crit}}(\sigma_a; \alpha, \beta)$, paired with unsupervised spectral-shape residual decomposition $1 - R^2_{\text{shape}}$ to separate physical scatter from Beer–Lambert chemical amplitude variance.
-2. **Zero-Leakage Paired Exact Allen-PRESS LOO Three-State Gate**:
-   Computes cancellation-free exact Allen-PRESS leave-one-out residuals on calibration spectra alone to emit `IMPROVE`, `WORSEN`, or `ABSTAIN` with prior-guided fallback (`SNV` for known solid diffuse-reflectance matrices / low compute budget; `Inner-CV` for unknown labs, liquid/low-scatter, or high-$R^2_{\text{shape}} \ge 0.90$ matrices).
-3. **Label-Free Wiener Shrinkage & Unified Coupling Upper Bound (Theorems 3–4)**:
-   Establishes $w_{s,\text{Wiener}}^\star = 1 - R^2_{\text{shape}}$ without consuming analyte labels $y$ or $w_s$ grid search (5.2×–5.7× calibration speedup over 11-point inner CV; PLS mean $\mathrm{RMSEP}_z$ +0.0088 with 12-source cluster one-sided 95% UCB +0.0537 supporting $\delta = 0.08$ [insufficient at $\delta = 0.05$], Ridge UCB +0.0259 supporting $\delta = 0.03$), bounded above by $w_{s,\text{unified}}^\star < w_{s,\text{Wiener}}^\star$ under $r \neq 0$.
+2. **Calibration-Only Paired Exact Allen-PRESS Three-State Gate (`C4A`/`C4B` Nested)**:
+   Computes calibration-only paired residuals to emit `IMPROVE`, `WORSEN`, or `ABSTAIN` with supervised fallback. Under the revised replicate-grouped nested 5-fold primary protocol (`C4A`), one multi-year `CRAW` wheat moisture error raises `Gate + SNV` $C_{10}$ to `50.58` vs `26.07` for standalone inner CV (`C1` single-$\gamma$: `15.17`), whereas year-grouping (`C4B`) recovers `0.56`. On 13 external tasks, `Gate + Inner-CV` lowers $C_{10}$ from `33.09` to `17.53` (`4/13` answered, all net gain from `AustrianSoil pH_CaCl2`).
+3. **Label-Free Surrogate Wiener-Type Shrinkage & Unified Coupling Upper Bound (Theorems 3–4)**:
+   Establishes $w_{s,\text{Wiener}}^\star = 1 - R^2_{\text{shape}}$ without consuming analyte labels $y$ or $w_s$ grid search. On 30 reused holdouts under unified grouped evaluation, PLS `Wiener-Type (1-split)` matches $T_{1,0}$ (`0.7535`, severe regrets `13→9`, $C_{10}=69.44$) and trails fixed $w_s = 0.20$ (`60.09`) while running `4.9×` faster than 11-pt CV (one-sided 12-source cluster $\mathrm{UCB}_{95} = +0.0544$, missing $\delta = 0.05$, supporting $\delta = 0.08$; Ridge `3.5×` faster, $\mathrm{UCB}_{95} = +0.0279 < \delta = 0.03$), bounded above by $w_{s,\text{unified}}^\star < w_{s,\text{Wiener}}^\star$ under $r \neq 0$.
 4. **Physical Identifiability Domain**:
    Maps scalar scatter fidelity ($r = 0.9975$ against $f_{\text{adj,lin}}$), wavelength-tilt collapse, and 6-source/8-group real paired/replicate scans.
 
@@ -44,25 +44,25 @@ X_test_w = dssnv_apply(X_test, wc=1.0, ws=ws_wiener, s_bar=s_bar)
 
 ---
 
-## Installation & One-Command Reproduction
+## Installation & Three-Tier Verification
 
 ```bash
 git clone https://github.com/FREE4LLLL/chemdl.git
 cd chemdl
-pip install -r requirements.txt
+pip install -r requirements-lock.txt   # or requirements.txt
 pip install --no-deps -e .
 
-# 1. Run self-contained unit tests, mathematical invariants, and artifact checks
+# Tier 1 (Offline Verification, zero downloads): unit tests + frozen hashes + 26 JSONs + Tables 1-5
 pytest -q -W default
+python reproduce_paper.py --verify --tables
 
-# 2. Verify frozen theory SHA-256, 22 archived JSONs, 7 PNGs, and preregistration locks
-python reproduce_paper.py --verify
-
-# 3. Print Tables 1-5 summary directly from archived JSONs
-python reproduce_paper.py --tables
-
-# 4. Regenerate all 7 publication figures (Figs 1-7) from archived JSONs
+# Tier 2 (Offline Figure Regeneration): regenerate all 7 publication PNGs from archived JSONs
 python reproduce_paper.py --plot-all
+
+# Tier 3 (Full Raw-Data Re-training): fetch public datasets & re-run full revision benchmark
+python scripts/fetch_data.py --verify
+python _audit/fetch_round3_unseen.py --verify
+python _audit/bench_revision_v2_2026_11_26.py
 ```
 
 ---
@@ -78,7 +78,8 @@ python reproduce_paper.py --plot-all
 | `chemdl/{corn,tablets,tecator,cordoba,diesel}.py` | Public NIR benchmark loaders |
 | `data/MANIFEST.yaml`, `data/MANIFEST_ROUND3.yaml` | Full 64-hex SHA-256 checksums and open-license provenance for all public datasets |
 | `scripts/fetch_data.py`, `_audit/fetch_round3_unseen.py` | Dataset download and SHA-256 verification utilities (`data_ext/` is not checked into git) |
-| `_audit/` | Preregistered Phase 1/2 scripts, evaluation benchmarks (incl. `bench_major_revision_2026_11_25.py`), and 22 archived JSON artifacts |
+| `_audit/` | Preregistered Phase 1/2 scripts, revision benchmarks (incl. `bench_revision_v2_2026_11_26.py`), and 26 archived JSON artifacts |
+| `requirements-lock.txt` | Exact pinned environment versions (Python 3.13.9, NumPy, SciPy, scikit-learn, etc.) |
 | `paper_assets/` | 4 figure-generation scripts and the 7 publication PNG figures |
 | `tests/test_paper_core.py` | Self-contained test suite (no external dataset download required) |
 
@@ -92,8 +93,8 @@ python reproduce_paper.py --plot-all
 | **Table 1** | `chemdl/theory.py::estimate_physical_params_v2` |
 | **Table 2 / Fig 2** | `_audit/bench_review_p0_2026_11_23.py`, `_audit/bench_theory_dssnv_2026_11_20.py`, `paper_assets/plot_fig_snv_phase_diagram.py` |
 | **Fig 3** | `_audit/prereg_theory_blind_phase2_unblind.py`, `_audit/prereg_snv_gate_round2_phase2_unblind.py`, `paper_assets/plot_manuscript_figs_1_3_4.py` |
-| **Table 3 / Fig 4 / Fig 5** | `_audit/prereg_deploy_holdout_phase2_unblind.py`, `_audit/prereg_round3_unseen_phase2_unblind.py`, `paper_assets/plot_manuscript_figs_1_3_4.py`, `paper_assets/plot_manuscript_figs_6_7.py` |
-| **Table 4 / Fig 6** | `_audit/prereg_ws_closed_value_phase2_unblind.py`, `_audit/prereg_wiener_ws_phase2_unblind.py`, `paper_assets/plot_manuscript_figs_6_7.py` |
+| **Table 3 / Fig 4 / Fig 5** | `_audit/bench_revision_v2_2026_11_26.py`, `_audit/res_revision_v2_2026_11_26.json`, `_audit/prereg_deploy_holdout_phase2_unblind.py`, `_audit/prereg_round3_unseen_phase2_unblind.py`, `paper_assets/plot_manuscript_figs_1_3_4.py`, `paper_assets/plot_manuscript_figs_6_7.py` |
+| **Table 4 / Fig 6** | `_audit/bench_revision_v2_2026_11_26.py`, `_audit/res_revision_v2_2026_11_26.json`, `_audit/prereg_ws_closed_value_phase2_unblind.py`, `_audit/prereg_wiener_ws_phase2_unblind.py`, `paper_assets/plot_manuscript_figs_6_7.py` |
 | **Table 5 / Fig 7** | `_audit/bench_r2_shape_identifiability_2026_11_25.py`, `paper_assets/plot_fig13_r2_shape_identifiability.py` |
 
 ---

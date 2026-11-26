@@ -46,7 +46,7 @@ _SHORT_TASK = {
     "Deploy_OSSL_Holdout__Mg_ext": "OSSL (Mg_ext)",
     "Deploy_OSSL_Holdout__Al_dith": "OSSL (Al_dith)",
     "Deploy_OSSL_Holdout__WR1500": "OSSL (WR1500)",
-    "Deploy_Mango_Official_SP_test2__DM": "Mango (DM) [Excluded: 5.3× mismatch]",
+    "Deploy_Mango_Official_SP_test2__DM": "Mango (DM) [Excluded: suspected mismatch]",
 }
 
 _DEC_BADGE = {"WORSEN": "[W]", "IMPROVE": "[I]", "ABSTAIN": "[A]"}
@@ -168,17 +168,17 @@ def make_fig_ms6_deploy_per_task() -> Path:
 
     fig.supxlabel("Test Regret vs. Oracle Endpoints (%)", y=0.025, fontsize=9.5, fontweight="bold")
     fig.suptitle(
-        "Per-Task Regret: 17 Valid-Scale Deployments (Plus Isolated 5.3× Unit-Mismatch Case)",
+        "Per-Task Regret: 17 Valid-Scale Deployments (Plus Excluded Suspected Label-Scale Mismatch)",
         y=0.975, fontsize=10.4, fontweight="bold",
     )
 
     handles = [
         Line2D([0], [0], marker="o", color="w", markerfacecolor=c_gate, markeredgecolor="#0D47A1", markersize=7.5,
-               label="Gate + SNV fallback (1 severe, VALID_17 mean +1.98%)"),
+               label="Gate + SNV fallback (1 severe, 17-task mean +1.98%)"),
         Line2D([0], [0], marker="s", color="w", markerfacecolor=c_raw, markeredgecolor="#A04000", markersize=6.8,
-               label="Always Raw (8 severe, VALID_17 mean +9.14%)"),
+               label="Always Raw (8 severe, 17-task mean +9.14%)"),
         Line2D([0], [0], marker="^", color="w", markerfacecolor=c_snv, markeredgecolor="#7B241C", markersize=7.5,
-               label="Always SNV (4 severe, VALID_17 mean +23.79%)"),
+               label="Always SNV (4 severe, 17-task mean +23.79%)"),
     ]
     fig.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.54, 0.935), ncol=3,
                frameon=True, framealpha=0.94, edgecolor="#CFD8DC", fontsize=8.0)
@@ -193,90 +193,93 @@ def make_fig_ms6_deploy_per_task() -> Path:
 
 
 def make_fig_ms7_ws_asymmetric_cost() -> Path:
-    """Two-panel row-aligned horizontal comparison: (a) C10 Cost, (b) Calibration Time & Severe Count."""
-    data = json.loads((AUDIT / "res_wiener_ws_2026_11_25.json").read_text(encoding="utf-8"))
-    methods = data["summary"]["EXTERNAL_30"]["pls"]["methods"]
+    """Two-panel row-aligned horizontal comparison on 30 reused PLS holdouts (revised grouped protocol)."""
+    data = json.loads((AUDIT / "res_revision_v2_2026_11_26.json").read_text(encoding="utf-8"))
+    methods = data["p1c_ext30_summary"]["pls"]["task_equal_weighted"]
 
     order = [
-        ("ws_0", "No Scaling ($w_s = 0$)"),
-        ("ws_1", "Full SNV ($w_s = 1$)"),
-        ("ws_closed_v2_old", "Old Closed-Form ($\\sigma_{\\mathrm{non}}=0$)"),
-        ("ws_wiener", "Wiener Shrinkage ($1-R^2_{\\mathrm{shape}}$)"),
-        ("ws_unified", "Unified Coupled Solution"),
-        ("ws_inner_cv", "11-pt Inner CV (Ref.)"),
+        ("ws_0", "Row-Centered ($T_{1,0},\\ w_s = 0$)"),
+        ("ws_0.10", "Fixed Shrinkage ($w_s = 0.10$)"),
+        ("ws_0.15", "Fixed Shrinkage ($w_s = 0.15$)"),
+        ("ws_0.20", "Fixed Shrinkage ($w_s = 0.20$)"),
+        ("ws_1", "Full SNV ($T_{1,1},\\ w_s = 1$)"),
+        ("ws_closed_legacy", "Legacy Closed-Form ($\\sigma_{\\mathrm{non}}=0$)"),
+        ("ws_wiener_single", "Wiener-Type (1-split, $1-R^2_{\\mathrm{shape}}$)"),
+        ("ws_wiener_rep20", "Wiener-Type (20-seed avg)"),
+        ("ws_inner_cv_11pt", "11-pt Inner CV (Ref.)"),
+        ("autoprep_cv", "AutoPrep-CV (8-op)"),
     ]
 
     labels = [lbl for _, lbl in order]
-    costs = [float(methods[k]["asymmetric_cost_w10"]) for k, _ in order]
-    times = [float(methods[k]["total_cal_time_s"]) for k, _ in order]
-    sevs = [int(methods[k]["severe_regret_ge5pct_count"]) for k, _ in order]
+    costs = [float(methods[k]["C_10"]) for k, _ in order]
+    times = [float(methods[k]["total_time_s"]) for k, _ in order]
+    sevs = [int(methods[k]["severe_count"]) for k, _ in order]
 
     y = np.arange(len(order))
-    colors = ["#90A4AE", "#B0BEC5", "#C0392B", "#00796B", "#2E7D32", "#546E7A"]
-    edge_colors = ["#455A64", "#455A64", "#7B241C", "#004D40", "#1B5E20", "#263238"]
-    edge_widths = [0.9, 0.9, 1.1, 2.0, 1.0, 0.9]
+    colors = ["#90A4AE", "#78909C", "#607D8B", "#455A64", "#B0BEC5", "#C0392B", "#00796B", "#4DB6AC", "#37474F", "#2E7D32"]
+    edge_colors = ["#455A64", "#37474F", "#263238", "#102027", "#455A64", "#7B241C", "#004D40", "#00695C", "#102027", "#1B5E20"]
+    edge_widths = [0.9, 0.9, 0.9, 1.3, 0.9, 1.1, 2.0, 1.0, 1.1, 1.1]
 
-    fig, (ax_a, ax_b) = plt.subplots(1, 2, figsize=(11.4, 4.3), dpi=300, sharey=True,
-                                     gridspec_kw={"width_ratios": [1.15, 1.0], "wspace": 0.10})
+    fig, (ax_a, ax_b) = plt.subplots(1, 2, figsize=(12.2, 5.5), dpi=300, sharey=True,
+                                     gridspec_kw={"width_ratios": [1.12, 1.0], "wspace": 0.10})
 
     # Panel (a): Asymmetric Cost C_10
-    bars_a = ax_a.barh(y, costs, height=0.56, color=colors, edgecolor=edge_colors, linewidth=edge_widths, zorder=3)
+    bars_a = ax_a.barh(y, costs, height=0.60, color=colors, edgecolor=edge_colors, linewidth=edge_widths, zorder=3)
     ax_a.set_xlim(0, 228)
     ax_a.set_xlabel("Asymmetric Severe-Regret Cost $C_{10}$ (lower is better)", fontweight="bold")
     ax_a.set_title("(a) Deployment Cost $C_{10}$", fontweight="bold", pad=8)
     ax_a.grid(axis="x", linestyle=":", alpha=0.45, zorder=0)
     ax_a.set_yticks(y)
-    ax_a.set_yticklabels(labels, fontsize=8.6)
+    ax_a.set_yticklabels(labels, fontsize=8.4)
     ax_a.invert_yaxis()
 
     for idx, (bar, val) in enumerate(zip(bars_a, costs)):
-        fw = "bold" if order[idx][0] in ("ws_wiener", "ws_closed_v2_old") else "normal"
-        col = "#004D40" if order[idx][0] == "ws_wiener" else ("#7B241C" if order[idx][0] == "ws_closed_v2_old" else "#263238")
+        fw = "bold" if order[idx][0] in ("ws_wiener_single", "ws_0.20", "ws_closed_legacy") else "normal"
+        col = "#004D40" if order[idx][0] == "ws_wiener_single" else ("#7B241C" if order[idx][0] == "ws_closed_legacy" else "#263238")
         ax_a.text(val + 3.5, bar.get_y() + bar.get_height() / 2.0, f"{val:.2f}",
-                  va="center", ha="left", fontsize=8.4, fontweight=fw, color=col, zorder=5)
+                  va="center", ha="left", fontsize=8.2, fontweight=fw, color=col, zorder=5)
 
-    # Callout arrow from Old Closed-Form (idx=2) to Wiener Shrinkage (idx=3)
     ax_a.annotate(
-        "−61.5% cost\n(179.52 → 69.18)",
-        xy=(104.0, 3.0),
-        xytext=(158.0, 4.35),
+        "−61.3% vs Legacy\n(fixed 0.20 = 60.09)",
+        xy=(104.0, 6.0),
+        xytext=(158.0, 7.6),
         ha="center", va="center",
-        fontsize=8.1, fontweight="bold", color="#004D40",
-        bbox=dict(boxstyle="round,pad=0.30", facecolor="#E0F2F1", edgecolor="#00796B", linewidth=1.0),
-        arrowprops=dict(arrowstyle="-|>", mutation_scale=13, color="#00796B", lw=1.5, connectionstyle="arc3,rad=-0.18"),
+        fontsize=7.9, fontweight="bold", color="#004D40",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor="#E0F2F1", edgecolor="#00796B", linewidth=1.0),
+        arrowprops=dict(arrowstyle="-|>", mutation_scale=12, color="#00796B", lw=1.4, connectionstyle="arc3,rad=-0.18"),
         zorder=7,
     )
 
     # Panel (b): Calibration Time (s) + Severe Regret Count
-    bars_b = ax_b.barh(y, times, height=0.56, color=colors, edgecolor=edge_colors, linewidth=edge_widths, zorder=3)
-    ax_b.set_xlim(0, 56)
+    bars_b = ax_b.barh(y, times, height=0.60, color=colors, edgecolor=edge_colors, linewidth=edge_widths, zorder=3)
+    ax_b.set_xlim(0, 210)
     ax_b.set_xlabel("Total Calibration Time (s)", fontweight="bold")
     ax_b.set_title("(b) Calibration Runtime & Severe Failures", fontweight="bold", pad=8)
     ax_b.grid(axis="x", linestyle=":", alpha=0.45, zorder=0)
     ax_b.tick_params(axis="y", which="both", left=False)
 
     for idx, (bar, tm, sv) in enumerate(zip(bars_b, times, sevs)):
-        fw = "bold" if order[idx][0] in ("ws_wiener", "ws_inner_cv") else "normal"
-        col = "#004D40" if order[idx][0] == "ws_wiener" else "#263238"
-        ax_b.text(tm + 1.0, bar.get_y() + bar.get_height() / 2.0, f"{tm:.1f} s  ({sv}/30 sev)",
-                  va="center", ha="left", fontsize=8.2, fontweight=fw, color=col, zorder=5)
+        fw = "bold" if order[idx][0] in ("ws_wiener_single", "ws_inner_cv_11pt", "autoprep_cv") else "normal"
+        col = "#004D40" if order[idx][0] == "ws_wiener_single" else "#263238"
+        ax_b.text(tm + 3.0, bar.get_y() + bar.get_height() / 2.0, f"{tm:.1f} s ({sv}/30 sev)",
+                  va="center", ha="left", fontsize=8.0, fontweight=fw, color=col, zorder=5)
 
     ax_b.annotate(
-        "5.2× faster\nthan Inner CV",
-        xy=(25.5, 3.0),
-        xytext=(43.5, 1.35),
+        "4.9× faster than 11-pt CV\n(17× vs AutoPrep; 9/30 sev)",
+        xy=(68.0, 6.0),
+        xytext=(144.0, 3.2),
         ha="center", va="center",
-        fontsize=8.2, fontweight="bold", color="#004D40",
-        bbox=dict(boxstyle="round,pad=0.30", facecolor="#E0F2F1", edgecolor="#00796B", linewidth=1.0),
-        arrowprops=dict(arrowstyle="-|>", mutation_scale=13, color="#00796B", lw=1.5, connectionstyle="arc3,rad=0.15"),
+        fontsize=7.9, fontweight="bold", color="#004D40",
+        bbox=dict(boxstyle="round,pad=0.28", facecolor="#E0F2F1", edgecolor="#00796B", linewidth=1.0),
+        arrowprops=dict(arrowstyle="-|>", mutation_scale=12, color="#00796B", lw=1.4, connectionstyle="arc3,rad=0.15"),
         zorder=7,
     )
 
     fig.suptitle(
-        "Continuous Scaling Comparison on 30 External Holdouts (PLS Head)",
-        y=1.01, fontsize=10.4, fontweight="bold",
+        "Continuous Scaling & Fixed-Weight Baselines on 30 Reused Holdouts (PLS Head)",
+        y=0.98, fontsize=10.4, fontweight="bold",
     )
-    fig.subplots_adjust(left=0.23, right=0.98, top=0.86, bottom=0.14)
+    fig.subplots_adjust(left=0.26, right=0.98, top=0.86, bottom=0.12)
     out_p = OUT / "fig_ms7_ws_asymmetric_cost.png"
     fig.savefig(out_p, dpi=300, bbox_inches="tight")
     plt.close(fig)

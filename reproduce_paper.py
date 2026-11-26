@@ -1,7 +1,7 @@
 """One-command verification, table summary, and figure regeneration for the paper.
 
 Usage:
-  python reproduce_paper.py --verify    # Verify frozen theory SHA-256, 22 archived JSONs, 7 PNGs, and prereg locks
+  python reproduce_paper.py --verify    # Verify frozen theory SHA-256, 26 archived JSONs, 7 PNGs, and prereg locks
   python reproduce_paper.py --tables    # Print headline Tables 1-5 summary directly from archived JSONs
   python reproduce_paper.py --plot-all  # Regenerate all 7 publication figures (Figs 1-7) from archived JSONs
 """
@@ -43,6 +43,10 @@ REQUIRED_JSONS = [
     "res_wiener_group_r2_audit_2026_11_25.json",
     "res_wiener_ws_2026_11_25.json",
     "res_ws_closed_value_2026_11_25.json",
+    "res_craw_nested_rootcause_2026_11_26.json",
+    "res_grouped_fit_pls_and_mango_2026_11_26.json",
+    "revision_protocol_registry_2026_11_26.json",
+    "res_revision_v2_2026_11_26.json",
 ]
 
 REQUIRED_FIGS = [
@@ -84,6 +88,10 @@ def cmd_verify() -> None:
     ]:
         subprocess.run([sys.executable, script, "--verify-only"], cwd=ROOT, check=True)
     assert (ROOT / "_audit" / "bench_major_revision_2026_11_25.py").exists()
+    assert (ROOT / "_audit" / "bench_revision_v2_2026_11_26.py").exists()
+    assert (ROOT / "_audit" / "audit_craw_nested_rootcause_2026_11_26.py").exists()
+    assert (ROOT / "_audit" / "audit_grouped_fit_pls_and_mango_2026_11_26.py").exists()
+    assert (ROOT / "requirements-lock.txt").exists()
     print("[PASS] All frozen hashes, preregistration locks, and paper artifacts verified.")
 
 
@@ -147,6 +155,35 @@ def cmd_tables() -> None:
         f"(p_0.03={ni_rdg['margins']['delta_0.03']['wilcoxon_one_sided_p']:.2e}), "
         f"PLS={ni_pls['cluster12_ucb95_wiener_minus_inner_cv']:+.4f} "
         f"(p_0.08={ni_pls['margins']['delta_0.08']['wilcoxon_one_sided_p']:.2e})"
+    )
+
+    rv2 = json.loads((ROOT / "_audit" / "res_revision_v2_2026_11_26.json").read_text(encoding="utf-8"))
+    v17_c4a = rv2["p1b_deployment_summary"]["VALID_17"]["C4A_FullNested_RepGrp"]
+    v17_c4b = rv2["p1b_deployment_summary"]["VALID_17"]["C4B_FullNested_DeployUnit"]
+    r13_c4a = rv2["p1b_deployment_summary"]["Round3_13"]["C4A_FullNested_RepGrp"]
+    print(
+        f"\n[Revision v2] VALID_17 C4A: cov={v17_c4a['coverage_k']}/17, acc={v17_c4a['cond_acc_k']}/{v17_c4a['coverage_k']} "
+        f"({v17_c4a['cond_acc_pct']:.1f}%), Gate+SNV C10={v17_c4a['strategies']['Gate_Fallback_SNV']['C_10']:.2f}, "
+        f"InnerCV C10={v17_c4a['strategies']['InnerCV_PLS']['C_10']:.2f}, "
+        f"AutoPrep-CV C10={v17_c4a['strategies']['AutoPrep_CV']['C_10']:.2f}; "
+        f"C4B Gate+SNV C10={v17_c4b['strategies']['Gate_Fallback_SNV']['C_10']:.2f}"
+    )
+    print(
+        f"[Revision v2] Round3_13 C4A: cov={r13_c4a['coverage_k']}/13, acc={r13_c4a['cond_acc_k']}/{r13_c4a['coverage_k']} "
+        f"({r13_c4a['cond_acc_pct']:.1f}%), Gate+InnerCV C10={r13_c4a['strategies']['Gate_Fallback_InnerCV']['C_10']:.2f} "
+        f"vs InnerCV C10={r13_c4a['strategies']['InnerCV_PLS']['C_10']:.2f}"
+    )
+    e_pls = rv2["p1c_ext30_summary"]["pls"]["task_equal_weighted"]
+    e_rdg = rv2["p1c_ext30_summary"]["ridge"]["task_equal_weighted"]
+    print(
+        f"[Revision v2] Ext-30 PLS C10: ws0={e_pls['ws_0']['C_10']:.2f}, ws0.20={e_pls['ws_0.20']['C_10']:.2f}, "
+        f"Wiener1={e_pls['ws_wiener_single']['C_10']:.2f}, 11ptCV={e_pls['ws_inner_cv_11pt']['C_10']:.2f}, "
+        f"AutoPrep={e_pls['autoprep_cv']['C_10']:.2f}"
+    )
+    print(
+        f"[Revision v2] Ext-30 Ridge C10: ws0={e_rdg['ws_0']['C_10']:.2f}, ws0.20={e_rdg['ws_0.20']['C_10']:.2f}, "
+        f"Wiener1={e_rdg['ws_wiener_single']['C_10']:.2f}, 11ptCV={e_rdg['ws_inner_cv_11pt']['C_10']:.2f}, "
+        f"AutoPrep={e_rdg['autoprep_cv']['C_10']:.2f}"
     )
 
 
