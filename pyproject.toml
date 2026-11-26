@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chemdl"
+version = "2.0.0"
+description = "Analytic sign criterion, paired exact Allen-PRESS LOO gating, and unsupervised Wiener shrinkage for near-infrared scatter correction"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24,<3.0",
+  "scipy>=1.10,<2.0",
+  "scikit-learn>=1.2,<2.0",
+  "torch>=2.0,<3.0",
+  "matplotlib>=3.7,<4.0",
+  "pandas>=1.5,<3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/FREE4LLLL/chemdl"
+Repository = "https://github.com/FREE4LLLL/chemdl"
+
+[tool.setuptools.packages.find]
+include = ["chemdl*"]
