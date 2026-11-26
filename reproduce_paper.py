@@ -1,7 +1,7 @@
 """One-command verification, table summary, and figure regeneration for the paper.
 
 Usage:
-  python reproduce_paper.py --verify    # Verify frozen theory SHA-256, 21 archived JSONs, 7 PNGs, and prereg locks
+  python reproduce_paper.py --verify    # Verify frozen theory SHA-256, 22 archived JSONs, 7 PNGs, and prereg locks
   python reproduce_paper.py --tables    # Print headline Tables 1-5 summary directly from archived JSONs
   python reproduce_paper.py --plot-all  # Regenerate all 7 publication figures (Figs 1-7) from archived JSONs
 """
