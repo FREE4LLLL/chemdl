@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or benchmark suite, please cite it as below."
+type: software
+title: "Selective Standard Normal Variate for Near-Infrared Calibration: Analytic Attribution, Paired Decision Gating, and Continuous Scale Shrinkage"
+version: 2.0.0
+date-released: 2026-11-25
+license: MIT
+repository-code: "https://github.com/FREE4LLLL/chemdl"
+url: "https://github.com/FREE4LLLL/chemdl"
+authors:
+  - name: "chemdl contributors"
+keywords:
+  - near-infrared spectroscopy
+  - standard normal variate
+  - scatter correction
+  - leave-one-out cross-validation
+  - Wiener shrinkage
+  - chemometrics
